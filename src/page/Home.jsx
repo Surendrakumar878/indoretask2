@@ -20,6 +20,8 @@ const Home = () => {
       <Link to="/VehicleMasterInformation"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >VehicleMasterInformation</button> </Link>
       <Link to="/Vehicleschedulehistotry"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >Vehicleschedulehistotry</button> </Link>
       <Link to="/vehicleview"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >vehicleview</button> </Link>
+      <Link to="/NotificationView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >NotificationView</button> </Link>
+      <Link to="/PromotionView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >PromotionView</button> </Link>
    
     </div>
 <h1 className='center'>  form</h1>

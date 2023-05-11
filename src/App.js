@@ -1,13 +1,8 @@
-
-
 import Vehicleform from "./components/Vehicleform";
 
 import { Route, Routes } from "react-router-dom";
 
 import Loadingslip from "./page/Loadingslip";
-
-
-
 
 import Notification from "./page/Notification";
 import Promotion from "./page/Promotion";
@@ -30,6 +25,8 @@ import Vehicleschedulehistotry from "./page/reports/Vehicleschedulehistotry";
 import Overallwallet from "./page/Overallwallet";
 import { useEffect, useState } from "react";
 import Home from "./page/Home";
+import NotificationView from "./page/NotificationView";
+import PromotionView from "./page/PromotionView";
 
 function App() {
   // function preback() {
@@ -42,19 +39,19 @@ function App() {
   //   return null;
   // };
 
-// useEffect(()=>{
+  // useEffect(()=>{
 
-const [count,setCount]=useState(0)
+  const [count, setCount] = useState(0);
 
   window.history.pushState(null, null, window.location.href);
   window.onpopstate = function () {
-    setCount(window.history.length)
-      window.history.go(1);
+    setCount(window.history.length);
+    window.history.go(1);
   };
-// },[])
- useEffect(()=>{
-  // setCount(window.history.length)
- },[])
+  // },[])
+  useEffect(() => {
+    // setCount(window.history.length)
+  }, []);
   return (
     <div>
       {/* <Vehicleform/> */}
@@ -64,8 +61,7 @@ const [count,setCount]=useState(0)
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/Vehicleform" element={<Vehicleform />}></Route>
-    
-        
+
         <Route path="/loadingslip" element={<Loadingslip />}></Route>
         <Route path="/Overallwallet" element={<Overallwallet />}></Route>
         <Route
@@ -83,7 +79,7 @@ const [count,setCount]=useState(0)
         ></Route>
         <Route path="/promotion" element={<Promotion />}></Route>
         <Route path="/notification" element={<Notification />}></Route>
-       
+
         <Route
           path="/vehicleownerdocuments"
           element={<Vehicle_owner_documents />}
@@ -110,6 +106,8 @@ const [count,setCount]=useState(0)
           path="/Vehicleschedulehistotry"
           element={<Vehicleschedulehistotry />}
         ></Route>
+        <Route path="/NotificationView" element={<NotificationView />}></Route>
+        <Route path="/PromotionView" element={<PromotionView />}></Route>
       </Routes>
     </div>
   );

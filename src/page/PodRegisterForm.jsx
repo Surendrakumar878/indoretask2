@@ -16,11 +16,7 @@ import {
 } from "antd";
 
 import { DatePicker } from "antd";
-import { Link, useNavigate } from "react-router-dom";
-import { UploadOutlined } from "@ant-design/icons";
-import TextArea from "antd/es/input/TextArea";
-import axios from "axios";
-import ReCAPTCHA from "react-google-recaptcha";
+
 import v from "../components/Vehicleform.module.css";
 const { Option } = Select;
 // import LoadingButton from "@mui/lab/LoadingButton";
@@ -35,18 +31,7 @@ const PodRegisterForm = () => {
     console.log("onOk: ", value);
   }
 
-  const navigate = useNavigate();
-  const [verfied, setVerifed] = useState(false);
-  const [country, setCountry] = useState([]);
-  const [state, setState] = useState([]);
-  const [city, setCity] = useState([]);
-  const [register, SetRegisterNumber] = useState([]);
-  const [required, Setrequired] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  function onChange() {
-    setVerifed(true);
-  }
+  
 
   const saveData = async (values) => {
     console.log(values);
@@ -64,31 +49,22 @@ const PodRegisterForm = () => {
       total_weight: values.total_weight,
       vehicle_body_type: values.vehicle_body_type,
       vehicle_height: values.vehicle_height,
-      //   country_id: values.country_id,
-      //   office_phone_number: values.office_phone_number,
-      //   email: values.email,
-      //   website: values.website,
-      //   company_registeration: values.company_registeration,
-      //   owner_aadhar_card: values.owner_aadhar_card,
-      //   gst_certificate: values.gst_certificate,
-      //   company_visiting_card: values.company_visiting_card,
+    
+      
     };
     console.log(reg_data);
   };
-
   const handlePhoneKeyPress = (e) => {
     const charCode = e.which ? e.which : e.keyCode;
     const isNumeric = charCode >= 48 && charCode <= 57; // check if the key pressed is a number
     const isBackspace = charCode === 8; // check if the key pressed is the backspace key
     const phone = e.target.value.replace(/\D/g, ""); // remove all non-numeric characters
-    const isValid = phone.length === 10 || isBackspace; // check if the input is a 10-digit number or the backspace key
+    
     if (!isNumeric && !isBackspace) {
       e.preventDefault(); // prevent the input of non-numeric characters
     }
 
-    if (isValid) {
-      e.target.value = phone; // update the input value with the valid phone number
-    }
+    
   };
 
   return (
@@ -97,9 +73,9 @@ const PodRegisterForm = () => {
         <h2 id={v.heading}>POD Entry</h2>
         <div className={v.mainForm}>
           <Card hoverable bodyStyle={{ padding: "0" }}>
-            {/* <Button onClick={welcom}> save</Button> */}
+          
             <Form layout="vertical" autoComplete="off" onFinish={saveData}>
-              {/* <h3 className={v.card_menu}>  ENQUIRY DETAILS</h3> */}
+           
               <Row>
                 <Col className={v.select_option_col}>
                   <Form.Item
@@ -636,4 +612,4 @@ const PodRegisterForm = () => {
   );
 };
 export default PodRegisterForm;
-// advanc %
+

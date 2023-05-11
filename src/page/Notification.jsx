@@ -1,23 +1,19 @@
-import { Button, Input, message, Form, Row, Radio, Col, Upload, Card, Select, Tooltip, Modal, DatePicker } from 'antd';
-import { React, useState, useEffect } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import { Link, useNavigate } from 'react-router-dom';
-// import { Empregister, GetCountryName, GetStateName, GetCityName, RegisterationNumberValidationName } from '../../../services/Services'
+import { Button, Input, Form, Row, Radio, Col, Upload, Card, Select,  DatePicker, Checkbox } from 'antd';
+import { React, useState } from "react";
+
 import { UploadOutlined } from '@ant-design/icons';
 import './Register.css'
-// import logo from '../../../assets/image/transduniyalogofinal.png'
+
 import TextArea from 'antd/es/input/TextArea';
 import n from "./Notification.module.css"
-const { Option } = Select;
+import { Option } from 'antd/es/mentions';
+
 
 const Notification = () => {
-  const navigate = useNavigate();
+ 
   const [verfied, setVerifed] = useState(false);
  
-  useEffect(() => {
-    // getCountryName()
-
-  }, [])
+  
  
 
 
@@ -76,32 +72,8 @@ const Notification = () => {
     },
 
   }
-  const [fileList3, setFile3] = useState([])
-  const fileProps3 = {
-    multiple: false,
-    fileList1,
-
-    onRemove: (file) => {
-      const index = fileList3.indexOf(file);
-      const newFileList = fileList3.slice();
-      newFileList.splice(index, 1);
-      setFile3(newFileList);
-    },
-
-    beforeUpload: (file) => {
-      setFile3([...fileList3, file]);
-    },
-
-    progress: {
-      strokeColor: {
-        '0%': '#108ee9',
-        '100%': '#87d068',
-      },
-      strokeWidth: 3,
-      format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
-    },
-
-  }
+  
+  
   const [fileList4, setFile4] = useState([])
   const fileProps4 = {
     multiple: false,
@@ -132,6 +104,7 @@ const Notification = () => {
     const reg_data = {
       notification_id: values.notification_id,
       notification_date_time: values.notification_date_time,
+      notification_end_date_time: values.notification_end_date_time,
       notification_messages: values.notification_messages,
       image1: values.image1,
       image2: values.image2,
@@ -140,25 +113,13 @@ const Notification = () => {
       pdf2: values.pdf2,
       
     }
+    alert("success")
     console.log(reg_data)
     
   };
 
 
-  const handlePhoneKeyPress = (e) => {
-    const charCode = e.which ? e.which : e.keyCode;
-    const isNumeric = charCode >= 48 && charCode <= 57; // check if the key pressed is a number
-    const isBackspace = charCode === 8; // check if the key pressed is the backspace key
-    const phone = e.target.value.replace(/\D/g, ''); // remove all non-numeric characters
-    const isValid = phone.length === 10 || isBackspace; // check if the input is a 10-digit number or the backspace key
-    if (!isNumeric && !isBackspace) {
-      e.preventDefault(); // prevent the input of non-numeric characters
-    }
-
-    if (isValid) {
-      e.target.value = phone; // update the input value with the valid phone number
-    }
-  };
+  
 
   
   return (
@@ -180,16 +141,25 @@ const Notification = () => {
                 }
               ]}
               style={{ paddingLeft: "20px" }}
-              // label={<lable style={{ fontSize: "18px" }}><b>User Type : </b></lable>}
+             
               hasFeedback
             >
-              <Radio.Group style={{ paddingLeft: "20px" }}>
-                <Radio value="1" style={{ fontSize: "18px" }}>Company </Radio>
-                <Radio value="2" style={{ fontSize: "18px" }}>Transporter </Radio>
-                <Radio value="3" style={{ fontSize: "18px" }}>Reseller</Radio>
-                <Radio value="4" style={{ fontSize: "18px" }}>All</Radio>
+            
+              <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
+    <Row>
+      <Col span={8}>
+        <Checkbox value="A">Company</Checkbox>
+      </Col>
+      <Col span={8}>
+        <Checkbox value="B">Transporter</Checkbox>
+      </Col>
+      <Col span={8}>
+        <Checkbox value="C">Reseller</Checkbox>
+      </Col>
+      
+    </Row>
+  </Checkbox.Group>
 
-              </Radio.Group>
             </Form.Item>
 
             <h3 className={n.card_menu}>Notification </h3>
@@ -239,6 +209,59 @@ const Notification = () => {
                   {/* </Tooltip> */}
                 </Form.Item>
               </Col>
+
+              <Col className={n.select_option_col}>
+              <Form.Item
+                  name="notification_end_date_time"
+                  label={<label style={{ fontSize: "15px" }}>Notification End Date/time</label>}
+                  rules={[
+                    {
+                      required: true,
+                    },
+                  ]}
+                  hasFeedback
+                  style={{  width: "96%" }}
+                >
+                  {/* <Tooltip title="Enter Your Address" > */}
+                  <DatePicker
+                    className="w-full"
+                    showTime
+                    placeholder=" Time"
+                    onChange={onChange}
+                    // onOk={onOk}
+                  />
+
+                  {/* </Tooltip> */}
+                </Form.Item>
+              </Col>
+              <Col className="select_option_col">
+                  <Form.Item
+                    name="notification_type"
+                    label={
+                      <label style={{ fontSize: "15px" }}>Notification Type :</label>
+                    }
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input your Vehicle Type!",
+                      },
+                    ]}
+                    hasFeedback
+                    style={{ width: "96%" }}
+                  >
+                    <Select
+                      showSearch
+                      // onChange={getStateName}
+                      placeholder="Notification  Type"
+                      optionFilterProp="children"
+                      tabIndex={3}
+                    >
+                      {/* {country.map((items) => ( */}
+                       <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
+                  </Form.Item>
+                </Col>
             </Row>
             <Row>
               <Form.Item name="notification_messages"
@@ -257,6 +280,7 @@ const Notification = () => {
                 <TextArea placeholder='Notification Messages' tabIndex={2} />
                 {/* </Tooltip> */}
               </Form.Item>
+           
             </Row>
            
 
