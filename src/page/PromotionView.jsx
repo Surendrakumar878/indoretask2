@@ -131,18 +131,6 @@ const PromotionView = () => {
       }
     
       <button onClick={handleClick}>Download PDF</button>;
-    
-      
-    
-     
-    
-    
-    
-      
-     
-    
-    
-     
   return (
     <div>
       <div className='w-[98%] m-auto'>
@@ -160,8 +148,8 @@ const PromotionView = () => {
       <p> Promotion Type : </p>
       <p>  Message: </p>
      
-      <button className="text-center  btn btn-success bg-orange-500  px-1 w-full text-[8px]  p-1  rounded-lg text-white "   onClick={() => showModal("greentex")} >View</button>
-     
+      {/* <button className="text-center  btn btn-success bg-orange-500  px-1 w-full text-[8px]  p-1  rounded-lg text-white "   onClick={() => showModal("greentex")} >View</button> */}
+      <img src="viewdetail.jpg" className='w-28 lg:w-40 sm:w-40 m-auto rounded-lg border' alt=""  onClick={() => showModal("greentex")}   />
         </div>
       </div>
     </div>))

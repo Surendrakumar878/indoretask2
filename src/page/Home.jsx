@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+  
+  
   return (
     <div className="">
     <div className='flex gap-3 flex-wrap '>
@@ -22,6 +24,8 @@ const Home = () => {
       <Link to="/vehicleview"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >vehicleview</button> </Link>
       <Link to="/NotificationView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >NotificationView</button> </Link>
       <Link to="/PromotionView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >PromotionView</button> </Link>
+      <Link to="/NotificationReport"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >NotificationReport</button> </Link>
+      <Link to="/PromotionReport"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >PromotionReport</button> </Link>
    
     </div>
 <h1 className='center'>  form</h1>

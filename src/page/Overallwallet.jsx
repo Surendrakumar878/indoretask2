@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
@@ -49,19 +49,17 @@ const Overallwallet = () => {
 
                     
                     <div>
-                <h1 className=" pl-1 font-bold text-base text-[10px]"> {data.name}</h1>
-                <h1 className=" pl-1 font-bold text-base text-[10px]"> {data.email} </h1>
-                <span className="pl-1 text-[10px] ">{data.mobilenumber} </span>
+                <h1 className=" pl-1 font-bold  text-[10px]"> {data.name}</h1>
+                <h1 className=" pl-1 font-bold  text-[10px]"> {data.email} </h1>
+                <p className="pl-1 text-[10px] ">{data.mobilenumber} </p>
                 <p className="pl-1 text-[10px]">{data.address}</p>
                 <p className="pl-1 text-[10px]">{data.reportname}</p>
-                <h2 className="pl-1 font-bold text-base text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
+                <h2 className="pl-1 font-bold  text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
                   Date : 
                   {data.date}
                 </h2>
-                {/* <h1 className="font-bold text-base border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0 ">
-                  BOOKING STATION : BHOPAL
-                </h1> */}
-                <h1 className="pl-1 font-bold text-base text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
+              
+                <h1 className="pl-1 font-bold  text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
                   Date From : {data.date_From}To :{data.to}
                 </h1>
                 </div>

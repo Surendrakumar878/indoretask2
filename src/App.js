@@ -27,31 +27,22 @@ import { useEffect, useState } from "react";
 import Home from "./page/Home";
 import NotificationView from "./page/NotificationView";
 import PromotionView from "./page/PromotionView";
+import NotificationReport from "./page/reports/NotificationReport";
+import PromotionReport from "./page/reports/PromotionReport";
+
 
 function App() {
-  // function preback() {
-  //   window.history.forward();
-  // }
-  // setTimeout(() => {
-  //   preback();
-  // }, 0);
-  // window.onunload = function () {
-  //   return null;
-  // };
-
+  
   // useEffect(()=>{
 
-  const [count, setCount] = useState(0);
-
-  window.history.pushState(null, null, window.location.href);
-  window.onpopstate = function () {
-    setCount(window.history.length);
-    window.history.go(1);
-  };
-  // },[])
-  useEffect(() => {
-    // setCount(window.history.length)
-  }, []);
+    // const [count, setCount] = useState(0);
+  
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function(event) {
+      window.history.go(1);
+    };
+    // },[])
+ 
   return (
     <div>
       {/* <Vehicleform/> */}
@@ -108,6 +99,8 @@ function App() {
         ></Route>
         <Route path="/NotificationView" element={<NotificationView />}></Route>
         <Route path="/PromotionView" element={<PromotionView />}></Route>
+        <Route path="/NotificationReport" element={<NotificationReport/>}></Route>
+        <Route path="/PromotionReport" element={<PromotionReport/>}></Route>
       </Routes>
     </div>
   );
