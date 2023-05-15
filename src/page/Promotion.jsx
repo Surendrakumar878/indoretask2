@@ -117,8 +117,8 @@ const Promotion = () => {
       image1: values.image1,
       image2: values.image2,
       pdf1: values.pdf1,
-      type_id: values.type_id,
       pdf2: values.pdf2,
+      type_id: values.type_id,
     };
     console.log(reg_data);
   };

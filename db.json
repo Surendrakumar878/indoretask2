@@ -1,0 +1,249 @@
+{
+  "reports": [
+    {
+      "id": 1,
+      "vehicle_id": 34234,
+      "vehicle_no": "12302",
+      "vehicle_type": "json-server",
+      "owner_name": "json-server"
+    },
+    {
+      "id": 2,
+      "vehicle_id": 35453,
+      "vehicle_no": "12301",
+      "vehicle_type": "json-server",
+      "owner_name": "jserver"
+    },
+    {
+      "id": 3,
+      "vehicle_id": 4535345,
+      "vehicle_no": "12000",
+      "vehicle_type": "jsonserver1",
+      "owner_name": "jsonserver"
+    },
+    {
+      "id": 4,
+      "vehicle_id": 6536456,
+      "vehicle_no": "12300",
+      "vehicle_type": "json21server",
+      "owner_name": "jsonserver"
+    },
+    {
+      "id": 5,
+      "vehicle_id": 524525,
+      "vehicle_no": "12340",
+      "vehicle_type": "json",
+      "owner_name": "jsserver"
+    },
+    {
+      "id": 6,
+      "vehicle_id": 534535,
+      "vehicle_no": "12345",
+      "vehicle_type": "react",
+      "owner_name": "java"
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "10/05/2020",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 2,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "10/05/2020",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 3,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "10/05/2020",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 4,
+      "vehicle_id": 6536456,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "10/05/2020",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 5,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "10/05/2020",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 6,
+      "vehicle_id": 534535,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-13",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    }
+  ],
+  "pod": [
+    {
+      "id": 1,
+      "pod_id": 34234,
+      "pod_no":"232322",
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "vehicle_no": "12302",
+      "report_date": "2023-05-13",
+      "unloading_date": "2023-05-13",
+      "pod_date": "2023-05-13"
+    },
+    {
+      "id": 2,
+      "pod_id": 34234,
+      "pod_no":"232322",
+      "booking_no": "12302",
+      "booking_date": "2023-05-08",
+      "vehicle_no": "12302",
+      "report_date": "2023-05-13",
+      "unloading_date": "2023-05-13",
+      "pod_date": "2023-05-13"
+    },
+    {
+      "id": 3,
+      "pod_id": 34234,
+      "pod_no":"232322",
+      "booking_no": "12302",
+      "booking_date": "2023-05-09",
+      "vehicle_no": "12302",
+      "report_date": "2023-05-13",
+      "unloading_date": "2023-05-13",
+      "pod_date": "2023-05-13"
+    },
+    {
+      "id": 4,
+      "pod_id": 34234,
+      "pod_no":"232322",
+      "booking_no": "12302",
+      "booking_date": "2023-05-10",
+      "vehicle_no": "12302",
+      "report_date": "2023-05-13",
+      "unloading_date": "2023-05-13",
+      "pod_date": "2023-05-13"
+    },
+    {
+      "id": 5,
+      "pod_id": 34234,
+      "pod_no":"232322",
+      "booking_no": "12302",
+      "booking_date": "2023-05-11",
+      "vehicle_no": "12302",
+      "report_date": "2023-05-13",
+      "unloading_date": "2023-05-13",
+      "pod_date": "2023-05-13"
+    },
+    {
+      "id": 6,
+      "pod_id": 34234,
+      "pod_no":"232322",
+      "booking_no": "12302",
+      "booking_date": "2023-05-12",
+      "vehicle_no": "12302",
+      "report_date": "2023-05-13",
+      "unloading_date": "2023-05-13",
+      "pod_date": "2023-05-13"
+    }
+  ],
+
+
+  "status": [
+    {
+      "id": 1,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 2,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 3,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 4,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 5,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 6,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    }
+  ]
+  
+}

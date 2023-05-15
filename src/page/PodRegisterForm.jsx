@@ -16,7 +16,7 @@ import {
 } from "antd";
 
 import { DatePicker } from "antd";
-
+import { UploadOutlined } from "@ant-design/icons";
 import v from "../components/Vehicleform.module.css";
 const { Option } = Select;
 // import LoadingButton from "@mui/lab/LoadingButton";
@@ -30,7 +30,83 @@ const PodRegisterForm = () => {
   function onOk(value) {
     console.log("onOk: ", value);
   }
+  const [fileList1, setFile1] = useState([]);
+  const fileProps1 = {
+    multiple: false,
+    fileList1,
 
+    onRemove: (file) => {
+      const index = fileList1.indexOf(file);
+      const newFileList = fileList1.slice();
+      newFileList.splice(index, 1);
+      setFile1(newFileList);
+    },
+
+    beforeUpload: (file) => {
+      setFile1([...fileList1, file]);
+    },
+
+    progress: {
+      strokeColor: {
+        "0%": "#108ee9",
+        "100%": "#87d068",
+      },
+      strokeWidth: 3,
+      format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+    },
+  };
+  const [fileList2, setFile2] = useState([]);
+  const fileProps2 = {
+    multiple: false,
+    fileList1,
+
+    onRemove: (file) => {
+      const index = fileList2.indexOf(file);
+      const newFileList = fileList2.slice();
+      newFileList.splice(index, 1);
+      setFile2(newFileList);
+    },
+
+    beforeUpload: (file) => {
+      setFile2([...fileList2, file]);
+    },
+
+    progress: {
+      strokeColor: {
+        "0%": "#108ee9",
+        "100%": "#87d068",
+      },
+      strokeWidth: 3,
+      format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+    },
+  };
+  const [fileList3, setFile3] = useState([]);
+
+  const [fileList4, setFile4] = useState([]);
+  const fileProps4 = {
+    multiple: false,
+    fileList1,
+
+    onRemove: (file) => {
+      const index = fileList4.indexOf(file);
+      const newFileList = fileList4.slice();
+      newFileList.splice(index, 1);
+      setFile4(newFileList);
+    },
+
+    beforeUpload: (file) => {
+      setFile4([...fileList4, file]);
+    },
+
+    progress: {
+      strokeColor: {
+        "0%": "#108ee9",
+        "100%": "#87d068",
+      },
+      strokeWidth: 3,
+      format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+    },
+  };
   
 
   const saveData = async (values) => {
@@ -50,7 +126,10 @@ const PodRegisterForm = () => {
       vehicle_body_type: values.vehicle_body_type,
       vehicle_height: values.vehicle_height,
     
-      
+      pod1: values.pod1,
+      pod2: values.pod2,
+      weight_slip1: values.weight_slip1,
+      weight_slip2: values.weight_slip2,
     };
     console.log(reg_data);
   };
@@ -590,6 +669,93 @@ const PodRegisterForm = () => {
                   </Form.Item>
                 </Col>
               </Row>
+              <h3 className="card_menu">DOCUMENTS</h3>
+            <Row>
+              {/* pod1 */}
+              <Col className="upload_col">
+                <Form.Item
+                  name="pod1"
+                  label={<label style={{ fontSize: "15px" }}> Pod1 </label>}
+                  getValueFromEvent={({ file }) => file.originFileObj}
+                  rules={[
+                    {
+                      required: true,
+                      message: "pod1!",
+                    },
+                  ]}
+                  hasFeedback
+                >
+                  <Upload {...fileProps1}>
+                    <Button icon={<UploadOutlined />} tabIndex={17}>
+                      Click to Upload
+                    </Button>
+                  </Upload>
+                </Form.Item>
+              </Col>
+              {/* pod2 */}
+              <Col className="upload_col">
+                <Form.Item
+                  name="pod2"
+                  label={<label style={{ fontSize: "15px" }}>Pod2</label>}
+                  getValueFromEvent={({ file }) => file.originFileObj}
+                  rules={[
+                    {
+                      required: true,
+                      message: "pod2!",
+                    },
+                  ]}
+                  hasFeedback
+                >
+                  <Upload {...fileProps2}>
+                    <Button icon={<UploadOutlined />} tabIndex={18}>
+                      Click to Upload
+                    </Button>
+                  </Upload>
+                </Form.Item>
+              </Col>
+              {/* weight_slip */}
+              <Col className="upload_col">
+                <Form.Item
+                  name="weight_slip1"
+                  label={<label style={{ fontSize: "15px" }}>Weight slip1</label>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "PDF!",
+                    },
+                  ]}
+                  hasFeedback
+                  getValueFromEvent={({ file }) => file.originFileObj}
+                >
+                  <Upload {...fileProps4} className="uploadField">
+                    <Button icon={<UploadOutlined />} tabIndex={19}>
+                      Click to Upload
+                    </Button>
+                  </Upload>
+                </Form.Item>
+              </Col>
+              {/* weight_slip2 */}
+              <Col className="upload_col">
+                <Form.Item
+                  name="weight_slip2"
+                  label={<label style={{ fontSize: "15px" }}>Weight Slip2</label>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "PDF!",
+                    },
+                  ]}
+                  hasFeedback
+                  getValueFromEvent={({ file }) => file.originFileObj}
+                >
+                  <Upload {...fileProps4} className="uploadField">
+                    <Button icon={<UploadOutlined />} tabIndex={19}>
+                      Click to Upload
+                    </Button>
+                  </Upload>
+                </Form.Item>
+              </Col>
+            </Row>
               <div className=" m-auto w-40 pb-20">
                 <Form.Item className="w-40 m-auto">
                   <button

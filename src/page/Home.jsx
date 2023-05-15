@@ -26,6 +26,10 @@ const Home = () => {
       <Link to="/PromotionView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >PromotionView</button> </Link>
       <Link to="/NotificationReport"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >NotificationReport</button> </Link>
       <Link to="/PromotionReport"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >PromotionReport</button> </Link>
+      <Link to="/View_Report"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >View_Report</button> </Link>
+      <Link to="/All_Booking"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >All_Booking</button> </Link>
+      <Link to="/View_Pod"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >View_Pod</button> </Link>
+      <Link to="/Booking_Status"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >Booking_Status</button> </Link>
    
     </div>
 <h1 className='center'>  form</h1>

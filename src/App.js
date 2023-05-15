@@ -29,6 +29,10 @@ import NotificationView from "./page/NotificationView";
 import PromotionView from "./page/PromotionView";
 import NotificationReport from "./page/reports/NotificationReport";
 import PromotionReport from "./page/reports/PromotionReport";
+import View_Report from "./page/reports/View_Report";
+import All_Booking from "./page/reports/All_Booking";
+import View_Pod from "./page/reports/View_Pod";
+import Booking_Status from "./page/reports/Booking_Status";
 
 
 function App() {
@@ -101,6 +105,10 @@ function App() {
         <Route path="/PromotionView" element={<PromotionView />}></Route>
         <Route path="/NotificationReport" element={<NotificationReport/>}></Route>
         <Route path="/PromotionReport" element={<PromotionReport/>}></Route>
+        <Route path="/View_Report" element={<View_Report/>}></Route>
+        <Route path="/All_Booking" element={<All_Booking/>}></Route>
+        <Route path="/View_Pod" element={<View_Pod/>}></Route>
+        <Route path="/Booking_Status" element={<Booking_Status/>}></Route>
       </Routes>
     </div>
   );
