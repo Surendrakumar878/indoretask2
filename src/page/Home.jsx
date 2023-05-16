@@ -39,6 +39,7 @@ const Home = () => {
     <Link to="/podRegisterForm"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >podRegisterForm</button> </Link>
      <Link to="/profileUpdateForm"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >profileUpdateForm</button> </Link>
      <Link to="/notification"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >notification</button> </Link>
+     <Link to="/Contract_Entry"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >Contract_Entry</button> </Link>
       
 
     </div>

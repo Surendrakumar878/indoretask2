@@ -77,40 +77,40 @@ const Booking_Status = () => {
                       <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full    border-black ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Booking Status </div> 
                     <div className="  pb-2">
-                    <div className="flex flex-wrap gap-2 py-3">
-                        <div>
+                    <div className="m-auto w-full grid grid-cols-2 px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
+                        <div  className="w-1/2">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Freight slip No :  </label>
              <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Vehicle" value={freight_slip_no} onChange={(e)=>setfreight_slip_no(e.target.value)} />
                 </div>
-                <div>
+                <div className="w-1/2">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Loading No :  </label>
              <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by pod no" value={loading_no} onChange={(e)=>setloading_no(e.target.value)} />
                 </div>
-                <div>
+                <div className="w-1/2">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Pod No :  </label>
              <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by pod no" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
                 </div>
-                <div>
+                <div className="w-1/2">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Booking No :  </label>
              <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
                 </div>
 
                 
-                <div>
+                <div className="w-1/2">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Booking date :  </label>
              <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Vehicle" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
            
                 </div>
-                <div>
+                <div className="w-1/2">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Pod Date :  </label>
              <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Name" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
                 </div>
                 
-                <div>
+                <div className="w-1/2">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Loading Date :  </label>
              <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Vehicle" value={loading_date} onChange={(e)=>setloading_date(e.target.value)} />
                 </div>
-                <div>
+                <div className="w-1/2">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Freight Slip  Date:  </label>
              <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Name" value={freight_slip_date} onChange={(e)=>setfreight_slip_date(e.target.value)} />
                 </div>
@@ -159,18 +159,11 @@ const Booking_Status = () => {
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute w-40 top-40 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
-
-<img className="w-full" src="transduniyalogo.png" alt="" />
-
-</div>
+                   
 </div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div> 
-{/* <div className="m-auto w-full text-center flex gap-2 justify-center " >
-                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-14 sm:w-32 text-[10px] sm:text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Download</button>  
-                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-14 sm:w-32 text-[10px] sm:text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
-                    </div>  */}
+
                     </div>
                 </div>
             </div>           

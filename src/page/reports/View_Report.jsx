@@ -102,11 +102,7 @@ const View_Report = () => {
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute w-40 top-40 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
-
-<img className="w-full" src="transduniyalogo.png" alt="" />
-
-</div>
+                    
 </div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div> 

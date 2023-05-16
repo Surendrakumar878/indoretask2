@@ -33,6 +33,7 @@ import View_Report from "./page/reports/View_Report";
 import All_Booking from "./page/reports/All_Booking";
 import View_Pod from "./page/reports/View_Pod";
 import Booking_Status from "./page/reports/Booking_Status";
+import Contract_Entry from "./page/Form/Contract_Entry";
 
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
         <Route path="/All_Booking" element={<All_Booking/>}></Route>
         <Route path="/View_Pod" element={<View_Pod/>}></Route>
         <Route path="/Booking_Status" element={<Booking_Status/>}></Route>
+        <Route path="/Contract_Entry" element={<Contract_Entry/>}></Route>
       </Routes>
     </div>
   );

@@ -43,7 +43,7 @@ const PodRegister = () => {
                     <div className="">
                       
                     
-                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2  border-black ">
+                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-auto lg:w-auto  bordre border-collapse border-2  border-black ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> POD Register</div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
@@ -66,50 +66,47 @@ const PodRegister = () => {
                     <table className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Pod No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Pod Date</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Id</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Number</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Date/Time</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle No </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Goods</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Loading wt</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Unloading wt</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Difference wt</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Reporting Date/Time</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Unloading Date/Time</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Pod No</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Pod Date</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Id</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Number</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Date/Time</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle No </th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From </th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Goods</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Loading wt</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Unloading wt</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Difference wt</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Reporting Date/Time</th>
+                            <th className="lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Unloading Date/Time</th>
                             </tr>  
                         </thead>
                         <tbody>
                             {
                                 userData.map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                             
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
+                                <td className="sm:px-2 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
                             </tr>
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute top-80 w-96 left-96 opacity-10">
+                    <div className="absolute top-40 left-32 sm:top-40 w-40 sm:w-96 sm:left-96 opacity-10">
 
 <img className="w-full" src="transduniyalogo.png" alt="" />
 

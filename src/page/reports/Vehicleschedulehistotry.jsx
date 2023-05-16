@@ -95,7 +95,7 @@ const Vehicleschedulehistotry = () => {
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute top-80 w-96 left-96 opacity-10">
+                    <div className="absolute w-40 top-40 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
 
 <img className="w-full" src="transduniyalogo.png" alt="" />
 

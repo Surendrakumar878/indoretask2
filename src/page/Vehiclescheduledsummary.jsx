@@ -101,7 +101,7 @@ const Vehiclescheduledsummary = () => {
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute top-40 w-96 left-96 opacity-10">
+                    <div className="absolute top-40 left-32 sm:top-40 w-40 sm:w-96 sm:left-96 opacity-10">
 
 <img className="w-full" src="transduniyalogo.png" alt="" />
 

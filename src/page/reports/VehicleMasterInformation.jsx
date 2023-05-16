@@ -43,9 +43,9 @@ const VehicleMasterInformation = () => {
                     <div className="">
                       
                     
-                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2  border-black ">
+                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-auto lg:w-auto  bordre border-collapse border-2  border-black  ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Vehicle Master Information</div> 
-                    <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
+                    <div className="  pb-2">
 
                     <div>
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.name}</h1>
@@ -66,18 +66,18 @@ const VehicleMasterInformation = () => {
                     <table className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Vehicle no</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Name</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Size</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Vehicle Type</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Capacity</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Body type </th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Height </th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">No of Tyres</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Contact no</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Pan no</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Adhar no</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Vehicle no</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Name</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Size</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Vehicle Type</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Capacity</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Body type </th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Height </th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">No of Tyres</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Contact no</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Pan no</th>
+                            <th className=" lg:text-[10px] text-[8px] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Adhar no</th>
                          
                             </tr>  
                         </thead>
@@ -85,26 +85,24 @@ const VehicleMasterInformation = () => {
                             {
                                 userData.map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                             
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
+                                <td className="sm:px-2 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
 
                             </tr>
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute top-40 w-96 left-96 opacity-10">
+                    <div className="absolute w-40 top-60 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
 
 <img className="w-full" src="transduniyalogo.png" alt="" />
 

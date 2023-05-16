@@ -42,7 +42,7 @@ const PromotionReport = () => {
             <div className="">
               <div
                 ref={conponentPDF}
-                className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-96 border-black "
+                className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-screen border-black "
               >
                 <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">
                   {" "}
@@ -118,7 +118,7 @@ const PromotionReport = () => {
                       ))}
                     </tbody>
                   </table>
-                  <div className="absolute top-40 w-96 left-96 opacity-10">
+                  <div className="absolute w-40 top-60 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
                     <img className="w-full" src="transduniyalogo.png" alt="" />
                   </div>
                 </div>
