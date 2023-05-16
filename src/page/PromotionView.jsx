@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Modal, message } from 'antd';
+import { Button, Modal, message } from 'antd';
 import jsPDF from "jspdf";
 import axios from 'axios';
 import { useReactToPrint } from 'react-to-print';
@@ -165,6 +165,8 @@ const PromotionView = () => {
             onOk={handleOk}
             onCancel={handleCancel}
             width={"90%"}
+            closable={false}
+            footer={null}
           >
             <p className='bg-blue-900 rounded-md p-1 text-white text-center font-bold'>Promotion id: 3654325 </p>
       <span className='font-bold'>Promotion Date/Time: </span><span>4/20/2023</span> 
@@ -181,6 +183,8 @@ const PromotionView = () => {
                 <img  src="Owner.jpg" alt="css"   className="btn btn-success  py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "  onClick={() => showModal1("greentex")} />
                 <div className="btn btn-success bg-[#151B54] py-2 px-2 w-16 text-[10px] mt-10 rounded-lg text-white "  onClick={handleClick1}>PDF1</div>
                 <div className="btn btn-success bg-[#151B54] py-2 px-2 w-16 text-[10px] mt-10 rounded-lg text-white   "  onClick={handleClick1}>PDF2</div>   </div>
+          
+                <div className='text-center'> <Button className='my-4'  onClick={handleCancel}> Close</Button> </div>
           </Modal>
           
     <Modal
@@ -191,10 +195,13 @@ const PromotionView = () => {
             width={"50%"}
             okText="ok"
             cancelText="Close"
-           
+            closable={false}
+           footer={null}
           >
 
             <img src="Owner.jpg" alt="css"  />
+
+            <div className='text-center'> <Button className='my-4'  onClick={handleCancel1}> Close</Button> </div>
           </Modal>
     </div>
   )

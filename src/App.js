@@ -35,6 +35,9 @@ import View_Pod from "./page/reports/View_Pod";
 import Booking_Status from "./page/reports/Booking_Status";
 import Contract_Entry from "./page/Form/Contract_Entry";
 
+import Privacypolicy from "./page/privacy/Privacypolicy";
+
+
 
 function App() {
   
@@ -111,6 +114,7 @@ function App() {
         <Route path="/View_Pod" element={<View_Pod/>}></Route>
         <Route path="/Booking_Status" element={<Booking_Status/>}></Route>
         <Route path="/Contract_Entry" element={<Contract_Entry/>}></Route>
+        <Route path="/Privacypolicy" element={<Privacypolicy />}></Route>
       </Routes>
     </div>
   );

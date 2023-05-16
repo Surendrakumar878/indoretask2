@@ -72,34 +72,34 @@ const View_Pod = () => {
                       <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full    border-black ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> POD VIEW </div> 
                     <div className="  pb-2">
-                    <div className="m-auto w-full grid grid-cols-2 px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
-                        <div  className="w-1/2">
+                    <div className="m-auto sm:m-0 w-[90%] grid grid-cols-2 gap-2 px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
+                        <div  className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Vehicle No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Vehicle" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
+             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Vehicle" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
                 </div>
-                <div  className="w-1/2">
+                <div  className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Pod No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by pod no" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
+             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by pod no" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
                 </div>
-                <div  className="w-1/2">
+                <div  className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Booking No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
+             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
                 </div>
 
                 
-                <div  className="w-1/2">
+                <div  className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Booking date :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Vehicle" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
+             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Vehicle" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
            
                 </div>
-                <div  className="w-1/2">
+                <div  className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Pod Date :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Name" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
+             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Name" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
                 </div>
                 
-                <div  className="w-1/2">
+                <div  className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Report Date :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Vehicle" value={report_date} onChange={(e)=>setReport_date(e.target.value)} />
+             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Vehicle" value={report_date} onChange={(e)=>setReport_date(e.target.value)} />
                 </div>
                 <div>
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Unloading Date:  </label>

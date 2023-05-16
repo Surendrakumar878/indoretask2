@@ -11,7 +11,7 @@ const Loadingslip = () => {
   });
   return (
     <div className="py-10">
-    <div ref={conponentPDF} className="w-[80%] m-auto py-10">
+    <div ref={conponentPDF} className=" w-[98%] sm:w-[80%] m-auto py-10">
 
 
    
@@ -117,7 +117,7 @@ const Loadingslip = () => {
             <p>Driver license no:</p>
           </div>
           <div className=" col-end-8 col-span-2 flex  border border-r-0 border-l-0 border-b-0 border-t-2 border-black">
-            <div className="w-1/2 border border-r-2 border-l-0 border-b-0 border-t-0 border-black ">
+            <div className="w-1/2 border border-r-2 border-l-0 border-b-0 border-t-0 border-black text-[10px] sm:text-base ">
               Unloading charges
             </div>
             <div className="w-1/2 "></div>
@@ -136,7 +136,7 @@ const Loadingslip = () => {
             <div className="w-1/2 "></div>
           </div>
         </div>
-        <div className="absolute top-80 w-96 left-96 opacity-10">
+        <div className="absolute top-60 left-32 sm:top-40 w-40 sm:w-96 sm:left-96 opacity-10">
 
 <img className="w-full" src="transduniyalogo.png" alt="" />
 

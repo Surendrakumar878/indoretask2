@@ -55,7 +55,7 @@ const View_Report = () => {
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> View Report </div> 
                     <div className="  pb-2">
 
-                    <div className="flex gap-2 py-3">
+                    <div className="flex gap-2 px-10 py-3">
 
                     <div>
                         <label className=" text-[10px] sm:text-base " >Vehicle No :  </label>
@@ -106,10 +106,7 @@ const View_Report = () => {
 </div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div> 
-{/* <div className="m-auto w-full text-center flex gap-2 justify-center " >
-                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-14 sm:w-32 text-[10px] sm:text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Download</button>  
-                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-14 sm:w-32 text-[10px] sm:text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
-                    </div>  */}
+
                     </div>
                 </div>
             </div>           

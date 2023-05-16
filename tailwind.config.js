@@ -11,6 +11,7 @@ module.exports = {
       backgroundImage: {
         
         'logo': "url('/img/shreelogo.png')",
+        'pattern-bg': "url('/img/pattern-bg.png')",
 
 
 
