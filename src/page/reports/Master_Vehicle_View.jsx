@@ -4,7 +4,7 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 
-const View_Report = () => {
+const Master_Vehicle_View = () => {
     
 
     const [data,setDate]=useState([])
@@ -52,7 +52,7 @@ const View_Report = () => {
                       
                     
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full    border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> View Report </div> 
+                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Master Vehicle View  </div> 
                     <div className="  pb-2">
 
                     <div className="flex gap-2 px-10 py-3">
@@ -115,4 +115,4 @@ const View_Report = () => {
   )
 }
 
-export default View_Report
+export default Master_Vehicle_View
