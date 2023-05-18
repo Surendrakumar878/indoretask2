@@ -38,11 +38,15 @@ import Contract_Entry from "./page/Form/Contract_Entry";
 import Privacypolicy from "./page/privacy/Privacypolicy";
 import GPSrequierement from "./page/Form/GPSrequierement";
 import Master_Vehicle_View from "./page/reports/Master_Vehicle_View";
+import Example from "./components/Example";
 
+
+import "./styles.css";
+// create a new preview
 
 
 function App() {
-  
+ 
   // useEffect(()=>{
 
     // const [count, setCount] = useState(0);
@@ -55,6 +59,7 @@ function App() {
  
   return (
     <div>
+      {/* <Example /> */}
       {/* <Vehicleform/> */}
       {/* <SongApp/> */}
 

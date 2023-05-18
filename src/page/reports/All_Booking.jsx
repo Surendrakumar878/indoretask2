@@ -151,7 +151,8 @@ const All_Booking = () => {
                     </table>         
                 
 </div>
-<h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
+
+
 </div> 
 
                     </div>

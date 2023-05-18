@@ -182,20 +182,8 @@ const Vehicleform = () => {
                   {/* </Tooltip> */}
                 </Form.Item>
               </Col>
-                
-
-                
-
-               
-               
-               
-                
-              
-              
-
+            
               </Row>
-
-
 
               {/* VEHICLE DETAILS */}
               <h3 className={v.card_menu}> VEHICLE DETAILS</h3>
@@ -431,17 +419,6 @@ const Vehicleform = () => {
             <Row>
             
          
-
-           
-             
-
-            
-
-
-              
-            
-
-
             
               <Col className={v.select_option_col}>
                 <Form.Item

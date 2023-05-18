@@ -1,9 +1,16 @@
+import { Button } from 'antd'
 import React, { useEffect } from 'react'
+import { useRef } from 'react';
 import { Link } from 'react-router-dom'
-
+import ReactToPdf from "react-to-pdf"
 const Home = () => {
   
-  
+  const ref = useRef();
+const options = {
+    orientation: 'landscape',
+    unit: 'in',
+    format: [4,2]
+};
   return (
     <div className="">
     <div className='flex gap-3 flex-wrap '>
@@ -33,7 +40,7 @@ const Home = () => {
    
     </div>
 <h1 className='center'>  form</h1>
-    <div className="flex gap-5">
+    <div className="flex gap-5 flex-wrap">
     <Link to="/Vehicleform"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >Vehicleform</button> </Link>
     <Link to="/promotion"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >promotion</button> </Link>
     <Link to="/podRegisterForm"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >podRegisterForm</button> </Link>
@@ -44,6 +51,9 @@ const Home = () => {
      <Link to="/GPSrequierement"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " >GPSrequierement</button> </Link>
      
     </div>
+
+   
+   
     </div>
   )
 }

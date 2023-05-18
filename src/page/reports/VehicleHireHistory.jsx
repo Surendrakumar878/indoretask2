@@ -3,8 +3,466 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
+import ReactPaginate from 'react-paginate';
 
+const Apidata= [
+    {
+      "id": 1,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 2,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 3,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 4,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 5,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+      "id": 6,
+      "booking_no": "12302",
+      "booking_date": "2023-05-07",
+      "pod_no":"232322",
+      "pod_date": "2023-05-13",
+      "loading_no": "34234",
+      "loading_date": "2023-05-13",
+      "freight_slip_no": "12302",
+      "freight_slip_date": "2023-05-13"
+    },
+    {
+        "id": 7,
+        "booking_no": "12302",
+        "booking_date": "2023-05-07",
+        "pod_no":"232322",
+        "pod_date": "2023-05-13",
+        "loading_no": "34234",
+        "loading_date": "2023-05-13",
+        "freight_slip_no": "12302",
+        "freight_slip_date": "2023-05-13"
+      },
+      {
+        "id": 8,
+        "booking_no": "12302",
+        "booking_date": "2023-05-07",
+        "pod_no":"232322",
+        "pod_date": "2023-05-13",
+        "loading_no": "34234",
+        "loading_date": "2023-05-13",
+        "freight_slip_no": "12302",
+        "freight_slip_date": "2023-05-13"
+      },
+      {
+        "id": 9,
+        "booking_no": "12302",
+        "booking_date": "2023-05-07",
+        "pod_no":"232322",
+        "pod_date": "2023-05-13",
+        "loading_no": "34234",
+        "loading_date": "2023-05-13",
+        "freight_slip_no": "12302",
+        "freight_slip_date": "2023-05-13"
+      },
+      {
+        "id": 10,
+        "booking_no": "12302",
+        "booking_date": "2023-05-07",
+        "pod_no":"232322",
+        "pod_date": "2023-05-13",
+        "loading_no": "34234",
+        "loading_date": "2023-05-13",
+        "freight_slip_no": "12302",
+        "freight_slip_date": "2023-05-13"
+      },
+      {
+        "id": 11,
+        "booking_no": "12302",
+        "booking_date": "2023-05-07",
+        "pod_no":"232322",
+        "pod_date": "2023-05-13",
+        "loading_no": "34234",
+        "loading_date": "2023-05-13",
+        "freight_slip_no": "12302",
+        "freight_slip_date": "2023-05-13"
+      },
+      {
+        "id": 12,
+        "booking_no": "12302",
+        "booking_date": "2023-05-07",
+        "pod_no":"232322",
+        "pod_date": "2023-05-13",
+        "loading_no": "34234",
+        "loading_date": "2023-05-13",
+        "freight_slip_no": "12302",
+        "freight_slip_date": "2023-05-13"
+      },
+      {
+        "id": 13,
+        "booking_no": "12302",
+        "booking_date": "2023-05-07",
+        "pod_no":"232322",
+        "pod_date": "2023-05-13",
+        "loading_no": "34234",
+        "loading_date": "2023-05-13",
+        "freight_slip_no": "12302",
+        "freight_slip_date": "2023-05-13"
+      },
+      {
+          "id": 14,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 15,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 16,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 17,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 18,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 19,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 1,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 2,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 3,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 4,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 5,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+          "id": 6,
+          "booking_no": "12302",
+          "booking_date": "2023-05-07",
+          "pod_no":"232322",
+          "pod_date": "2023-05-13",
+          "loading_no": "34234",
+          "loading_date": "2023-05-13",
+          "freight_slip_no": "12302",
+          "freight_slip_date": "2023-05-13"
+        },
+        {
+            "id": 7,
+            "booking_no": "12302",
+            "booking_date": "2023-05-07",
+            "pod_no":"232322",
+            "pod_date": "2023-05-13",
+            "loading_no": "34234",
+            "loading_date": "2023-05-13",
+            "freight_slip_no": "12302",
+            "freight_slip_date": "2023-05-13"
+          },
+          {
+            "id": 8,
+            "booking_no": "12302",
+            "booking_date": "2023-05-07",
+            "pod_no":"232322",
+            "pod_date": "2023-05-13",
+            "loading_no": "34234",
+            "loading_date": "2023-05-13",
+            "freight_slip_no": "12302",
+            "freight_slip_date": "2023-05-13"
+          },
+          {
+            "id": 9,
+            "booking_no": "12302",
+            "booking_date": "2023-05-07",
+            "pod_no":"232322",
+            "pod_date": "2023-05-13",
+            "loading_no": "34234",
+            "loading_date": "2023-05-13",
+            "freight_slip_no": "12302",
+            "freight_slip_date": "2023-05-13"
+          },
+          {
+            "id": 10,
+            "booking_no": "12302",
+            "booking_date": "2023-05-07",
+            "pod_no":"232322",
+            "pod_date": "2023-05-13",
+            "loading_no": "34234",
+            "loading_date": "2023-05-13",
+            "freight_slip_no": "12302",
+            "freight_slip_date": "2023-05-13"
+          },
+          {
+            "id": 11,
+            "booking_no": "12302",
+            "booking_date": "2023-05-07",
+            "pod_no":"232322",
+            "pod_date": "2023-05-13",
+            "loading_no": "34234",
+            "loading_date": "2023-05-13",
+            "freight_slip_no": "12302",
+            "freight_slip_date": "2023-05-13"
+          },
+          {
+            "id": 12,
+            "booking_no": "12302",
+            "booking_date": "2023-05-07",
+            "pod_no":"232322",
+            "pod_date": "2023-05-13",
+            "loading_no": "34234",
+            "loading_date": "2023-05-13",
+            "freight_slip_no": "12302",
+            "freight_slip_date": "2023-05-13"
+          },
+          {
+            "id": 13,
+            "booking_no": "12302",
+            "booking_date": "2023-05-07",
+            "pod_no":"232322",
+            "pod_date": "2023-05-13",
+            "loading_no": "34234",
+            "loading_date": "2023-05-13",
+            "freight_slip_no": "12302",
+            "freight_slip_date": "2023-05-13"
+          },
+          {
+              "id": 14,
+              "booking_no": "12302",
+              "booking_date": "2023-05-07",
+              "pod_no":"232322",
+              "pod_date": "2023-05-13",
+              "loading_no": "34234",
+              "loading_date": "2023-05-13",
+              "freight_slip_no": "12302",
+              "freight_slip_date": "2023-05-13"
+            },
+            {
+              "id": 15,
+              "booking_no": "12302",
+              "booking_date": "2023-05-07",
+              "pod_no":"232322",
+              "pod_date": "2023-05-13",
+              "loading_no": "34234",
+              "loading_date": "2023-05-13",
+              "freight_slip_no": "12302",
+              "freight_slip_date": "2023-05-13"
+            },
+            {
+              "id": 16,
+              "booking_no": "12302",
+              "booking_date": "2023-05-07",
+              "pod_no":"232322",
+              "pod_date": "2023-05-13",
+              "loading_no": "34234",
+              "loading_date": "2023-05-13",
+              "freight_slip_no": "12302",
+              "freight_slip_date": "2023-05-13"
+            },
+            {
+              "id": 17,
+              "booking_no": "12302",
+              "booking_date": "2023-05-07",
+              "pod_no":"232322",
+              "pod_date": "2023-05-13",
+              "loading_no": "34234",
+              "loading_date": "2023-05-13",
+              "freight_slip_no": "12302",
+              "freight_slip_date": "2023-05-13"
+            },
+            {
+              "id": 18,
+              "booking_no": "12302",
+              "booking_date": "2023-05-07",
+              "pod_no":"232322",
+              "pod_date": "2023-05-13",
+              "loading_no": "34234",
+              "loading_date": "2023-05-13",
+              "freight_slip_no": "12302",
+              "freight_slip_date": "2023-05-13"
+            },
+            {
+              "id": 19,
+              "booking_no": "12302",
+              "booking_date": "2023-05-07",
+              "pod_no":"232322",
+              "pod_date": "2023-05-13",
+              "loading_no": "34234",
+              "loading_date": "2023-05-13",
+              "freight_slip_no": "12302",
+              "freight_slip_date": "2023-05-13"
+            }
+  ]
 const VehicleHireHistory = () => {
+  const pageStyle = `@page { 
+    size: auto;  margin: 0mm ; } @media print { body { -webkit-print-color-adjust: exact; } }
+  @media print {
+    div.page-footer {
+    position: fixed;
+    bottom:0mm;
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    color: #fff;
+    
+    background: red; 
+    opacity: 1;
+    
+    page-break-after: always;
+    }
+    .page-number:before {
+     
+      content: "Pagina "counter(page);
+    }
+
+
+  }
+  body {
+    marginBottom:50px
+  }
+  `;
+
+    const [postdata,setPostdata]= useState(Apidata.slice(0,100));
+  const [pagenumber, setPagenumber]= useState(0);
+  const perpage=10;
+  const pageclick= pagenumber*perpage;
+  const countpage= Math.ceil(postdata.length/perpage);
+ 
+  const changePage=({selected})=>{
+    setPagenumber(selected);
+  }
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",
@@ -29,21 +487,34 @@ const VehicleHireHistory = () => {
             registerUserdata();
         },[]);
     
-        const generatePDF= useReactToPrint({
-            content: ()=>conponentPDF.current,
-            documentTitle:"Userdata",
-            onAfterPrint:()=>alert("Data saved in PDF")
+        // const generatePDF= useReactToPrint({
+        //     content: ()=>conponentPDF.current,
+        //     removeAfterPrint: true,
+        //     copyStyles: true,
+        //     documentTitle:"Userdata",
+        //     onAfterPrint:()=>alert("Data saved in PDF")
+        // });
+        const generatePDF = useReactToPrint({
+          content: () => conponentPDF.current,
+          removeAfterPrint: true,
+          copyStyles: true
         });
            console.log(userData)
+
+         
+
+
+
   return (
     <div>
+     
      <React.Fragment>
             <div className=" sm:w-[80%]  sm:m-auto ">
                 <div className="">
                     <div className="">
                       
                     
-                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-96 border-black ">
+                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full   ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Vehicle Hire History </div> 
 
                     
@@ -83,16 +554,18 @@ const VehicleHireHistory = () => {
                         </thead>
                         <tbody>
                             {
-                                userData.map( (uData, index)=>(
+                                postdata
+                                // slice(pageclick, pageclick + perpage)
+                                .map((datapost,index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.schedule_date_time}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.username}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registered_number}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_no_scheduled}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.current_status}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.freight}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.schedule_date_time}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.user_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.username}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.registered_number}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.vehicle_no_scheduled}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.current_status}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.freight}</td>
                              
                            
                                 <td>
@@ -102,7 +575,9 @@ const VehicleHireHistory = () => {
                             </tr>
                             )) }
                         </tbody>                        
-                    </table>         
+                    </table>  
+                    <div className="header"></div>
+        <div className="footer"></div>       
                     <div className="absolute w-40 top-60 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
 
 <img className="w-full" src="transduniyalogo.png" alt="" />
@@ -111,10 +586,24 @@ const VehicleHireHistory = () => {
 </div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div>
+
 <div className="m-auto w-full text-center" >
                     <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Download</button>  <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
                     </div> 
                     </div>
+
+                    
+                    <ReactPaginate 
+                      previousLable={"Previous"}
+                      nextLable={"Next"}
+                      pageCount= { countpage}
+                      onPageChange={ changePage}
+                      containerClassName={"paginationBttns"}
+                      previousLinkClassName={"previousBttn"}
+                      nextLinkClassName={"nextBttn"}
+                      activeClassName={"paginationActive"}
+                      disabledClassName={"paginationDisabled"}
+                    /> 
                 </div>
             </div>           
         </React.Fragment>

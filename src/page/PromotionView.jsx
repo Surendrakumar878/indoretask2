@@ -136,20 +136,22 @@ const PromotionView = () => {
       <div className='w-[98%] m-auto'>
 {/* <Report data={"example"}/> */}
 <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Promotion View </div> 
-    <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-2 gap-2 text-[8px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4' >
+    <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-2 gap-2 text-[8px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-2' >
 
  
     {[1,2,3,4,5,6,6,8].map((e)=>(<div className="w-full mx-auto bg-white rounded-xl  shadow-2xl border-collapse border overflow-hidden md:max-w-2xl">
       <div className="">
-        <div className="p-2">
+        <div className="">
           {/* <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div> */}
-      <p className='bg-blue-900 rounded-md p-1 text-white text-center font-bold'>Promotion id: 3654325 </p>
+      <p className='bg-blue-900  p-1 text-white text-center font-bold'>Promotion id: 3654325 </p>
+      <div className="p-2">
       <p>Promotion Date/Time:</p>
       <p> Promotion Type : </p>
       <p>  Message: </p>
      
       {/* <button className="text-center  btn btn-success bg-orange-500  px-1 w-full text-[8px]  p-1  rounded-lg text-white "   onClick={() => showModal("greentex")} >View</button> */}
       <img src="viewdetail.jpg" className='w-28 lg:w-40 sm:w-40 m-auto rounded-lg border' alt=""  onClick={() => showModal("greentex")}   />
+        </div>
         </div>
       </div>
     </div>))
