@@ -4,11 +4,12 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 import ReactPaginate from 'react-paginate';
-
+import jsPDF from "jspdf";
+import 'jspdf-autotable';
 const Apidata= [
     {
       "id": 1,
-      "booking_no": "12302",
+      "booking_no": "1",
       "booking_date": "2023-05-07",
       "pod_no":"232322",
       "pod_date": "2023-05-13",
@@ -19,7 +20,7 @@ const Apidata= [
     },
     {
       "id": 2,
-      "booking_no": "12302",
+      "booking_no": "2",
       "booking_date": "2023-05-07",
       "pod_no":"232322",
       "pod_date": "2023-05-13",
@@ -30,7 +31,7 @@ const Apidata= [
     },
     {
       "id": 3,
-      "booking_no": "12302",
+      "booking_no": "3",
       "booking_date": "2023-05-07",
       "pod_no":"232322",
       "pod_date": "2023-05-13",
@@ -41,7 +42,7 @@ const Apidata= [
     },
     {
       "id": 4,
-      "booking_no": "12302",
+      "booking_no": "4",
       "booking_date": "2023-05-07",
       "pod_no":"232322",
       "pod_date": "2023-05-13",
@@ -52,7 +53,7 @@ const Apidata= [
     },
     {
       "id": 5,
-      "booking_no": "12302",
+      "booking_no": "5",
       "booking_date": "2023-05-07",
       "pod_no":"232322",
       "pod_date": "2023-05-13",
@@ -63,7 +64,7 @@ const Apidata= [
     },
     {
       "id": 6,
-      "booking_no": "12302",
+      "booking_no": "6",
       "booking_date": "2023-05-07",
       "pod_no":"232322",
       "pod_date": "2023-05-13",
@@ -74,7 +75,7 @@ const Apidata= [
     },
     {
         "id": 7,
-        "booking_no": "12302",
+        "booking_no": "7",
         "booking_date": "2023-05-07",
         "pod_no":"232322",
         "pod_date": "2023-05-13",
@@ -85,7 +86,7 @@ const Apidata= [
       },
       {
         "id": 8,
-        "booking_no": "12302",
+        "booking_no": "8",
         "booking_date": "2023-05-07",
         "pod_no":"232322",
         "pod_date": "2023-05-13",
@@ -96,7 +97,7 @@ const Apidata= [
       },
       {
         "id": 9,
-        "booking_no": "12302",
+        "booking_no": "9",
         "booking_date": "2023-05-07",
         "pod_no":"232322",
         "pod_date": "2023-05-13",
@@ -107,7 +108,7 @@ const Apidata= [
       },
       {
         "id": 10,
-        "booking_no": "12302",
+        "booking_no": "10",
         "booking_date": "2023-05-07",
         "pod_no":"232322",
         "pod_date": "2023-05-13",
@@ -118,7 +119,7 @@ const Apidata= [
       },
       {
         "id": 11,
-        "booking_no": "12302",
+        "booking_no": "11",
         "booking_date": "2023-05-07",
         "pod_no":"232322",
         "pod_date": "2023-05-13",
@@ -129,7 +130,7 @@ const Apidata= [
       },
       {
         "id": 12,
-        "booking_no": "12302",
+        "booking_no": "12",
         "booking_date": "2023-05-07",
         "pod_no":"232322",
         "pod_date": "2023-05-13",
@@ -140,7 +141,7 @@ const Apidata= [
       },
       {
         "id": 13,
-        "booking_no": "12302",
+        "booking_no": "13",
         "booking_date": "2023-05-07",
         "pod_no":"232322",
         "pod_date": "2023-05-13",
@@ -151,7 +152,7 @@ const Apidata= [
       },
       {
           "id": 14,
-          "booking_no": "12302",
+          "booking_no": "14",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -162,7 +163,7 @@ const Apidata= [
         },
         {
           "id": 15,
-          "booking_no": "12302",
+          "booking_no": "145",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -173,7 +174,7 @@ const Apidata= [
         },
         {
           "id": 16,
-          "booking_no": "12302",
+          "booking_no": "16",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -184,7 +185,7 @@ const Apidata= [
         },
         {
           "id": 17,
-          "booking_no": "12302",
+          "booking_no": "17",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -195,7 +196,7 @@ const Apidata= [
         },
         {
           "id": 18,
-          "booking_no": "12302",
+          "booking_no": "18",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -206,7 +207,7 @@ const Apidata= [
         },
         {
           "id": 19,
-          "booking_no": "12302",
+          "booking_no": "19",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -217,7 +218,7 @@ const Apidata= [
         },
         {
           "id": 1,
-          "booking_no": "12302",
+          "booking_no": "20",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -228,7 +229,7 @@ const Apidata= [
         },
         {
           "id": 2,
-          "booking_no": "12302",
+          "booking_no": "21",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -239,7 +240,7 @@ const Apidata= [
         },
         {
           "id": 3,
-          "booking_no": "12302",
+          "booking_no": "22",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -250,7 +251,7 @@ const Apidata= [
         },
         {
           "id": 4,
-          "booking_no": "12302",
+          "booking_no": "23",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -261,7 +262,7 @@ const Apidata= [
         },
         {
           "id": 5,
-          "booking_no": "12302",
+          "booking_no": "24",
           "booking_date": "2023-05-07",
           "pod_no":"232322",
           "pod_date": "2023-05-13",
@@ -283,7 +284,7 @@ const Apidata= [
         },
         {
             "id": 7,
-            "booking_no": "12302",
+            "booking_no": "26",
             "booking_date": "2023-05-07",
             "pod_no":"232322",
             "pod_date": "2023-05-13",
@@ -349,7 +350,7 @@ const Apidata= [
           },
           {
             "id": 13,
-            "booking_no": "12302",
+            "booking_no": "28",
             "booking_date": "2023-05-07",
             "pod_no":"232322",
             "pod_date": "2023-05-13",
@@ -393,7 +394,7 @@ const Apidata= [
             },
             {
               "id": 17,
-              "booking_no": "12302",
+              "booking_no": "30",
               "booking_date": "2023-05-07",
               "pod_no":"232322",
               "pod_date": "2023-05-13",
@@ -415,7 +416,7 @@ const Apidata= [
             },
             {
               "id": 19,
-              "booking_no": "12302",
+              "booking_no": "38",
               "booking_date": "2023-05-07",
               "pod_no":"232322",
               "pod_date": "2023-05-13",
@@ -479,8 +480,8 @@ const VehicleHireHistory = () => {
       
         useEffect( ()=>{
             const registerUserdata= async()=>{
-             axios.get("http://localhost:4000/Vehicle")  
-             .then(res=>setUserdata(res.data.data) )
+              axios.get("http://localhost:3004/reports")  
+             .then(res=>setUserdata(res.data) )
              .catch(error=>console.log(error)); 
     
             }
@@ -503,7 +504,22 @@ const VehicleHireHistory = () => {
 
          
 
+           const exportPDF = () => {
 
+            const doc = new jsPDF();
+            doc.setFontSize(10);
+            doc.text('name:ram transport \nemail:email@gmail.com \nmobilenumber:7222082282 \naddress:106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP \nreportname:Vehicle Scheduled Summary \ndate:4/20/2023 \ndate_From : 4/20/2023 to : 4/20/2023 ', 10, 10);
+       
+         doc.autoTable({ html:"#my-table",
+     
+         theme:'grid',
+         headStyles:{fillColor: "#151B54"},
+         margin: { top: 50 },
+     
+     })
+         // Save the PDF document
+         doc.save('data-report.pdf');
+       }
 
   return (
     <div>
@@ -559,7 +575,7 @@ const VehicleHireHistory = () => {
                                 .map((datapost,index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.schedule_date_time}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.booking_no}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.user_id}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.username}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.registered_number}</td>
@@ -587,7 +603,7 @@ const VehicleHireHistory = () => {
 </div>
 
 <div className="m-auto w-full text-center" >
-                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Download</button>  <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
+                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={exportPDF}>Download</button>  <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
                     </div> 
                     </div>
 

@@ -23,17 +23,20 @@ const View_Pod = () => {
     console.log(vehicle)
     useEffect( ()=>{
         const registerUserdata= async()=>{
-            axios.get("http://localhost:3004/pod")  
-            .then(res=>setUserdata(res.data) )
+            axios.get("http://localhost:3004/booking")  
+            .then(res=>{setUserdata(res.data)
+                setDate(res.data)} )
             .catch(error=>console.log(error)); 
             
         }
         registerUserdata();
         
+        // setDate(userData.filter((res)=>res.vehicle_no.slice(0,1)==vehicle||res.vehicle_no.slice(0,2)==vehicle||res.vehicle_no.slice(0,3)==vehicle||res.vehicle_no.slice(0,4)==vehicle||res.vehicle_no==vehicle||res.vehicle_no.includes(vehicle)))
+    },[]);
+    
+    useEffect(()=>{
         setDate(userData.filter((res)=>res.vehicle_no.slice(0,1)==vehicle||res.vehicle_no.slice(0,2)==vehicle||res.vehicle_no.slice(0,3)==vehicle||res.vehicle_no.slice(0,4)==vehicle||res.vehicle_no==vehicle||res.vehicle_no.includes(vehicle)))
     },[vehicle]);
-    
-
     useEffect(()=>{
         setDate(userData.filter((res)=>res.pod_no.slice(0,1)==pod_no||res.pod_no.slice(0,2)==pod_no||res.pod_no.slice(0,3)==pod_no||res.pod_no.slice(0,4)==pod_no||res.pod_no==pod_no||res.pod_no.includes(pod_no)))
    

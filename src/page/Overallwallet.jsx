@@ -36,44 +36,33 @@ const Overallwallet = () => {
             onAfterPrint:()=>alert("Data saved in PDF")
         });
            console.log(userData)
+
+
            const exportPDF = () => {
+
             const doc = new jsPDF();
-          
-            // Retrieve the HTML table data
-            // const tableData = document.querySelectorAll('#my-table').innerHTML;
-          
-            // Define the PDF document
-            // doc.text('Data Report', 10, 10);
-          
-            // Add content to the PDF document
-            // doc.autoTable({ 
-            // body:[
-            //   ['John Doe', 'john@example.com', 'USA'],
-            //   ['Jane Smith', 'jane@example.com', 'Canada'],
-            // ], });
-            doc.autoTable({ html:"#my-table",
-        
-            theme:'grid',
-           
-            // styles: { fillColor: red },
-//   rowStyles: { 0: { halign: 'center', fillColor: [0, 255, 0] } },
-columnStyles: { europe: { halign: 'center' } }, // Cells in first column centered and green
-  margin: { top: 10 },
-        })
-            // Save the PDF document
-            
-            doc.save('data-report.pdf');
-          }
+            doc.setFontSize(10);
+            doc.text('name:ram transport \nemail:email@gmail.com \nmobilenumber:7222082282 \naddress:106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP \nreportname:Vehicle Scheduled Summary \ndate:4/20/2023 \ndate_From : 4/20/2023 to : 4/20/2023 ', 10, 10);
+       
+         doc.autoTable({ html:"#my-table",
+     
+         theme:'grid',
+         headStyles:{fillColor: "#151B54"},
+         margin: { top: 50 },
+     
+     })
+         // Save the PDF document
+         doc.save('data-report.pdf');
+       }
   return (
     <div>
      <React.Fragment>
-     <button onClick={exportPDF}>Export to PDF</button>
+     
         
             <div className=" sm:w-[80%]  sm:m-auto ">
                 <div className="">
                     <div className="">
-                      
-                    
+                   
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-auto border-black ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Overall wallet Summary: </div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
@@ -137,7 +126,7 @@ columnStyles: { europe: { halign: 'center' } }, // Cells in first column centere
 </div>
 </div>
 <div className="m-auto w-full text-center" >
-                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Download</button>  <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
+                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "onClick={exportPDF}>Download</button>  <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
                     </div> 
                     </div>
                 </div>

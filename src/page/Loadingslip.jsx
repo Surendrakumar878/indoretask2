@@ -23,24 +23,20 @@ const Loadingslip = () => {
     onAfterPrint: () => alert("Data saved in PDF"),
   });
   const exportPDF = () => {
+
     const doc = new jsPDF();
-  
-    // Retrieve the HTML table data
-    // const tableData = document.querySelectorAll('#my-table').innerHTML;
-  
-    // Define the PDF document
-    // doc.text('Data Report', 10, 10);
-  
-    // Add content to the PDF document
-    // doc.autoTable({ 
-    // body:[
-    //   ['John Doe', 'john@example.com', 'USA'],
-    //   ['Jane Smith', 'jane@example.com', 'Canada'],
-    // ], });
-    doc.autoTable({ html:"#my-table"})
-    // Save the PDF document
-    doc.save('data-report.pdf');
-  }
+    doc.setFontSize(10);
+    doc.text('name:ram transport \nemail:email@gmail.com \nmobilenumber:7222082282 \naddress:106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP \nreportname:Vehicle Scheduled Summary \ndate:4/20/2023 \ndate_From : 4/20/2023 to : 4/20/2023 ', 10, 10);
+
+ doc.autoTable({ html:"#my-table",
+
+ theme:'grid',
+ margin: { top: 50 },
+
+})
+ // Save the PDF document
+ doc.save('data-report.pdf');
+}
 
   return (
     <div className="py-10">
@@ -50,10 +46,13 @@ const Loadingslip = () => {
   /> */}
       <button onClick={exportPDF}>Export to PDF</button>
 
+
+
       <div >
+      
       <div ref={conponentPDF}  className=" w-[100%] sm:w-[80%] m-auto py-10">
 
-
+      <table id='my-table'>
         <h1 className=" text-center text-base font-semibold sm:font-bold sm:text-3xl sm:text-center">
           Loadingslip
         </h1>
@@ -61,7 +60,7 @@ const Loadingslip = () => {
           VEHICLE NO : 47564
         </h1>
         <div >
-          <div id='my-table' class="relative grid grid-cols-7  border-2 border-black text-xs sm:text-base ">
+          <div  class="relative grid grid-cols-7  border-2 border-black text-xs sm:text-base ">
             <div className="col-start-1 col-end-8 flex">
               <div class=" w-1/2   border border-r-2 border-l-0 border-b-0 border-t-0 border-black pb-4">
                 Booking no
@@ -186,9 +185,10 @@ const Loadingslip = () => {
         <h1 className="text-end text-xs">
           Powered by : www.transduniya.com-97553-22022{" "}
         </h1>
-      </div>
-      </div>
+        </table></div>
 
+    
+      </div>
       <div className="m-auto w-full text-center">
         <button
           className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "

@@ -6,7 +6,8 @@ import v from "../components/Vehicleform.module.css";
 import { useReactToPrint } from "react-to-print";
 import { Col, DatePicker, Form, Input, Row, Select } from "antd";
 import { Option } from "antd/es/mentions";
-
+import jsPDF from "jspdf";
+import 'jspdf-autotable';
 const Vehicle_View = () => {
   const conponentPDF = useRef();
   const [userData, setUserdata] = useState([]);
@@ -27,6 +28,23 @@ const Vehicle_View = () => {
     onAfterPrint: () => alert("Data saved in PDF"),
   });
   console.log(userData);
+
+  const exportPDF = () => {
+
+    const doc = new jsPDF();
+    doc.setFontSize(10);
+    doc.text('name:ram transport \nemail:email@gmail.com \nmobilenumber:7222082282 \naddress:106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP \nreportname:Vehicle Scheduled Summary \ndate:4/20/2023 \ndate_From : 4/20/2023 to : 4/20/2023 ', 10, 10);
+
+ doc.autoTable({ html:"#my-table",
+
+ theme:'grid',
+ headStyles:{fillColor: "#151B54"},
+ margin: { top: 50 },
+
+})
+ // Save the PDF document
+ doc.save('data-report.pdf');
+}
   return (
     <div>
       <React.Fragment>
@@ -42,7 +60,7 @@ const Vehicle_View = () => {
                   ref={conponentPDF}
                   className="  pb-2"
                 >
-                  <table className=" w-full ">
+                  <table id="my-table" className=" w-full ">
                     <thead className="bg-[#151B54] w-full text-white">
                       <tr>
                         <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
@@ -94,7 +112,7 @@ const Vehicle_View = () => {
               <div className="m-auto w-full text-center">
                 <button
                   className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "
-                  onClick={generatePDF}
+                  onClick={exportPDF}
                 >
                   Download
                 </button>{" "}

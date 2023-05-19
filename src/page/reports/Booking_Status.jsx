@@ -24,16 +24,19 @@ const Booking_Status = () => {
     
     useEffect( ()=>{
         const registerUserdata= async()=>{
-            axios.get("http://localhost:3004/status")  
-            .then(res=>setUserdata(res.data) )
+            axios.get("http://localhost:3004/booking")  
+            .then(res=>{setUserdata(res.data)
+                setDate(res.data)} )
             .catch(error=>console.log(error)); 
             
         }
         registerUserdata();
         
+        // setDate(userData.filter((res)=>res.freight_slip_no.includes(freight_slip_no)))
+    },[]);
+    useEffect(()=>{
         setDate(userData.filter((res)=>res.freight_slip_no.includes(freight_slip_no)))
     },[freight_slip_no]);
-    
 
     useEffect(()=>{
         setDate(userData.filter((res)=>res.pod_no.slice(0,1)==pod_no||res.pod_no.slice(0,2)==pod_no||res.pod_no.slice(0,3)==pod_no||res.pod_no.slice(0,4)==pod_no||res.pod_no==pod_no||res.pod_no.includes(pod_no)))

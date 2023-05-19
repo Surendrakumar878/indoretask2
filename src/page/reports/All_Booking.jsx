@@ -20,15 +20,18 @@ const All_Booking = () => {
     useEffect( ()=>{
         const registerUserdata= async()=>{
             axios.get("http://localhost:3004/booking")  
-            .then(res=>setUserdata(res.data) )
+            .then(res=>{setUserdata(res.data)
+                setDate(res.data)} )
             .catch(error=>console.log(error)); 
             
         }
         registerUserdata();
         
+        // setDate(userData.filter((res)=>res.vehicle_no.slice(0,1)==vehicle||res.vehicle_no.slice(0,2)==vehicle||res.vehicle_no.slice(0,3)==vehicle||res.vehicle_no.slice(0,4)==vehicle||res.vehicle_no==vehicle||res.vehicle_no.includes(vehicle)))
+    },[]);
+    useEffect(()=>{
         setDate(userData.filter((res)=>res.vehicle_no.slice(0,1)==vehicle||res.vehicle_no.slice(0,2)==vehicle||res.vehicle_no.slice(0,3)==vehicle||res.vehicle_no.slice(0,4)==vehicle||res.vehicle_no==vehicle||res.vehicle_no.includes(vehicle)))
     },[vehicle]);
-    
 
     useEffect(()=>{
         setDate(userData.filter((res)=>res.from.slice(0,1)==from||res.from.slice(0,2)==from||res.from.slice(0,3)==from||res.from.slice(0,4)==from||res.from==from||res.from.includes(from)))
@@ -65,6 +68,7 @@ const All_Booking = () => {
     //  const data2=userData.filter((res)=>res.vehicle_no.slice(0,1)==owner||res.vehicle_no.slice(0,2)==owner||res.vehicle_no.slice(0,3)==owner||res.vehicle_no.slice(0,4)==owner||res.vehicle_no==owner)
     
     console.log(booking_date)
+    
     return (
         <div>
      <React.Fragment>
@@ -81,7 +85,7 @@ const All_Booking = () => {
 
                     <div className="w-full">
                         <label className=" text-[10px] sm:text-base " >Vehicle No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Vehicle No" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
+             <input className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by Vehicle No" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
                 </div  >
                 <div className="w-full">
                         <label className=" text-[10px] sm:text-base " > Booking No :  </label>
