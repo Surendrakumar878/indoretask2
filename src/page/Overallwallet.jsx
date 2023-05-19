@@ -3,7 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
-
+import jsPDF from "jspdf";
+import 'jspdf-autotable';
 const Overallwallet = () => {
     const [data,setDate]=useState({
         name:"ram transport",
@@ -17,7 +18,7 @@ const Overallwallet = () => {
 
     })
         const conponentPDF= useRef();
-        const [userData, setUserdata]= useState([]);
+        const [userData, setUserdata]= useState([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
       
         useEffect( ()=>{
             const registerUserdata= async()=>{
@@ -35,17 +36,45 @@ const Overallwallet = () => {
             onAfterPrint:()=>alert("Data saved in PDF")
         });
            console.log(userData)
+           const exportPDF = () => {
+            const doc = new jsPDF();
+          
+            // Retrieve the HTML table data
+            // const tableData = document.querySelectorAll('#my-table').innerHTML;
+          
+            // Define the PDF document
+            // doc.text('Data Report', 10, 10);
+          
+            // Add content to the PDF document
+            // doc.autoTable({ 
+            // body:[
+            //   ['John Doe', 'john@example.com', 'USA'],
+            //   ['Jane Smith', 'jane@example.com', 'Canada'],
+            // ], });
+            doc.autoTable({ html:"#my-table",
+        
+            theme:'grid',
+           
+            // styles: { fillColor: red },
+//   rowStyles: { 0: { halign: 'center', fillColor: [0, 255, 0] } },
+columnStyles: { europe: { halign: 'center' } }, // Cells in first column centered and green
+  margin: { top: 10 },
+        })
+            // Save the PDF document
+            
+            doc.save('data-report.pdf');
+          }
   return (
     <div>
      <React.Fragment>
-
+     <button onClick={exportPDF}>Export to PDF</button>
         
             <div className=" sm:w-[80%]  sm:m-auto ">
                 <div className="">
                     <div className="">
                       
                     
-                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-96 border-black ">
+                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-auto border-black ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Overall wallet Summary: </div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
@@ -65,7 +94,7 @@ const Overallwallet = () => {
                   Date From : {data.date_From}To :{data.to}
                 </h1>
                 </div>
-                    <table className=" w-full " >
+                    <table id="my-table" className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>

@@ -16,18 +16,22 @@ const Master_Vehicle_View = () => {
     useEffect( ()=>{
         const registerUserdata= async()=>{
             axios.get("http://localhost:3004/reports")  
-            .then(res=>setUserdata(res.data) )
+            .then(res=>{setUserdata(res.data)
+                setDate(res.data)} )
             .catch(error=>console.log(error)); 
             
         }
         registerUserdata();
         
-        setDate(userData.filter((res)=>res.vehicle_no.slice(0,1)==vehicle||res.vehicle_no.slice(0,2)==vehicle||res.vehicle_no.slice(0,3)==vehicle||res.vehicle_no.slice(0,4)==vehicle||res.vehicle_no==vehicle||res.vehicle_no.includes(vehicle)))
-    },[vehicle]);
+        
+    },[]);
     
-
+useEffect(()=>{
+    setDate(userData.filter((res)=>res.vehicle_no.includes(vehicle)))
+    
+},[vehicle])
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.owner_name.slice(0,1)==owner||res.owner_name.slice(0,2)==owner||res.owner_name.slice(0,3)==owner||res.owner_name.slice(0,4)==owner||res.owner_name==owner||res.owner_name.includes(owner)))
+        setDate(userData.filter((res)=>res.owner_name.includes(owner)))
    
     },[owner])
     const generatePDF= useReactToPrint({

@@ -8,6 +8,7 @@ import Report from 'bv-react-data-report';
 import jsPDF from 'jspdf'
 
 import 'jspdf-autotable';
+// import { blueGrey } from "@mui/material/colors";
 
 // import { data } from "./example.js";
 
@@ -25,14 +26,18 @@ const Loadingslip = () => {
     const doc = new jsPDF();
   
     // Retrieve the HTML table data
-    const tableData = document.getElementById('my-table').innerHTML;
+    // const tableData = document.querySelectorAll('#my-table').innerHTML;
   
     // Define the PDF document
-    doc.text('Data Report', 10, 10);
+    // doc.text('Data Report', 10, 10);
   
     // Add content to the PDF document
-    doc.autoTable({ html: '#my-table' });
-  
+    // doc.autoTable({ 
+    // body:[
+    //   ['John Doe', 'john@example.com', 'USA'],
+    //   ['Jane Smith', 'jane@example.com', 'Canada'],
+    // ], });
+    doc.autoTable({ html:"#my-table"})
     // Save the PDF document
     doc.save('data-report.pdf');
   }

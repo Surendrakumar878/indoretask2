@@ -138,10 +138,10 @@ const NotificationView = () => {
       <div className='w-[98%] m-auto'>
 {/* <Report data={"example"}/> */}
 <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Notification View </div> 
-    <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-2 gap-2 text-[8px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-2' >
+    <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-1 gap-2 px-5 text-[8px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-2' >
 
  
-    {[1,2,3,4,5,6,6,8].map((e)=>(<div className="w-full mx-auto bg-white rounded-xl  shadow-2xl border-collapse border overflow-hidden md:max-w-2xl">
+    {[1,2,3,4,5,6,6,8].map((e)=>(<div className="w-full mx-auto bg-white rounded-md  shadow-2xl border-collapse border overflow-hidden md:max-w-2xl">
       <div className="">
         <div className="">
           {/* <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div> */}
@@ -149,9 +149,12 @@ const NotificationView = () => {
       <div className="p-2">
       <p>Notification Date/Time:</p>
       <p> Notification Type : </p>
-      <p>  Message: </p>
-     
-      <img src="viewdetail.jpg" className='w-28 lg:w-40 sm:w-40 m-auto rounded-lg border' alt=""  onClick={() => showModal("greentex")}   />
+      {/* <p>  Message: </p> */}
+      <div className='m-auto w-10'>
+
+      <button className="text-center bg-orange-500  sm:px-[1px] w-7 sm:w-10 text-[6px] rounded-sm p-[1px]  sm:p-[1px]  sm:text-[10px] sm:rounded-sm text-white "   onClick={() => showModal("greentex")} >View</button>
+      </div>
+      {/* <img src="viewdetail.jpg" className='w-28 lg:w-40 sm:w-40 m-auto rounded-lg border' alt=""  onClick={() => showModal("greentex")}   /> */}
       </div>
        
         </div>
@@ -182,9 +185,9 @@ const NotificationView = () => {
       
       <span className='font-bold'> Notification Type: </span><span>type</span> 
       <br />
-      <span className='font-bold'> Message:
+      {/* <span className='font-bold'> Message:
        </span><span>Lorram Medical Systems Private Limited is a Private incorporated on 06 March 2013. It is classified as Non-govt company and is registered at Registrar of Companies, Hyderabad. Its authorized share capital is Rs. 10,000,000 and its paid up capital is Rs. 10,000,000. It is inolved in Manufacture of other chemical product</span> 
-            
+             */}
 
             <div className='flex gap-2 flex-wrap' >
                  <img src="Owner.jpg" alt="css"   className="btn btn-success  py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={() => showModal1("greentex")} />

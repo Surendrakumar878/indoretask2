@@ -455,11 +455,11 @@ const VehicleHireHistory = () => {
   `;
 
     const [postdata,setPostdata]= useState(Apidata.slice(0,100));
-  const [pagenumber, setPagenumber]= useState(0);
+  const [pagenumber, setPagenumber]= useState(1);
   const perpage=10;
   const pageclick= pagenumber*perpage;
   const countpage= Math.ceil(postdata.length/perpage);
- 
+ console.log(countpage)
   const changePage=({selected})=>{
     setPagenumber(selected);
   }
@@ -555,7 +555,7 @@ const VehicleHireHistory = () => {
                         <tbody>
                             {
                                 postdata
-                                // slice(pageclick, pageclick + perpage)
+                                .slice(pageclick, pageclick + perpage)
                                 .map((datapost,index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
@@ -566,8 +566,7 @@ const VehicleHireHistory = () => {
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.vehicle_no_scheduled}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.current_status}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.freight}</td>
-                             
-                           
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.freight}</td>
                                 <td>
                                     {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>
                                     <Link to="/userDelete" className="btn btn-danger">Delete</Link> */}
@@ -593,7 +592,8 @@ const VehicleHireHistory = () => {
                     </div>
 
                     
-                    <ReactPaginate 
+                    <ReactPaginate
+                    className="flex gap-4 m-auto text-center items-center justify-center my-4 rounded-lg bg-red-500" 
                       previousLable={"Previous"}
                       nextLable={"Next"}
                       pageCount= { countpage}
@@ -602,7 +602,7 @@ const VehicleHireHistory = () => {
                       previousLinkClassName={"previousBttn"}
                       nextLinkClassName={"nextBttn"}
                       activeClassName={"paginationActive"}
-                      disabledClassName={"paginationDisabled"}
+                      // disabledClassName={"paginationDisabled"}
                     /> 
                 </div>
             </div>           
