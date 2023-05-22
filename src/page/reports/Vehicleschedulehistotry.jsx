@@ -42,7 +42,7 @@ const Vehicleschedulehistotry = () => {
 
             const doc = new jsPDF();
             doc.setFontSize(10);
-            doc.text('name:ram transport \nemail:email@gmail.com \nmobilenumber:7222082282 \naddress:106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP \nreportname:Vehicle Scheduled Summary \ndate:4/20/2023 \ndate_From : 4/20/2023 to : 4/20/2023 ', 10, 10);
+            doc.text('name:ram transport \nemail:email@gmail.com \nmobilenumber:7222082282 \naddress:106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP \nreportname:Vehicle Schedule Histotry \ndate:4/20/2023 \ndate_From : 4/20/2023 to : 4/20/2023 ', 10, 10);
        
          doc.autoTable({ html:"#my-table",
      
@@ -63,7 +63,7 @@ const Vehicleschedulehistotry = () => {
                       
                     
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2  border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> POD Register</div> 
+                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Vehicle Schedule Histotry</div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
                     

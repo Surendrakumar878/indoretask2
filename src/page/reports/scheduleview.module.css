@@ -1,0 +1,66 @@
+.scheduleview{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   
+}
+
+#transaction_boder {
+    border: 1px solid black; 
+    border-collapse: collapse;
+
+  }
+.scheduleview td{
+text-align: left;
+}
+.scheduleview button{
+  float: right;
+  background-color: #FFA500;
+  color: black;
+}
+.scheduleview  th, td {
+  font-size: 15px;
+  padding: 3px;
+
+}
+.select_option_col{
+  width: 30%;
+  margin-right: 18px;
+  padding-left: 10px;
+}
+@media screen and (max-width: 500px) {
+  .select_option_col{
+    width: 100%;
+    margin-right: 20px;
+}
+
+.scheduleview{
+    width: 100%;
+    padding: 0px;
+}
+
+.scheduleview  th, td {
+  font-size: 10px;
+  padding: 3px;
+
+}   
+}
+@media screen and (max-width: 700px){
+
+  .select_option_col{
+    width: 100%;
+    margin-right: 0px; 
+}
+}
+@media screen and (max-width: 900px){
+
+  .select_option_col{
+    width: 40%;
+    margin-right: 5px;
+}
+
+}

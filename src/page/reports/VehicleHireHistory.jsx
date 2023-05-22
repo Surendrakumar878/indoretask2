@@ -534,23 +534,20 @@ const VehicleHireHistory = () => {
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Vehicle Hire History </div> 
 
                     
-                    <div className=" bordre border-collapse border-2  border-slate-700 pb-2 ">
+                    <div className="  ">
 
                     
                  
-<div>
+                    <div className=" border border-t-1  border-slate-700 border-b-1 border-r-1 border-l-1 w-[99.5%] ">
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.name}</h1>
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.email} </h1>
-                <span className="pl-1 text-[10px] ">{data.mobilenumber} </span>
+                <p className="pl-1 text-[10px] ">{data.mobilenumber} </p>
                 <p className="pl-1 text-[10px]">{data.address}</p>
                 <p className="pl-1 text-[10px]">{data.reportname}</p>
-                <h2 className="pl-1 font-bold  text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
-                  Date : 
-                  {data.date}
-                </h2>
                
-                <h1 className="pl-1 font-bold  text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
-                  Date From : {data.date_From}To :{data.to}
+              
+                <h1 className="pl-1 font-bold  text-[10px] border border-t-1  border-slate-700 border-b-0 border-r-0 border-l-0 ">
+                  Date From : {data.date_From} To :{data.to}
                 </h1>
                 </div>
                     <table className=" w-full " >
@@ -571,7 +568,7 @@ const VehicleHireHistory = () => {
                         <tbody>
                             {
                                 postdata
-                                .slice(pageclick, pageclick + perpage)
+                                // .slice(pageclick, pageclick + perpage)
                                 .map((datapost,index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
@@ -608,18 +605,7 @@ const VehicleHireHistory = () => {
                     </div>
 
                     
-                    <ReactPaginate
-                    className="flex gap-4 m-auto text-center items-center justify-center my-4 rounded-lg bg-red-500" 
-                      previousLable={"Previous"}
-                      nextLable={"Next"}
-                      pageCount= { countpage}
-                      onPageChange={ changePage}
-                      containerClassName={"paginationBttns"}
-                      previousLinkClassName={"previousBttn"}
-                      nextLinkClassName={"nextBttn"}
-                      activeClassName={"paginationActive"}
-                      // disabledClassName={"paginationDisabled"}
-                    /> 
+                   
                 </div>
             </div>           
         </React.Fragment>

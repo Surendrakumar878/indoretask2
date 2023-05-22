@@ -54,13 +54,13 @@
   }
   
   @page:left {
-    margin-left:22mm;
+    margin-left:14mm;
     margin-right:14mm;
     margin-top: 73px;
     margin-bottom: 73px;
   
     @top-left{
-      /* content: counter(page); */
+      content: counter(page);
       font-weight: 400;
       font-family: var(--serif);
       font-size: var(--font-size);
@@ -72,7 +72,7 @@
     }
   
     @top-center{
-      /* content: string(booktitle); */
+      content: string(booktitle);
       font-weight: 400;
       font-family: var(--serif);
       font-size: var(--font-size);
@@ -89,11 +89,11 @@
   
   @page:right {
     margin-left:14mm;
-    margin-right:22mm;
+    margin-right:14mm;
     margin-top: 73px;
     margin-bottom: 73px;
     @top-right{
-      /* content: counter(page); */
+      content: counter(page);
       font-weight: 400;
       font-family: var(--serif);
       font-size: var(--font-size);
@@ -106,7 +106,7 @@
     }
   
     @top-center{
-      /* content: element(shorter); */
+      content: element(shorter);
       vertical-align: bottom;
       text-align: right;
       margin-bottom: 1px;
@@ -124,9 +124,9 @@
   
   .part h2, #appendices h2,
   section[data-type="half-title"],
-  /* section[data-type="titlepage"], */
+  section[data-type="titlepage"],
   section[data-type="copyright"],
-  /* section[data-type="dedication"], */
+  section[data-type="dedication"],
   section[data-type="epigraph"],
   #toc {
     margin-left: 10mm /*center the page*/
@@ -139,7 +139,7 @@
   /* running elements */
   
   #cover h1 {
-    /* string-set: booktitle content(text); */
+    string-set: booktitle content(text);
   }
   
   #cover {
@@ -154,7 +154,7 @@
     font-weight: normal;
     line-height: var(--line-height);
     text-align: right;
-    /* font-style: italic; */
+    font-style: italic;
     font-variant-numeric: oldstyle-nums;
   }
   

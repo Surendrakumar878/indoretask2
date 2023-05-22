@@ -52,7 +52,7 @@ const Loadingslip = () => {
       
       <div ref={conponentPDF}  className=" w-[100%] sm:w-[80%] m-auto py-10">
 
-      <table id='my-table'>
+      {/* <table id='my-table'> */}
         <h1 className=" text-center text-base font-semibold sm:font-bold sm:text-3xl sm:text-center">
           Loadingslip
         </h1>
@@ -74,7 +74,7 @@ const Loadingslip = () => {
             </div>
             <div  className="col-start-1 col-end-8 flex">
               <div class="w-1/2 border border-r-2 border-l-0 border-b-0 border-t-0 border-black">
-                <p>Consignee</p>
+                <p>Consignor </p>
                 <p>name :</p>
                 <p>Address:</p>
                 <p> Phone :</p>
@@ -185,7 +185,8 @@ const Loadingslip = () => {
         <h1 className="text-end text-xs">
           Powered by : www.transduniya.com-97553-22022{" "}
         </h1>
-        </table></div>
+        {/* </table> */}
+        </div>
 
     
       </div>

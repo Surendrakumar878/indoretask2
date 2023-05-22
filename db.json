@@ -244,6 +244,77 @@
       "freight_slip_no": "12302",
       "freight_slip_date": "2023-05-13"
     }
-  ]
+  ],
+  "hire":[
+    {
+    "id":1,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:44",
+    "vehicle_no":"12321",
+    "hire_owner_name":"abc",
+    "trip_status":1
+  },
+  {
+    "id":2,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:00",
+    "vehicle_no":"12322",
+    "hire_owner_name":"abcd",
+    "trip_status":0
+  }
+],
+"schd":[
+  {
+    
+    "id":1,
+    "schd_id":121,
+"schd_date_time":"2023-05-21T15:44",
+"vehicle_no":"12000",
+"hire_date_time":"2023-05-21T15:00",
+"hire_by":"abcd",
+"hire_status":1
+  },
+  {
+    
+    "id":2,
+    "schd_id":121,
+"schd_date_time":"2023-05-21T15:40",
+"vehicle_no":"12000",
+"hire_date_time":"2023-05-21T15:44",
+"hire_by":"abc",
+"hire_status":0
+  }
+],
+"vehicle":[
+  {
+    "id":1,
+    "enq_id":"3452673",
+    "demand_by":"option1",
+    "vehicle_type":"bus",
+    "vehicle_height":"12",
+    "vehicle_size":"11",
+    "vehicle_capacity":"option1",
+    "vehicle_body_type":"option1",
+    "goods_name":"abc",
+    "total_weight":"2kg",
+    "from":"indore",
+    "to":"indore"
+
+  },
+  {
+    "id":2,
+    "enq_id":"3452674",
+    "demand_by":"option2",
+    "vehicle_type":"car",
+    "vehicle_height":"122",
+    "vehicle_size":"112",
+    "vehicle_capacity":"option2",
+    "vehicle_body_type":"option2",
+    "goods_name":"abcd",
+    "total_weight":"22kg",
+    "from":"bhopal",
+    "to":"bhopal"
+  }
+]
   
 }

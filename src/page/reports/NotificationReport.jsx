@@ -17,7 +17,7 @@ const NotificationReport = () => {
     to: "4/20/2023",
   });
   const conponentPDF = useRef();
-  const [userData, setUserdata] = useState([]);
+  const [userData, setUserdata] = useState([1,1,1,1,1,1,1,1,1,1,,,1,1,1,1,1,1,1,1,1,1,1]);
 
   useEffect(() => {
     const registerUserdata = async () => {
@@ -62,34 +62,26 @@ const NotificationReport = () => {
             <div className="">
               <div
                 ref={conponentPDF}
-                className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-96 border-black "
+                className=" relative sm:w-full sm:m-auto w-full   "
               >
                 <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">
                   {" "}
                   Notification Register {" "}
                 </div>
 
-                <div className=" bordre border-collapse border-2  border-slate-700 pb-2 ">
-                  <div>
-                    <h1 className=" pl-1  font-bold  text-[10px]">
-                      {" "}
-                      {data.name}
-                    </h1>
-                    <h1 className=" pl-1  font-bold  text-[10px]">
-                      {" "}
-                      {data.email}{" "}
-                    </h1>
-                    <p className="pl-1 text-[10px] ">{data.mobilenumber} </p>
-                    <p className="pl-1 text-[10px]">{data.address}</p>
-                    <p className="pl-1 text-[10px]">{data.reportname}</p>
-                    <h2 className="pl-1 font-bold  text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
-                      Date :{data.date}
-                    </h2>
-
-                    <h1 className="pl-1 font-bold  text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
-                      Date From : {data.date_From}To :{data.to}
-                    </h1>
-                  </div>
+                <div className="  pb-2 ">
+                <div className=" border border-t-1  border-slate-700 border-b-1 border-r-1 border-l-1 w-[99.%] ">
+                <h1 className=" pl-1 font-bold  text-[10px]"> {data.name}</h1>
+                <h1 className=" pl-1 font-bold  text-[10px]"> {data.email} </h1>
+                <p className="pl-1 text-[10px] ">{data.mobilenumber} </p>
+                <p className="pl-1 text-[10px]">{data.address}</p>
+                <p className="pl-1 text-[10px]">{data.reportname}</p>
+               
+              
+                <h1 className="pl-1 font-bold  text-[10px] border border-t-1  border-slate-700 border-b-0 border-r-0 border-l-0 ">
+                  Date From : {data.date_From} To :{data.to}
+                </h1>
+                </div>
                   <table id="my-table" className=" w-full ">
                     <thead className="bg-[#151B54] w-full text-white text-[10px]">
                       <tr>
@@ -132,8 +124,10 @@ const NotificationReport = () => {
                           <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
                             {uData.registered_number}
                           </td>
-
-                          <td></td>
+                          <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            {uData.registered_number}
+                          </td>
+                          
                         </tr>
                       ))}
                     </tbody>

@@ -1,4 +1,4 @@
-import Vehicleform from "./components/Vehicleform";
+
 
 import { Route, Routes } from "react-router-dom";
 
@@ -9,8 +9,8 @@ import Promotion from "./page/Promotion";
 import Vehicle_owner_documents from "./page/Vehicle_owner_documents";
 
 import ProfileUpdateForm from "./page/ProfileUpdateForm";
-import Vehicle_View from "./page/Vehicle_View";
-import View from "./page/View";
+// import Vehicle_View from "./page/Vehicle_View";
+import FRMVehicle_View_Owner from "./page/FRMVehicle_View_Owner";
 import Singlepod from "./page/Singlepod";
 import PodRegister from "./page/PodRegister";
 import PodRegisterForm from "./page/PodRegisterForm";
@@ -38,10 +38,18 @@ import Contract_Entry from "./page/Form/Contract_Entry";
 import Privacypolicy from "./page/privacy/Privacypolicy";
 import GPSrequierement from "./page/Form/GPSrequierement";
 import Master_Vehicle_View from "./page/reports/Master_Vehicle_View";
-import Example from "./components/Example";
+// import Example from "./components/Example";
 
 
 import "./styles.css";
+import ScheduleView from "./page/reports/ScheduleView";
+import Hiringview from "./page/reports/Hiringview";
+import FRMVehicleDemandOwner from "./components/FRMVehicleDemandOwner";
+import FRMVehicleDemandAgent from "./page/Form/FRMVehicleDemandAgent";
+import FRMVehicleViewAgent from "./page/Form/FRMVehicleViewAgent";
+import RPTDemandDetail from "./page/reports/RPTDemandDetail";
+import DownloadableContent from "./components/DownloadableContent";
+// import MyComponent from "./components/MyComponent";
 // create a new preview
 
 
@@ -66,7 +74,7 @@ function App() {
       {/* <span> {count} </span> */}
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/Vehicleform" element={<Vehicleform />}></Route>
+        <Route path="/FRMVehicleDemandOwner" element={<FRMVehicleDemandOwner />}></Route>
 
         <Route path="/loadingslip" element={<Loadingslip />}></Route>
         <Route path="/Overallwallet" element={<Overallwallet />}></Route>
@@ -94,8 +102,8 @@ function App() {
           path="/profileUpdateForm"
           element={<ProfileUpdateForm />}
         ></Route>
-        <Route path="/vehicleview" element={<Vehicle_View />}></Route>
-        <Route path="/view" element={<View />}></Route>
+        <Route path="/RPTDemandDetail" element={<RPTDemandDetail />}></Route>
+        <Route path="/FRMVehicle_View_Owner" element={<FRMVehicle_View_Owner />}></Route>
         <Route path="/singlepod" element={<Singlepod />}></Route>
         <Route path="/podRegister" element={<PodRegister />}></Route>
         <Route path="/podRegisterForm" element={<PodRegisterForm />}></Route>
@@ -123,6 +131,11 @@ function App() {
         <Route path="/Contract_Entry" element={<Contract_Entry/>}></Route>
         <Route path="/Privacypolicy" element={<Privacypolicy />}></Route>
         <Route path="/GPSrequierement" element={<GPSrequierement />}></Route>
+        <Route path="/ScheduleView" element={<ScheduleView />}></Route>
+        <Route path="/Hiringview" element={<Hiringview />}></Route>
+        <Route path="/FRMVehicleDemandAgent" element={<FRMVehicleDemandAgent />}></Route>
+        <Route path="/FRMVehicleViewAgent" element={<FRMVehicleViewAgent />}></Route>
+        <Route path="/DownloadableContent" element={<DownloadableContent />}></Route>
       </Routes>
     </div>
   );

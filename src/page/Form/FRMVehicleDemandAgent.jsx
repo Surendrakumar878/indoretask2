@@ -18,10 +18,10 @@ import {
 import { DatePicker } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
-import v from "./Vehicleform.module.css"
+import v from "./FRMVehicleDemandAgent.module.css"
 const { Option } = Select;
 // import LoadingButton from "@mui/lab/LoadingButton";
-const Vehicleform = () => {
+const FRMVehicleDemandAgent = () => {
   const { RangePicker } = DatePicker;
   function onChange(value, dateString) {
     console.log("Selected Time: ", value);
@@ -68,8 +68,8 @@ const Vehicleform = () => {
       total_weight: values.total_weight,
       vehicle_body_type: values.vehicle_body_type,
       vehicle_height: values.vehicle_height,
-    //   country_id: values.country_id,
-    //   office_phone_number: values.office_phone_number,
+      contact_number: values.contact_number,
+      location: values.location,
     //   email: values.email,
     //   website: values.website,
     //   company_registeration: values.company_registeration,
@@ -101,7 +101,7 @@ const Vehicleform = () => {
   return (
     <>
       <div className="flex flex-col gap-4 bg-white mb-10">
-        <h2 id={v.heading}>Vehicle enquiry </h2>
+        <h2 id={v.heading}>FRM Vehicle Demand Agent</h2>
         <div className={v.mainForm}>
         
          
@@ -131,7 +131,7 @@ const Vehicleform = () => {
               <Col className={v.select_option_col}>
               <Form.Item
                   name="enq_date"
-                  label={<label style={{ fontSize: "15px" }}>Enq Date</label>}
+                  label={<label style={{ fontSize: "15px" }}>Enq Date/Time</label>}
                   rules={[
                     {
                       required: true,
@@ -158,7 +158,7 @@ const Vehicleform = () => {
                   name="vehicle_required_date"
                   label={
                     <label style={{ fontSize: "15px" }}>
-                      Vehicle required date :
+                      Vehicle required date/Time :
                     </label>
                   }
                   rules={[
@@ -559,6 +559,53 @@ const Vehicleform = () => {
                   {/* </Tooltip> */}
                 </Form.Item>
               </Col>
+
+              <Col className={v.select_option_col}>
+                <Form.Item
+                  name="contact_number"
+                  label={
+                    <label style={{ fontSize: "15px" }}>Contact Number</label>
+                  }
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your Contact Number!",
+                    },
+                    {
+                      type: "text",
+                    },
+                  ]}
+                  hasFeedback
+                  style={{ width: "96%" }}
+                >
+                  {/* <Tooltip title="Enter Your Website URL"> */}
+                  <Input placeholder="Contact Number" tabIndex={11} />
+                  {/* </Tooltip> */}
+                </Form.Item>
+              </Col>
+              <Col className={v.select_option_col}>
+                <Form.Item
+                  name="location"
+                  label={
+                    <label style={{ fontSize: "15px" }}>Location :</label>
+                  }
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your location!",
+                    },
+                    {
+                      type: "text",
+                    },
+                  ]}
+                  hasFeedback
+                  style={{ width: "96%" }}
+                >
+                  {/* <Tooltip title="Enter Your Website URL"> */}
+                  <Input placeholder="location" tabIndex={11} />
+                  {/* </Tooltip> */}
+                </Form.Item>
+              </Col>
             </Row>
               <div className=" m-auto w-40 pb-20">
                 
@@ -586,5 +633,5 @@ const Vehicleform = () => {
     </>
   );
 };
-export default Vehicleform;
+export default FRMVehicleDemandAgent;
 // advanc %

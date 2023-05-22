@@ -60,24 +60,21 @@ const PodRegister = () => {
                     <div className="">
                       
                     
-                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-auto lg:w-auto  bordre border-collapse border-2  border-black ">
+                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-auto lg:w-auto  ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> POD Register</div> 
-                    <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
+                    <div className="  pb-2">
 
                     
-                    <div>
+                    <div className=" border border-t-1  border-slate-700 border-b-1 border-r-1 border-l-1 w-[99.%] ">
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.name}</h1>
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.email} </h1>
                 <p className="pl-1 text-[10px] ">{data.mobilenumber} </p>
                 <p className="pl-1 text-[10px]">{data.address}</p>
                 <p className="pl-1 text-[10px]">{data.reportname}</p>
-                <h2 className="pl-1 font-bold  text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
-                  Date : 
-                  {data.date}
-                </h2>
-            
-                <h1 className="pl-1 font-bold  text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
-                  Date From : {data.date_From}To :{data.to}
+               
+              
+                <h1 className="pl-1 font-bold  text-[10px] border border-t-1  border-slate-700 border-b-0 border-r-0 border-l-0 ">
+                  Date From : {data.date_From} To :{data.to}
                 </h1>
                 </div>
                     <table id="my-table" className=" w-full " >

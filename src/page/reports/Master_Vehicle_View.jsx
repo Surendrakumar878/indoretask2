@@ -68,6 +68,7 @@ useEffect(()=>{
                 <div>
                         <label className=" text-[10px] sm:text-base " > Owner Name :  </label>
              <input className="border border-collapse px-1 text-[10px] sm:text-base" type="text" placeholder="Search by Name" value={owner} onChange={(e)=>setOwner(e.target.value)} />
+                
                 </div>
                     </div>
                     <table className=" w-full " >
