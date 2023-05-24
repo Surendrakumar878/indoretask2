@@ -51,7 +51,7 @@ const Loadingslip = () => {
 
       <div ref={conponentPDF} id="loading" className=" p-2" >
       
-      <div   className=" bg-no-repeat bg-center  w-[100%] sm:w-[30%] m-auto py-10">
+      <div   className=" bg-no-repeat bg-center  w-[100%] sm:w-[70%] m-auto py-10">
 
       {/* <table id='my-table'> */}
         <h1 className=" text-center text-base font-semibold sm:font-bold sm:text-3xl sm:text-center">
