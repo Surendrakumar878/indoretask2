@@ -4,7 +4,7 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 
-const All_Booking = () => {
+const FRMAll_Booking = () => {
     
 
     const [data,setDate]=useState([])
@@ -167,4 +167,4 @@ const All_Booking = () => {
   )
 }
 
-export default All_Booking
+export default FRMAll_Booking

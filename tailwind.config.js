@@ -12,6 +12,7 @@ module.exports = {
         
         'logo': "url('/img/shreelogo.png')",
         'pattern-bg': "url('/img/pattern-bg.png')",
+        'logo1': "url('/img/transduniyalogo.png')",
 
 
 

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
-import ReactPaginate from 'react-paginate';
+
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+
 const Apidata= [
     {
       "id": 1,
@@ -426,7 +427,7 @@ const Apidata= [
               "freight_slip_date": "2023-05-13"
             }
   ]
-const VehicleHireHistory = () => {
+const RPTVehicleHireHistory = () => {
   const pageStyle = `@page { 
     size: auto;  margin: 0mm ; } @media print { body { -webkit-print-color-adjust: exact; } }
   @media print {
@@ -456,14 +457,10 @@ const VehicleHireHistory = () => {
   `;
 
     const [postdata,setPostdata]= useState(Apidata.slice(0,100));
-  const [pagenumber, setPagenumber]= useState(1);
-  const perpage=10;
-  const pageclick= pagenumber*perpage;
-  const countpage= Math.ceil(postdata.length/perpage);
- console.log(countpage)
-  const changePage=({selected})=>{
-    setPagenumber(selected);
-  }
+  
+ 
+
+ 
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",
@@ -497,8 +494,12 @@ const VehicleHireHistory = () => {
         // });
         const generatePDF = useReactToPrint({
           content: () => conponentPDF.current,
+           
           removeAfterPrint: true,
-          copyStyles: true
+          copyStyles: true,
+         
+        
+          // background:"transduniyalogo.png"
         });
            console.log(userData)
 
@@ -509,13 +510,15 @@ const VehicleHireHistory = () => {
             const doc = new jsPDF();
             doc.setFontSize(10);
             doc.text('name:ram transport \nemail:email@gmail.com \nmobilenumber:7222082282 \naddress:106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP \nreportname:Vehicle Scheduled Summary \ndate:4/20/2023 \ndate_From : 4/20/2023 to : 4/20/2023 ', 10, 10);
-       
+            doc.addImage('../../../img/transduniyalogo.png', 'JPEG', 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
+
          doc.autoTable({ html:"#my-table",
      
          theme:'grid',
+         
          headStyles:{fillColor: "#151B54"},
          margin: { top: 50 },
-     
+              
      })
          // Save the PDF document
          doc.save('data-report.pdf');
@@ -523,7 +526,7 @@ const VehicleHireHistory = () => {
 
   return (
     <div>
-     
+    
      <React.Fragment>
             <div className=" sm:w-[80%]  sm:m-auto ">
                 <div className="">
@@ -550,7 +553,7 @@ const VehicleHireHistory = () => {
                   Date From : {data.date_From} To :{data.to}
                 </h1>
                 </div>
-                    <table className=" w-full " >
+                    <table id="my-table"  className=" w-full  " >
                         <thead className="bg-[#151B54] w-full text-white text-[10px]">
                            <tr>
                             <th className=" lg:text-[10px]  p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
@@ -588,11 +591,30 @@ const VehicleHireHistory = () => {
                             )) }
                         </tbody>                        
                     </table>  
-                    <div className="header"></div>
-        <div className="footer"></div>       
+                    <div
+      style={{
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        opacity: '0.5',
+        fontSize: '48px',
+        color: 'red',
+        transform: 'rotate(0deg)',
+        pointerEvents: 'none',
+      }}
+    >
+    
+<img className="w-40" src="transduniyalogo.png" alt="" />
+    </div>
+                    {/* <div className="header"></div>
+        <div className="footer"></div>        */}
                     <div className="absolute w-40 top-60 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
 
-<img className="w-full" src="transduniyalogo.png" alt="" />
 
 </div>
 </div>
@@ -613,4 +635,4 @@ const VehicleHireHistory = () => {
   )
 }
 
-export default VehicleHireHistory
+export default RPTVehicleHireHistory

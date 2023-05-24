@@ -7,7 +7,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import { Input ,Row,Col, Radio, Button } from "antd";
 import schedule from "./scheduleview.module.css"
-const ScheduleView = () => {
+const FRMScheduleView = () => {
     const [data,setDate]=useState([])
     const conponentPDF= useRef();
     const [userData, setUserdata]= useState([]);
@@ -172,4 +172,4 @@ sethire_by("1")
     )
 }
 
-export default ScheduleView
+export default FRMScheduleView

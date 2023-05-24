@@ -136,7 +136,7 @@ const PromotionView = () => {
       <div className='w-[98%] m-auto'>
 {/* <Report data={"example"}/> */}
 <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Promotion View </div> 
-    <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-1 p-4 gap-2 text-[8px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-2' >
+    <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-1 p-4 gap-2 text-[11px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-2' >
 
  
     {[1,2,3,4,5,6,6,8].map((e)=>(<div className="w-full mx-auto bg-white rounded-md  shadow-2xl border-collapse border overflow-hidden md:max-w-2xl">

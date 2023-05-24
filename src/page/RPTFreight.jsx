@@ -5,7 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const Freight = () => {
+const RPTFreight = () => {
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",
@@ -112,9 +112,23 @@ const Freight = () => {
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute top-40 left-32 sm:top-40 w-40 sm:w-96 sm:left-96 opacity-10">
+                    <div    style={{
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        opacity: '0.5',
+        fontSize: '48px',
+        color: 'red',
+        transform: 'rotate(0deg)',
+        pointerEvents: 'none',
+      }}>
 
-<img className="w-full" src="transduniyalogo.png" alt="" />
+<img className="w-60" src="transduniyalogo.png" alt="" />
 
 </div>
 </div>
@@ -131,4 +145,4 @@ const Freight = () => {
   )
 }
 
-export default Freight
+export default RPTFreight

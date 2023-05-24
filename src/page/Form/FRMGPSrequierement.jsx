@@ -20,7 +20,7 @@ import { UploadOutlined } from "@ant-design/icons";
 import v from "./GPSrequierement.module.css";
 const { Option } = Select;
 // import LoadingButton from "@mui/lab/LoadingButton";
-const GPSrequierement = () => {
+const FRMGPSrequierement = () => {
   const { RangePicker } = DatePicker;
   function onChange(value, dateString) {
     console.log("Selected Time: ", value);
@@ -141,7 +141,7 @@ const GPSrequierement = () => {
   return (
     <>
       <div className="flex flex-col gap-4 bg-white mb-10">
-        <h2 id={v.heading}>GPS Requierement</h2>
+        <h2 id={v.heading}>FRMGPSrequierement </h2>
         <div className={v.mainForm}>
           <Card hoverable bodyStyle={{ padding: "0" }}>
           
@@ -326,5 +326,5 @@ const GPSrequierement = () => {
     </>
   );
 };
-export default GPSrequierement;
+export default FRMGPSrequierement;
 

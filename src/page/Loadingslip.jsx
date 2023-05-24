@@ -8,6 +8,7 @@ import Report from 'bv-react-data-report';
 import jsPDF from 'jspdf'
 
 import 'jspdf-autotable';
+import html2canvas from "html2canvas";
 // import { blueGrey } from "@mui/material/colors";
 
 // import { data } from "./example.js";
@@ -22,21 +23,21 @@ const Loadingslip = () => {
     documentTitle: "Userdata",
     onAfterPrint: () => alert("Data saved in PDF"),
   });
-  const exportPDF = () => {
+  const [loader, setLoader] = useState(false);
 
-    const doc = new jsPDF();
-    doc.setFontSize(10);
-    doc.text('name:ram transport \nemail:email@gmail.com \nmobilenumber:7222082282 \naddress:106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP \nreportname:Vehicle Scheduled Summary \ndate:4/20/2023 \ndate_From : 4/20/2023 to : 4/20/2023 ', 10, 10);
-
- doc.autoTable({ html:"#my-table",
-
- theme:'grid',
- margin: { top: 50 },
-
-})
- // Save the PDF document
- doc.save('data-report.pdf');
-}
+  const downloadPDF = () =>{
+    const capture = document.querySelector('#loading');
+    setLoader(true);
+    html2canvas(capture).then((canvas)=>{
+      const imgData = canvas.toDataURL('img/png');
+      const doc = new jsPDF('p', 'mm', 'a4');
+      const componentWidth = doc.internal.pageSize.getWidth();
+      const componentHeight = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+      setLoader(false);
+      doc.save('receipt.pdf');
+    })
+  }
 
   return (
     <div className="py-10">
@@ -44,13 +45,13 @@ const Loadingslip = () => {
         data={data}
         
   /> */}
-      <button onClick={exportPDF}>Export to PDF</button>
+      {/* <button onClick={downloadPDF}>Export to PDF</button> */}
 
 
 
-      <div >
+      <div ref={conponentPDF} id="loading" className=" p-2" >
       
-      <div ref={conponentPDF}  className=" w-[100%] sm:w-[80%] m-auto py-10">
+      <div   className=" bg-no-repeat bg-center  w-[100%] sm:w-[30%] m-auto py-10">
 
       {/* <table id='my-table'> */}
         <h1 className=" text-center text-base font-semibold sm:font-bold sm:text-3xl sm:text-center">
@@ -178,12 +179,26 @@ const Loadingslip = () => {
               <div className="w-1/2 "></div>
             </div>
           </div>
-          <div className="absolute top-60 left-32 sm:top-40 w-40 sm:w-96 sm:left-96 opacity-10">
-            <img className="w-full" src="transduniyalogo.png" alt="" />
+          <div    style={{
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        opacity: '0.5',
+        fontSize: '48px',
+        color: 'red',
+        transform: 'rotate(0deg)',
+        pointerEvents: 'none',
+      }}>
+            <img className="w-60 " src="transduniyalogo.png" alt="" />
           </div>
         </div>
         <h1 className="text-end text-xs">
-          Powered by : www.transduniya.com-97553-22022{" "}
+          Powered by : www.transduniya.com-97553-22022
         </h1>
         {/* </table> */}
         </div>
@@ -193,7 +208,7 @@ const Loadingslip = () => {
       <div className="m-auto w-full text-center">
         <button
           className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "
-          onClick={generatePDF}
+          onClick={downloadPDF}
         >
           Download
         </button>{" "}

@@ -23,7 +23,7 @@
   
   @page cover {
     margin: 0;
-    /* background: url("images/cover.jpg"); */
+    background: red;
     background-position: center;
     background-size: 104%;
     background-repeat: no-repeat;
@@ -160,3 +160,4 @@
   
   
   /* flexbox */
+ 

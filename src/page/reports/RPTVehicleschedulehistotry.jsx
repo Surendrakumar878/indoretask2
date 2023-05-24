@@ -5,7 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const Vehicleschedulehistotry = () => {
+const RPTVehicleschedulehistotry = () => {
     
 
     const [data,setDate]=useState({
@@ -112,9 +112,23 @@ const Vehicleschedulehistotry = () => {
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute w-40 top-40 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
+                    <div    style={{
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        opacity: '0.5',
+        fontSize: '48px',
+        color: 'red',
+        transform: 'rotate(0deg)',
+        pointerEvents: 'none',
+      }}>
 
-<img className="w-full" src="transduniyalogo.png" alt="" />
+<img className="w-40" src="transduniyalogo.png" alt="" />
 
 </div>
 </div>
@@ -130,4 +144,4 @@ const Vehicleschedulehistotry = () => {
   )
 }
 
-export default Vehicleschedulehistotry
+export default RPTVehicleschedulehistotry

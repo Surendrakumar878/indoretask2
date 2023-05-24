@@ -388,13 +388,13 @@ const Vehicle_owner_documents = () => {
             </div>
             <div className="text-center flex gap-4 justify-center">
               <button
-                className="btn btn-success bg-blue-400 py-3 px-2 w-44 text-xl mt-10 rounded-lg text-white "
+                className="btn btn-success bg-[#151B54] py-3 px-2 w-44 text-xl mt-10 rounded-lg text-white "
                 onClick={handleClick1}
               >
                 Download{" "}
               </button>
               <button
-                className="btn text-center btn-success bg-blue-400 py-3 px-2 w-28 text-xl mt-10 rounded-lg text-white "
+                className="btn text-center btn-success bg-[#151B54] py-3 px-2 w-28 text-xl mt-10 rounded-lg text-white "
                 onClick={generatePDF}
               >
                 Print
@@ -446,14 +446,14 @@ const Vehicle_owner_documents = () => {
             </div>
             <div className="text-center flex gap-4 justify-center">
               <button
-                className="btn btn-success bg-blue-400 py-3 px-2 w-28 text-xl mt-10 rounded-lg text-white "
+                className="btn btn-success bg-[#151B54] py-3 px-2 w-28 text-xl mt-10 rounded-lg text-white "
                 onClick={generatePDF}
               >
                 Print
               </button>
 
               <button
-                className="btn btn-success bg-blue-400 py-3 px-2 w-44 text-xl mt-10 rounded-lg text-white "
+                className="btn btn-success bg-[#151B54] py-3 px-2 w-44 text-xl mt-10 rounded-lg text-white "
                 onClick={() => handleClick(view)}
               >
                 Download{" "}

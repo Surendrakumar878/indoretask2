@@ -8,7 +8,7 @@ import { Col, DatePicker, Form, Input, Row, Select } from "antd";
 import { Option } from "antd/es/mentions";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const Vehicle_View = () => {
+const RPTVehicle_View = () => {
   const conponentPDF = useRef();
   const [userData, setUserdata] = useState([]);
 
@@ -131,4 +131,4 @@ const Vehicle_View = () => {
   );
 };
 
-export default Vehicle_View;
+export default RPTVehicle_View;

@@ -21,7 +21,7 @@ import { Link, useNavigate } from "react-router-dom";
 import v from "./contractentry.module.css";
 const { Option } = Select;
 // import LoadingButton from "@mui/lab/LoadingButton";
-const Contract_Entry = () => {
+const FRMContract_Entry = () => {
   const { RangePicker } = DatePicker;
   function onChange(value, dateString) {
     console.log("Selected Time: ", value);
@@ -87,7 +87,7 @@ const Contract_Entry = () => {
   return (
     <>
       <div className="flex flex-col gap-4 bg-white mb-10">
-        <h2 id={v.heading}>Contract Entry</h2>
+        <h2 id={v.heading}>FRMContract_Entry Entry</h2>
         <div className={v.mainForm}>
           <Card hoverable bodyStyle={{ padding: "0" }}>
             {/* <Button onClick={welcom}> save</Button> */}
@@ -660,5 +660,5 @@ const Contract_Entry = () => {
     </>
   );
 };
-export default Contract_Entry;
+export default FRMContract_Entry;
 // advanc %

@@ -2,14 +2,14 @@ import { Button, Input, Form, Row, Radio, Col, Upload, Card, Select,  DatePicker
 import { React, useState } from "react";
 
 import { UploadOutlined } from '@ant-design/icons';
-import './Register.css'
+// import './Register.css'
 
 import TextArea from 'antd/es/input/TextArea';
 import n from "./Notification.module.css"
 import { Option } from 'antd/es/mentions';
 
 
-const Notification = () => {
+const FRMNotification = () => {
  
   const [verfied, setVerifed] = useState(false);
  
@@ -132,7 +132,7 @@ const Notification = () => {
           <Form layout="vertical" autoComplete="off" onFinish={saveData} >
 
 
-            <h3 className={n.card_menu}>Notification Type</h3>
+            <h3 className={n.card_menu}>FRMNotification Type</h3>
             <Form.Item name="type_id"
               rules={[
                 {
@@ -402,4 +402,4 @@ const Notification = () => {
 
   )
 };
-export default Notification;
+export default FRMNotification;

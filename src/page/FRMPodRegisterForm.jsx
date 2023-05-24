@@ -20,7 +20,7 @@ import { UploadOutlined } from "@ant-design/icons";
 import v from "../components/Vehicleform.module.css";
 const { Option } = Select;
 // import LoadingButton from "@mui/lab/LoadingButton";
-const PodRegisterForm = () => {
+const FRMPodRegisterForm = () => {
   const { RangePicker } = DatePicker;
   function onChange(value, dateString) {
     console.log("Selected Time: ", value);
@@ -777,5 +777,5 @@ const PodRegisterForm = () => {
     </>
   );
 };
-export default PodRegisterForm;
+export default FRMPodRegisterForm;
 

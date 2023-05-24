@@ -138,14 +138,14 @@ const NotificationView = () => {
       <div className='w-[98%] m-auto'>
 {/* <Report data={"example"}/> */}
 <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Notification View </div> 
-    <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-1 gap-2 px-5 text-[8px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-2' >
+    <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-1 gap-2 px-5 text-[11px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4 md:grid md:grid-cols-3 md:gap-2' >
 
  
     {[1,2,3,4,5,6,6,8].map((e)=>(<div className="w-full mx-auto bg-white rounded-md  shadow-2xl border-collapse border overflow-hidden md:max-w-2xl">
       <div className="">
         <div className="">
           {/* <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div> */}
-      <p className=' bg-blue-900  p-1 text-white text-center font-bold'>Notification id: 3654325 </p>
+      <p className=' bg-blue-900  p-1 text-white text-center font-extrabold'>Notification id: 3654325 </p>
       <div className="p-2">
       <p>Notification Date/Time:</p>
       <p> Notification Type : </p>

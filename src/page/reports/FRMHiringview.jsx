@@ -7,7 +7,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import { Input ,Row,Col, Radio } from "antd";
 import schedule from "./scheduleview.module.css"
-const Hiringview = () => {
+const FRMHiringview = () => {
     const [data,setDate]=useState([])
     const conponentPDF= useRef();
     const [userData, setUserdata]= useState([]);
@@ -134,4 +134,4 @@ useEffect(()=>{
     )
 }
 
-export default Hiringview
+export default FRMHiringview

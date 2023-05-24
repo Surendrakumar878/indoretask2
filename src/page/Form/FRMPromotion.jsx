@@ -19,13 +19,13 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Link, useNavigate } from "react-router-dom";
 // import { Empregister, GetCountryName, GetStateName, GetCityName, RegisterationNumberValidationName } from '../../../services/Services'
 import { UploadOutlined } from "@ant-design/icons";
-import "./Register.css";
+// import "./Register.css";
 // import logo from '../../../assets/image/transduniyalogofinal.png'
 import TextArea from "antd/es/input/TextArea";
 import n from "./Promotion.module.css";
 const { Option } = Select;
 
-const Promotion = () => {
+const FRMPromotion = () => {
   const navigate = useNavigate();
   const [verfied, setVerifed] = useState(false);
 
@@ -125,8 +125,8 @@ const Promotion = () => {
 
   return (
     <>
-      <h2 id={n.heading}>Promotion by Admin</h2>
-      <div className="mainForm">
+      <h2 id={n.heading}>FRMPromotion by Admin</h2>
+      <div className={n.mainForm}>
         <Card hoverable bodyStyle={{ padding: "0" }}>
           <Form layout="vertical" autoComplete="off" onFinish={saveData}>
             <h3 className={n.card_menu}>Promotion Type</h3>
@@ -396,4 +396,4 @@ const Promotion = () => {
     </>
   );
 };
-export default Promotion;
+export default FRMPromotion;
