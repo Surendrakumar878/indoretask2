@@ -37,6 +37,8 @@ import RPTVehicleHireHistory from "./page/reports/RPTVehicleHireHistory";
 import RPTVehiclescheduledsummary from "./page/RPTVehiclescheduledsummary";
 import RPTNotificationReport from "./page/reports/RPTNotificationReport";
 import RPTPromotionReport from "./page/reports/RPTPromotionReport";
+import Dropdownd from "./components/Dropdownd";
+import RPTreport from "./page/reports/RPTreport";
 
 // create a new preview
 
@@ -74,6 +76,7 @@ function App() {
         <Route path="/RPTNotificationReport" element={<RPTNotificationReport />}></Route>
         <Route path="/RPTPromotionReport" element={<RPTPromotionReport/>}></Route>
         <Route path="/RPTPrivacypolicy" element={<Privacypolicy />}></Route>
+        <Route path="/RPTreport" element={<RPTreport />}></Route>
 {/* from */}
         
         <Route path="/FRMPodRegisterForm" element={<FRMPodRegisterForm />}></Route>
@@ -92,6 +95,7 @@ function App() {
         <Route path="/FRMVehicleDemandAgent" element={<FRMVehicleDemandAgent />}></Route>
         <Route path="/FRMVehicleViewAgent" element={<FRMVehicleViewAgent />}></Route>
         <Route path="/FRMGPSView" element={<FRMGPSView />}></Route>
+        <Route path="/Dropdownd" element={<Dropdownd />}></Route>
       </Routes>
     </div>
   );

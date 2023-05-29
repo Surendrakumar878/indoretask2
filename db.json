@@ -43,12 +43,14 @@
       "owner_name": "java"
     }
   ],
+
+
   "booking": [
     {
       "id": 1,
       "booking_id": 34234,
       "booking_no": "12302",
-      "booking_date": "10/05/2020",
+      "booking_date": "2023-05-25T00:59",
       "vehicle_no": "12302",
       "from": "bhopal",
       "to": "indore",
@@ -58,7 +60,7 @@
       "id": 2,
       "booking_id": 34234,
       "booking_no": "12302",
-      "booking_date": "10/05/2020",
+      "booking_date": "2023-05-25T00:59",
       "vehicle_no": "12302",
       "from": "bhopal",
       "to": "indore",
@@ -68,7 +70,7 @@
       "id": 3,
       "booking_id": 34234,
       "booking_no": "12302",
-      "booking_date": "10/05/2020",
+      "booking_date": "2023-05-25T00:59",
       "vehicle_no": "12302",
       "from": "bhopal",
       "to": "indore",
@@ -79,7 +81,7 @@
       "vehicle_id": 6536456,
       "booking_id": 34234,
       "booking_no": "12302",
-      "booking_date": "10/05/2020",
+      "booking_date": "2023-05-25T00:59",
       "vehicle_no": "12302",
       "from": "bhopal",
       "to": "indore",
@@ -89,7 +91,254 @@
       "id": 5,
       "booking_id": 34234,
       "booking_no": "12302",
-      "booking_date": "10/05/2020",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 6,
+      "vehicle_id": 534535,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-13",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 1,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 2,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 3,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 4,
+      "vehicle_id": 6536456,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 5,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 6,
+      "vehicle_id": 534535,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-13",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 1,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 2,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 3,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 4,
+      "vehicle_id": 6536456,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 5,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 6,
+      "vehicle_id": 534535,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-13",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    }
+    ,{
+      "id": 1,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 2,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 3,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 4,
+      "vehicle_id": 6536456,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 5,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:59",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 6,
+      "vehicle_id": 534535,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-13",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },{
+      "id": 1,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:54",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 2,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:53",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 3,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:51",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 4,
+      "vehicle_id": 6536456,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:52",
+      "vehicle_no": "12302",
+      "from": "bhopal",
+      "to": "indore",
+      "vehicle_type": "abcde"
+    },
+    {
+      "id": 5,
+      "booking_id": 34234,
+      "booking_no": "12302",
+      "booking_date": "2023-05-25T00:50",
       "vehicle_no": "12302",
       "from": "bhopal",
       "to": "indore",
@@ -107,6 +356,12 @@
       "vehicle_type": "abcde"
     }
   ],
+
+
+
+
+
+
   "pod": [
     {
       "id": 1,
@@ -177,6 +432,8 @@
   ],
 
 
+
+
   "status": [
     {
       "id": 1,
@@ -245,8 +502,74 @@
       "freight_slip_date": "2023-05-13"
     }
   ],
+
+
+
   "hire":[
     {
+    "id":1,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:44",
+    "vehicle_no":"12321",
+    "hire_owner_name":"abc",
+    "trip_status":1
+  },
+  {
+    "id":2,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:00",
+    "vehicle_no":"12322",
+    "hire_owner_name":"abcd",
+    "trip_status":0
+  },
+  {
+    "id":1,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:44",
+    "vehicle_no":"12321",
+    "hire_owner_name":"abc",
+    "trip_status":1
+  },
+  {
+    "id":2,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:00",
+    "vehicle_no":"12322",
+    "hire_owner_name":"abcd",
+    "trip_status":0
+  },
+  {
+    "id":1,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:44",
+    "vehicle_no":"12321",
+    "hire_owner_name":"abc",
+    "trip_status":1
+  },
+  {
+    "id":2,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:00",
+    "vehicle_no":"12322",
+    "hire_owner_name":"abcd",
+    "trip_status":0
+  }
+  , {
+    "id":1,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:44",
+    "vehicle_no":"12321",
+    "hire_owner_name":"abc",
+    "trip_status":1
+  },
+  {
+    "id":2,
+    "hire_id":"2",
+    "hire_date_time":"2023-05-21T15:00",
+    "vehicle_no":"12322",
+    "hire_owner_name":"abcd",
+    "trip_status":0
+  }, {
     "id":1,
     "hire_id":"2",
     "hire_date_time":"2023-05-21T15:44",

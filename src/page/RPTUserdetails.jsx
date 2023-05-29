@@ -1,11 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
 const RPTUserdetails = () => {
+
+    let [searchParams, setSearchParams] = useSearchParams();
+  let [query, setQuery] = React.useState(
+    searchParams.getAll("query")
+  );
+  console.log(query)
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",

@@ -141,13 +141,12 @@ const FRMVehicleDemandAgent = () => {
                   style={{  width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
-                  <DatePicker
-                    className="w-full"
-                    showTime
-                    placeholder="Enq date"
-                    onChange={onChange}
-                    onOk={onOk}
-                  />
+                  <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                   {/* </Tooltip> */}
                 </Form.Item>
@@ -171,13 +170,12 @@ const FRMVehicleDemandAgent = () => {
                   style={{  width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
-                  <DatePicker
-                    className="w-full"
-                    showTime
-                    placeholder="Vehicle required date"
-                    onChange={onChange}
-                    onOk={onOk}
-                  />
+                  <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                   {/* </Tooltip> */}
                 </Form.Item>
@@ -189,7 +187,7 @@ const FRMVehicleDemandAgent = () => {
               <h3 className={v.card_menu}> VEHICLE DETAILS</h3>
             
               <Row>
-              <Col className="select_option_col">
+              <Col className={v.select_option_col}>
                   <Form.Item
                     name="vehicle_type"
                     label={

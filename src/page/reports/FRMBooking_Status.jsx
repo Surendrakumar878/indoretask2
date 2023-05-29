@@ -4,6 +4,7 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 import { DatePicker } from "antd";
+import ReactPaginate from "react-paginate";
 
 const FRMBooking_Status = () => {
     
@@ -26,7 +27,7 @@ const FRMBooking_Status = () => {
         const registerUserdata= async()=>{
             axios.get("http://localhost:3004/booking")  
             .then(res=>{setUserdata(res.data)
-                setDate(res.data)} )
+                setDate(res.data.slice(0,100))} )
             .catch(error=>console.log(error)); 
             
         }
@@ -71,6 +72,14 @@ const FRMBooking_Status = () => {
    
     console.log(userData)
     console.log(booking_date)
+    const [pagenumber, setPagenumber]= useState(0);
+    const perpage=10;
+    const pageclick= pagenumber*perpage;
+    const countpage= Math.ceil(data.length/perpage);
+   console.log(countpage)
+    const changePage=({selected})=>{
+      setPagenumber(selected);
+    }
     return (
         <div>
      <React.Fragment>
@@ -101,21 +110,21 @@ const FRMBooking_Status = () => {
                 
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Booking date :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
+             <input max="2099-12-25T23:59"  className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
            
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Pod Date :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Pod Date" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
+             <input max="2099-12-25T23:59" className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Pod Date" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
                 </div>
                 
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Loading Date :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Loading Date" value={loading_date} onChange={(e)=>setloading_date(e.target.value)} />
+             <input  max="2099-12-25T23:59"className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Loading Date" value={loading_date} onChange={(e)=>setloading_date(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Freight Slip  Date:  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Freight Slip  Date:" value={freight_slip_date} onChange={(e)=>setfreight_slip_date(e.target.value)} />
+             <input max="2099-12-25T23:59" className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Freight Slip  Date:" value={freight_slip_date} onChange={(e)=>setfreight_slip_date(e.target.value)} />
                 </div>
                     </div>
                     <table className=" w-full " >
@@ -136,7 +145,7 @@ const FRMBooking_Status = () => {
                         </thead>
                         <tbody>
                             {
-                                data.map( (uData, index)=>(
+                                  data.slice(pageclick, pageclick + perpage).map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{index+1}</td>
                                 <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_no}</td>
@@ -163,8 +172,33 @@ const FRMBooking_Status = () => {
                         </tbody>                        
                     </table>         
                    
-</div>
+                    <div     className="flex gap-4 m-auto text-center items-center  justify-center my-4  "  >
+                    <ReactPaginate
+                
+                previousLable={"Previous"}
+                nextLable={"Next"}
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                pageCount= { countpage}
+                onPageChange={ changePage}
+                containerClassName={"pagination"}
+              //   previousLinkClassName={"previousBttn"}
+              //   nextLinkClassName={"nextBttn"}
+                activeClassName={"active"}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+              //   disabledClassName={"paginationDisabled"}
 
+              /> 
+</div>
+</div>
 </div> 
 
                     </div>

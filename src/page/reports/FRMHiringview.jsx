@@ -7,6 +7,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import { Input ,Row,Col, Radio } from "antd";
 import schedule from "./scheduleview.module.css"
+import ReactPaginate from "react-paginate";
 const FRMHiringview = () => {
     const [data,setDate]=useState([])
     const conponentPDF= useRef();
@@ -28,8 +29,8 @@ const FRMHiringview = () => {
     useEffect( ()=>{
         const registerUserdata= async()=>{
             axios.get("http://localhost:3004/hire")  
-            .then(res=>{setUserdata(res.data)
-                setDate(res.data)} )
+            .then(res=>{setUserdata(res.data.slice(0,100))
+                setDate(res.data.slice(0,100))} )
             .catch(error=>console.log(error)); 
             
         }
@@ -60,6 +61,15 @@ useEffect(()=>{
       settrip_status(e.target.value);
     };
   console.log(hire_date_time)
+
+  const [pagenumber, setPagenumber]= useState(0);
+  const perpage=10;
+  const pageclick= pagenumber*perpage;
+  const countpage= Math.ceil(data.length/perpage);
+ console.log(countpage)
+  const changePage=({selected})=>{
+    setPagenumber(selected);
+  }
     return (
         <div>
 
@@ -68,7 +78,7 @@ useEffect(()=>{
    <Row >
    <Col className={schedule.select_option_col} >
      <label   style={{paddingLeft:"10px"}}>HIRE TIME/DATE </label><br/>
-     <input value={hire_date_time} onChange={(e)=>sethire_date_time(e.target.value)} class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+     <input max="2099-12-25T23:59" value={hire_date_time} onChange={(e)=>sethire_date_time(e.target.value)} class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
 
       
@@ -111,8 +121,8 @@ useEffect(()=>{
     {/* <th id={schedule.transaction_boder}>HIRE BY </th> */}
     <th id={schedule.transaction_boder}>ACTION</th>
   </tr> 
-  {data.map((items ,index)=>(
-  <tr> 
+  {  data.slice().map((items ,index)=>(
+  <tr  key={index}> 
     <td id={schedule.transaction_boder}>{index+1}</td>
     <td id={schedule.transaction_boder}>{items.hire_id}</td>
     <td id={schedule.transaction_boder}>{items.hire_date_time}</td>
@@ -126,6 +136,33 @@ useEffect(()=>{
   ))}
  
 </table>
+           
+<div     className="flex gap-4 m-auto text-center items-center  justify-center my-4  "  >
+                    <ReactPaginate
+                
+                previousLable={"Previous"}
+                nextLable={"Next"}
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                pageCount= { countpage}
+                onPageChange={ changePage}
+                containerClassName={"pagination"}
+              //   previousLinkClassName={"previousBttn"}
+              //   nextLinkClassName={"nextBttn"}
+                activeClassName={"active"}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+              //   disabledClassName={"paginationDisabled"}
+
+              /> 
+</div>
     </div>
 
 

@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 // import Report from "react-data-report"
 // import schedule from "../page/reports/scheduleview.module.css"
 import axios from 'axios'
+import ReactPaginate from 'react-paginate'
 const FRMVehicle_View_Agent = () => {
   const [data,setData]=useState([])
   const conponentPDF= useRef();
@@ -21,7 +22,7 @@ const FRMVehicle_View_Agent = () => {
         const registerUserdata= async()=>{
             axios.get("http://localhost:3004/vehicle")  
             .then(res=>{setUserdata(res.data)
-                setData(res.data)} )
+                setData(res.data.slice(0,100))} )
             .catch(error=>console.log(error)); 
             
         }
@@ -60,6 +61,15 @@ useEffect(()=>{
   setData(userData.filter((res)=>res.vehicle_capacity.includes(vehicle_capacity)))
 
 },[vehicle_capacity])
+
+const [pagenumber, setPagenumber]= useState(0);
+const perpage=10;
+const pageclick= pagenumber*perpage;
+const countpage= Math.ceil(data.length/perpage);
+console.log(countpage)
+const changePage=({selected})=>{
+  setPagenumber(selected);
+}
   return (
 
     <div className='w-[98%] m-auto'>
@@ -218,6 +228,34 @@ useEffect(()=>{
     
       
     </div>
+
+               
+    <div     className="flex gap-4 m-auto text-center items-center  justify-center my-4  "  >
+                    <ReactPaginate
+                
+                previousLable={"Previous"}
+                nextLable={"Next"}
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                pageCount= { countpage}
+                onPageChange={ changePage}
+                containerClassName={"pagination"}
+              //   previousLinkClassName={"previousBttn"}
+              //   nextLinkClassName={"nextBttn"}
+                activeClassName={"active"}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+              //   disabledClassName={"paginationDisabled"}
+
+              /> 
+</div>
     </div>
   )
 }

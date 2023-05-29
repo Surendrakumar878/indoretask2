@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
+import ReactPaginate from "react-paginate";
 
 const FRMMaster_Vehicle_View = () => {
     
@@ -12,12 +13,12 @@ const FRMMaster_Vehicle_View = () => {
     const [userData, setUserdata]= useState([]);
     const [vehicle,setVehicle]=useState()
     const [owner,setOwner]=useState("")
-    console.log(vehicle)
+    
     useEffect( ()=>{
         const registerUserdata= async()=>{
             axios.get("http://localhost:3004/reports")  
             .then(res=>{setUserdata(res.data)
-                setDate(res.data)} )
+                setDate(res.data.slice(0,100))} )
             .catch(error=>console.log(error)); 
             
         }
@@ -47,20 +48,25 @@ useEffect(()=>{
     //  const data2=userData.filter((res)=>res.vehicle_no.slice(0,1)==owner||res.vehicle_no.slice(0,2)==owner||res.vehicle_no.slice(0,3)==owner||res.vehicle_no.slice(0,4)==owner||res.vehicle_no==owner)
     
     console.log(data)
+    const [pagenumber, setPagenumber]= useState(0);
+    const perpage=10;
+    const pageclick= pagenumber*perpage;
+    console.log(pageclick)
+    const countpage= Math.ceil(data.length/perpage);
+   console.log(countpage)
+    const changePage=({selected})=>{
+      setPagenumber(selected);
+    }
     return (
         <div>
      <React.Fragment>
             <div className=" sm:w-[99%]  sm:m-auto ">
                 <div className="">
                     <div className="">
-                      
-                    
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full    border-black ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> FRMMaster Vehicle View  </div> 
                     <div className="  pb-2">
-
                     <div className="flex gap-2 px-10 py-3">
-
                     <div>
                         <label className=" text-[10px] sm:text-base " >Vehicle No :  </label>
              <input className="border border-collapse px-1 text-[10px] sm:text-base" type="number" placeholder="Search by Vehicle" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
@@ -79,21 +85,24 @@ useEffect(()=>{
                             <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No</th>
                             <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Type </th>
                             <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Name</th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Action</th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No</th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No</th>
+                           <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Action</th>
                             
                             </tr>  
                         </thead>
                         <tbody>
                             {
-                                data.map( (uData, index)=>(
+                                data?.slice(pageclick, pageclick + perpage).map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_id}</td>
                                 <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_no}</td>
                                 <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_type}</td>
-                                <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.owner_name}</td>
-                                
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300"> 
+                                <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_no}</td>
+                               <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_no}</td>
+                                <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_no}</td>
+                               <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300"> 
                                 
                                 <div className="  m-auto">
 
@@ -106,7 +115,34 @@ useEffect(()=>{
                             </tr>
                             )) }
                         </tbody>                        
-                    </table>         
+                    </table>    
+                               
+                    <div     className="flex gap-4 m-auto text-center items-center  justify-center my-4  "  >
+                    <ReactPaginate
+                
+                previousLable={"Previous"}
+                nextLable={"Next"}
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                pageCount= {countpage}
+                onPageChange={ changePage}
+                containerClassName={"pagination"}
+              //   previousLinkClassName={"previousBttn"}
+              //   nextLinkClassName={"nextBttn"}
+                activeClassName={"active"}
+                marginPagesDisplayed={1}
+                pageRangeDisplayed={5}
+              //   disabledClassName={"paginationDisabled"}
+
+              /> 
+</div>     
                     
 </div>
 

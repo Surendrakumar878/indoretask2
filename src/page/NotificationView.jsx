@@ -152,7 +152,7 @@ const NotificationView = () => {
       {/* <p>  Message: </p> */}
       <div className='m-auto w-10'>
 
-      <button className="text-center bg-orange-500  sm:px-[1px] w-7 sm:w-10 text-[6px] rounded-sm p-[1px]  sm:p-[1px]  sm:text-[10px] sm:rounded-sm text-white "   onClick={() => showModal("greentex")} >View</button>
+      <button className="text-center bg-orange-500  sm:px-[1px] w-8 sm:w-10 text-[7px] font-extrabold rounded-sm p-[1px]  sm:p-[1px]  sm:text-[10px] sm:rounded-sm text-white "   onClick={() => showModal("greentex")} >View</button>
       </div>
       {/* <img src="viewdetail.jpg" className='w-28 lg:w-40 sm:w-40 m-auto rounded-lg border' alt=""  onClick={() => showModal("greentex")}   /> */}
       </div>

@@ -207,13 +207,12 @@ const FRMPodRegisterForm = () => {
                     style={{ width: "96%" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
-                    <DatePicker
-                      className="w-full"
-                      showTime
-                      placeholder="POD DATE"
-                      onChange={onChange}
-                      onOk={onOk}
-                    />
+                    <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                     {/* </Tooltip> */}
                   </Form.Item>
@@ -281,13 +280,12 @@ const FRMPodRegisterForm = () => {
                     style={{ width: "96%" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
-                    <DatePicker
-                      className="w-full"
-                      showTime
-                      placeholder="booking date"
-                      onChange={onChange}
-                      onOk={onOk}
-                    />
+                    <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                     {/* </Tooltip> */}
                   </Form.Item>
@@ -477,13 +475,12 @@ const FRMPodRegisterForm = () => {
                     style={{ width: "96%" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
-                    <DatePicker
-                      className="w-full"
-                      showTime
-                      placeholder="Reporting date"
-                      onChange={onChange}
-                      onOk={onOk}
-                    />
+                    <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                     {/* </Tooltip> */}
                   </Form.Item>
@@ -503,13 +500,12 @@ const FRMPodRegisterForm = () => {
                     style={{ width: "96%" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
-                    <DatePicker
-                      className="w-full"
-                      showTime
-                      placeholder="Unloading_date"
-                      onChange={onChange}
-                      onOk={onOk}
-                    />
+                    <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                     {/* </Tooltip> */}
                   </Form.Item>
@@ -669,10 +665,10 @@ const FRMPodRegisterForm = () => {
                   </Form.Item>
                 </Col>
               </Row>
-              <h3 className="card_menu">DOCUMENTS</h3>
+              <h3 className={v.card_menu}>DOCUMENTS</h3>
             <Row>
               {/* pod1 */}
-              <Col className="upload_col">
+              <Col className={v.upload_col}>
                 <Form.Item
                   name="pod1"
                   label={<label style={{ fontSize: "15px" }}> Pod1 </label>}
@@ -693,7 +689,7 @@ const FRMPodRegisterForm = () => {
                 </Form.Item>
               </Col>
               {/* pod2 */}
-              <Col className="upload_col">
+              <Col className={v.upload_col}>
                 <Form.Item
                   name="pod2"
                   label={<label style={{ fontSize: "15px" }}>Pod2</label>}
@@ -714,7 +710,7 @@ const FRMPodRegisterForm = () => {
                 </Form.Item>
               </Col>
               {/* weight_slip */}
-              <Col className="upload_col">
+              <Col className={v.upload_col}>
                 <Form.Item
                   name="weight_slip1"
                   label={<label style={{ fontSize: "15px" }}>Weight slip1</label>}
@@ -735,7 +731,7 @@ const FRMPodRegisterForm = () => {
                 </Form.Item>
               </Col>
               {/* weight_slip2 */}
-              <Col className="upload_col">
+              <Col className={v.upload_col}>
                 <Form.Item
                   name="weight_slip2"
                   label={<label style={{ fontSize: "15px" }}>Weight Slip2</label>}

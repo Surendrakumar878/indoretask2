@@ -4,9 +4,12 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
-import { useReactToPrint } from "react-to-print";
+
 import { Input ,Row,Col, Radio, Button } from "antd";
 import schedule from "./scheduleview.module.css"
+import ReactPaginate from "react-paginate";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 const FRMScheduleView = () => {
     const [data,setDate]=useState([])
     const conponentPDF= useRef();
@@ -23,7 +26,7 @@ const FRMScheduleView = () => {
         const registerUserdata= async()=>{
             axios.get("http://localhost:3004/schd")  
             .then(res=>{setUserdata(res.data)
-                setDate(res.data)} )
+                setDate(res.data.slice(0,100))} )
             .catch(error=>console.log(error)); 
             
         }
@@ -53,10 +56,10 @@ useEffect(()=>{
       setDate(userData.filter((res) => res.hire_status===hire_status))
       
       const dd=userData.filter((res) => res.hire_status===hire_status)
-      onSubmit3(dd)
+    
   }, [hire_status])
 // console.log("dayat",data[0].vehicle_no)
-    const [value, setValue] = useState(1);
+    const [value, setValue] = useState(0);
     const onChange = (e) => {
       // e.prevntDefualt()
       e.preventDefault() 
@@ -65,35 +68,29 @@ useEffect(()=>{
     };
   // console.log("hire_status",data[0].vehicle_no)
 
-  const onSubmit1=(e)=>{
-     e.preventDefault() 
-const payload={vehicle,schd_date_time,hire_status,hire_date_time,hire_by}
-console.log(payload)
 
-  }
-  const onSubmit2=(e)=>{
-     e.preventDefault() 
-setVehicle()
-setschd_date_time("")
-sethire_status()
-sethire_date_time("")
-sethire_by()
-// console.log(payload)
+ 
 
-  }
-  const onSubmit3=(e)=>{
-    // e.preventDefault() 
-setVehicle(e[0]?.vehicle_no)
-setschd_date_time("")
-sethire_status(1)
-sethire_date_time("")
-sethire_by("1")
-// console.log(payload)
-
+ const [pagenumber, setPagenumber]= useState(0);
+ const perpage=10;
+ const pageclick= pagenumber*perpage;
+ const countpage= Math.ceil(data.length/perpage);
+console.log(countpage)
+ const changePage=({selected})=>{
+   setPagenumber(selected);
  }
-  
+ const [date1,setDate1]=useState(false)
+//  if(schd_date_time){
+
+//  }else{
+// setDate1(true)
+//  }
+
+ console.log(schd_date_time)
+ 
     return (
         <div>
+     
 
             <div className={schedule.scheduleview}>
               
@@ -107,13 +104,13 @@ sethire_by("1")
       </Col>
        <Col  className={schedule.select_option_col}>
        <label  style={{paddingLeft:"10px"}}>SCHD TIME/DATE:</label><br/>
-       <input  value={schd_date_time} onChange={(e)=>setschd_date_time(e.target.value)} class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+       <input max="2099-12-25T23:59"  value={schd_date_time} onChange={(e)=>setschd_date_time(e.target.value)} class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
 
       </Col>
       <Col  className={schedule.select_option_col}>
      <label   style={{paddingLeft:"10px"}}>HIRE DATE/DATE </label><br/>
-     <input value={hire_date_time} onChange={(e)=>sethire_date_time(e.target.value)} class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+     <input max="2099-12-25T23:59" value={hire_date_time} onChange={(e)=>sethire_date_time(e.target.value)} class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
 
       </Col>
@@ -149,7 +146,7 @@ sethire_by("1")
     <th id={schedule.transaction_boder}>HIRE BY </th>
     <th id={schedule.transaction_boder}>ACTION</th>
   </tr> 
-  {data.map((items ,index)=>(
+  {  data.slice(pageclick, pageclick + perpage).map((items ,index)=>(
   <tr> 
     <td id={schedule.transaction_boder}>{index+1}</td>
     <td id={schedule.transaction_boder}>{items.schd_id}</td>
@@ -164,6 +161,33 @@ sethire_by("1")
   ))}
  
 </table>
+<div     className="flex gap-4 m-auto text-center items-center  justify-center my-4  "  >
+                    <ReactPaginate
+                
+                previousLable={"Previous"}
+                nextLable={"Next"}
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                pageCount= { countpage}
+                onPageChange={ changePage}
+                containerClassName={"pagination"}
+              //   previousLinkClassName={"previousBttn"}
+              //   nextLinkClassName={"nextBttn"}
+                activeClassName={"active"}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+              //   disabledClassName={"paginationDisabled"}
+
+              /> 
+</div>
+
     </div>
 
 

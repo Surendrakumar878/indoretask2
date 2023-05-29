@@ -5,7 +5,8 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const RPTVehiclescheduledsummary = () => {
+const RPTVehiclescheduledsummary = ({dat}) => {
+console.log("dhvdv",dat)
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",
@@ -18,7 +19,7 @@ const RPTVehiclescheduledsummary = () => {
 
     })
         const conponentPDF= useRef();
-        const [userData, setUserdata]= useState([1,1,1,1]);
+        const [userData, setUserdata]= useState([1,1,1,1,2323,2323,2,33,3,3,3,33]);
       
         useEffect( ()=>{
             const registerUserdata= async()=>{

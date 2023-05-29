@@ -141,13 +141,19 @@ const FRMVehicleDemandOwner = () => {
                   style={{  width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
-                  <DatePicker
+                  {/* <DatePicker
                     className="w-full"
                     showTime
                     placeholder="Enq date"
                     onChange={onChange}
                     onOk={onOk}
-                  />
+                  /> */}
+                   <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                   {/* </Tooltip> */}
                 </Form.Item>
@@ -171,13 +177,12 @@ const FRMVehicleDemandOwner = () => {
                   style={{  width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
-                  <DatePicker
-                    className="w-full"
-                    showTime
-                    placeholder="Vehicle required date"
-                    onChange={onChange}
-                    onOk={onOk}
-                  />
+                  <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                   {/* </Tooltip> */}
                 </Form.Item>
@@ -189,7 +194,7 @@ const FRMVehicleDemandOwner = () => {
               <h3 className={v.card_menu}> VEHICLE DETAILS</h3>
             
               <Row>
-              <Col className="select_option_col">
+              <Col className={v.select_option_col}>
                   <Form.Item
                     name="vehicle_type"
                     label={
@@ -309,13 +314,17 @@ const FRMVehicleDemandOwner = () => {
                     hasFeedback
                   >
                     {/* <Tooltip title="Enter PIN Number"> */}
-                    <Input
-                      type="tel"
-                      onKeyPress={handlePhoneKeyPress}
-                      maxLength={7}
-                      tabIndex={3}
-                      placeholder="  Vehicle size "
-                    />
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder="Vehicle size"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
@@ -354,8 +363,17 @@ const FRMVehicleDemandOwner = () => {
                     hasFeedback
                   >
                     {/* <Tooltip title="Enter Email ID"> */}
-                    <Input placeholder="Vehicle Capacity" type="tel"
-                      onKeyPress={handlePhoneKeyPress} tabIndex={7} />
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder="Vehicle capacity"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>

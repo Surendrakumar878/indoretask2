@@ -125,7 +125,7 @@ const FRMNotification = () => {
   return (
     <>
       <h2 id={n.heading}>Notification By Admin</h2>
-      <div className='mainForm'>
+      <div className={n.mainForm}>
         
         <Card hoverable bodyStyle={{ padding: "0" }} >
         
@@ -198,13 +198,12 @@ const FRMNotification = () => {
                   style={{  width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
-                  <DatePicker
-                    className="w-full"
-                    showTime
-                    placeholder=" Time"
-                    onChange={onChange}
-                    // onOk={onOk}
-                  />
+                  <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                   {/* </Tooltip> */}
                 </Form.Item>
@@ -223,18 +222,17 @@ const FRMNotification = () => {
                   style={{  width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
-                  <DatePicker
-                    className="w-full"
-                    showTime
-                    placeholder=" Time"
-                    onChange={onChange}
-                    // onOk={onOk}
-                  />
+                  <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
 
                   {/* </Tooltip> */}
                 </Form.Item>
               </Col>
-              <Col className="select_option_col">
+              <Col className={n.select_option_col}>
                   <Form.Item
                     name="notification_type"
                     label={
@@ -292,9 +290,9 @@ const FRMNotification = () => {
           
             
 
-            <h3 className='card_menu'>DOCUMENTS</h3>
+            <h3 className={n.card_menu}>DOCUMENTS</h3>
             <Row>
-              <Col className='upload_col'>
+              <Col className={n.upload_col}>
                 <Form.Item
                   name="image1"
 
@@ -315,7 +313,7 @@ const FRMNotification = () => {
               </Col>
 
 
-              <Col className='upload_col'>
+              <Col className={n.upload_col}>
                 <Form.Item
                   name="image2"
                   label={<label style={{ fontSize: "15px" }}>Image2</label>}
@@ -335,7 +333,7 @@ const FRMNotification = () => {
                 </Form.Item>
               </Col>
 
-              <Col className='upload_col'>
+              <Col className={n.upload_col}>
                 <Form.Item
                   name="pdf1"
                   label={<label style={{ fontSize: "15px" }}>PDF1</label>}
@@ -354,7 +352,7 @@ const FRMNotification = () => {
                 </Form.Item>
               </Col>
 
-              <Col className='upload_col'>
+              <Col className={n.upload_col}>
                 <Form.Item
                   name="pdf2"
                   label={<label style={{ fontSize: "15px" }}>PDF2</label>}

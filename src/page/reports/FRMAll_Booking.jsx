@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
+import ReactPaginate from "react-paginate";
 
 const FRMAll_Booking = () => {
     
-
+    
     const [data,setDate]=useState([])
     const conponentPDF= useRef();
     const [userData, setUserdata]= useState([]);
@@ -20,8 +21,8 @@ const FRMAll_Booking = () => {
     useEffect( ()=>{
         const registerUserdata= async()=>{
             axios.get("http://localhost:3004/booking")  
-            .then(res=>{setUserdata(res.data)
-                setDate(res.data)} )
+            .then(res=>{setUserdata(res.data.slice(0,100))
+                setDate(res.data.slice(0,100))} )
             .catch(error=>console.log(error)); 
             
         }
@@ -30,16 +31,16 @@ const FRMAll_Booking = () => {
         // setDate(userData.filter((res)=>res.vehicle_no.slice(0,1)==vehicle||res.vehicle_no.slice(0,2)==vehicle||res.vehicle_no.slice(0,3)==vehicle||res.vehicle_no.slice(0,4)==vehicle||res.vehicle_no==vehicle||res.vehicle_no.includes(vehicle)))
     },[]);
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.vehicle_no.slice(0,1)==vehicle||res.vehicle_no.slice(0,2)==vehicle||res.vehicle_no.slice(0,3)==vehicle||res.vehicle_no.slice(0,4)==vehicle||res.vehicle_no==vehicle||res.vehicle_no.includes(vehicle)))
+        setDate(userData.filter((res)=>res.vehicle_no.includes(vehicle)))
     },[vehicle]);
 
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.from.slice(0,1)==from||res.from.slice(0,2)==from||res.from.slice(0,3)==from||res.from.slice(0,4)==from||res.from==from||res.from.includes(from)))
+        setDate(userData.filter((res)=>res.from.includes(from)))
    
     },[from])
 
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.booking_no.slice(0,1)==booking_no||res.booking_no.slice(0,2)==booking_no||res.booking_no.slice(0,3)==booking_no||res.booking_no.slice(0,4)==booking_no||res.booking_no==booking_no||res.booking_no.includes(booking_no)))
+        setDate(userData.filter((res)=>res.booking_no.includes(booking_no)))
    
     },[booking_no])
     useEffect(()=>{
@@ -68,7 +69,16 @@ const FRMAll_Booking = () => {
     //  const data2=userData.filter((res)=>res.vehicle_no.slice(0,1)==owner||res.vehicle_no.slice(0,2)==owner||res.vehicle_no.slice(0,3)==owner||res.vehicle_no.slice(0,4)==owner||res.vehicle_no==owner)
     
     console.log(booking_date)
-    
+   
+  
+  const [pagenumber, setPagenumber]= useState(0);
+  const perpage=10;
+  const pageclick= pagenumber*perpage;
+  const countpage= Math.ceil(data.length/perpage);
+ console.log(countpage)
+  const changePage=({selected})=>{
+    setPagenumber(selected);
+  }
     return (
         <div>
      <React.Fragment>
@@ -95,7 +105,7 @@ const FRMAll_Booking = () => {
                 
                 <div className="w-full">
                         <label className=" text-[10px] sm:text-base " >Booking date :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
+             <input max="2099-12-25T23:59" className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] sm:text-base " > From :  </label>
@@ -128,7 +138,7 @@ const FRMAll_Booking = () => {
                         </thead>
                         <tbody>
                             {
-                                data.map( (uData, index)=>(
+                                data.slice(pageclick, pageclick + perpage).map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_id}</td>
@@ -152,8 +162,33 @@ const FRMAll_Booking = () => {
                             </tr>
                             )) }
                         </tbody>                        
-                    </table>         
+                    </table>        
+                    <div     className="flex gap-4 m-auto text-center items-center  justify-center my-4  "  >
+                    <ReactPaginate
                 
+                      previousLable={"Previous"}
+                      nextLable={"Next"}
+                      pageClassName="page-item"
+                      pageLinkClassName="page-link"
+                      previousClassName="page-item"
+                      previousLinkClassName="page-link"
+                      nextClassName="page-item"
+                      nextLinkClassName="page-link"
+                      breakLabel="..."
+                      breakClassName="page-item"
+                      breakLinkClassName="page-link"
+                      pageCount= { countpage}
+                      onPageChange={ changePage}
+                      containerClassName={"pagination"}
+                    //   previousLinkClassName={"previousBttn"}
+                    //   nextLinkClassName={"nextBttn"}
+                      activeClassName={"active"}
+                      marginPagesDisplayed={2}
+                      pageRangeDisplayed={5}
+                    //   disabledClassName={"paginationDisabled"}
+
+                    /> 
+                     </div> 
 </div>
 
 
