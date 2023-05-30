@@ -39,6 +39,7 @@ import RPTNotificationReport from "./page/reports/RPTNotificationReport";
 import RPTPromotionReport from "./page/reports/RPTPromotionReport";
 import Dropdownd from "./components/Dropdownd";
 import RPTreport from "./page/reports/RPTreport";
+import DataCard from "./components/DataCard";
 
 // create a new preview
 
@@ -77,6 +78,7 @@ function App() {
         <Route path="/RPTPromotionReport" element={<RPTPromotionReport/>}></Route>
         <Route path="/RPTPrivacypolicy" element={<Privacypolicy />}></Route>
         <Route path="/RPTreport" element={<RPTreport />}></Route>
+        <Route path="/DataCard" element={<DataCard />}></Route>
 {/* from */}
         
         <Route path="/FRMPodRegisterForm" element={<FRMPodRegisterForm />}></Route>

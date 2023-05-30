@@ -35,6 +35,7 @@ const options = {
       <Link to="/RPTNotificationReport"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >RPTNotificationReport</button> </Link>
       <Link to="/RPTPromotionReport"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >RPTPromotionReport</button> </Link>
       <Link to="/RPTreport"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >RPTreport</button> </Link>
+      <Link to="/DataCard"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >DataCard</button> </Link>
    
     </div>
 <h1 className='text-center font-semibold text-3xl text-[#151B54] border-dotted border-[#151B54] border-2 my-2 w-[98%] m-auto' >  FROMS</h1>

@@ -561,11 +561,13 @@ const RPTVehicleHireHistory = () => {
                             <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Hire Id</th>
                             <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Hire Date</th>
                             <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Hire By</th>
-                            <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Company Contact No</th>
-                            <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Company Location  </th>
+                            <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Com Contact No</th>
+                            <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Com Location  </th>
                             <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">POD no </th>
                             <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Pod Date</th>
-                         
+                            <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From</th>
+                            <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To</th>
+                            <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Com Name</th>
                             </tr> 
                         </thead>
                         <tbody>
@@ -582,6 +584,9 @@ const RPTVehicleHireHistory = () => {
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.vehicle_no_scheduled}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.current_status}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.freight}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.from}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.to}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.com_name}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.freight}</td>
                                 <td>
                                     {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>

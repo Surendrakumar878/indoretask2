@@ -86,13 +86,15 @@ const RPTVehicleschedulehistotry = () => {
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No </th>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Schedule No</th>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Schedule Date</th>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Name</th>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Contact Number</th>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Lisence No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No </th>
-
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Name</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To</th>
                             </tr>  
                         </thead>
                         <tbody>
@@ -103,7 +105,9 @@ const RPTVehicleschedulehistotry = () => {
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
