@@ -5,8 +5,8 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const RPTUserdetails = () => {
-
+const RPTUserdetails = ({data1}) => {
+console.log(data1)
     let [searchParams, setSearchParams] = useSearchParams();
   let [query, setQuery] = React.useState(
     searchParams.getAll("query")
@@ -103,11 +103,11 @@ const RPTUserdetails = () => {
                         </thead>
                         <tbody>
                             {
-                                userData.map( (uData, index)=>(
+                                data1?.map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.username}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.booking_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registered_number}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.city}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.contact}</td>

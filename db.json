@@ -52,8 +52,8 @@
       "booking_no": "12302",
       "booking_date": "2023-05-25T00:59",
       "vehicle_no": "12302",
-      "from": "bhopal",
-      "to": "indore",
+      "from": "bhopal1",
+      "to": "indore1",
       "vehicle_type": "abcde"
     },
     {
@@ -62,7 +62,7 @@
       "booking_no": "12302",
       "booking_date": "2023-05-25T00:59",
       "vehicle_no": "12302",
-      "from": "bhopal",
+      "from": "bhopal2",
       "to": "indore",
       "vehicle_type": "abcde"
     },
@@ -73,7 +73,7 @@
       "booking_date": "2023-05-25T00:59",
       "vehicle_no": "12302",
       "from": "bhopal",
-      "to": "indore",
+      "to": "indore3",
       "vehicle_type": "abcde"
     },
     {
@@ -651,6 +651,34 @@
     "req_date_time":"2023-05-23T15:43",
     "contact_no":"8899776655",
     "req_by":"abc"
+  }
+],
+"Userdetails":[
+  {
+    "id":1,
+    "user_name":"chinnu",
+  "registered_number":"12304",
+  "booking_date":"12",
+  "vehicle_no":"",
+  "from":"",
+  "to":"",
+  "scheduled_date":"",
+  "owner_name":"chinnu2",
+  "promotion_type":"abcd",
+  "no_type":"abc"
+  },
+  {
+    "id":2,
+    "user_name":"munnu",
+  "registered_number":"12305",
+  "booking_date":"13",
+  "vehicle_no":"12",
+  "from":"bhopal",
+  "to":"indore",
+  "scheduled_date":"",
+  "owner_name":"chinnu1",
+  "promotion_type":"abc",
+  "no_type":"abcd"
   }
 ]
   

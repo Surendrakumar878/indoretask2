@@ -5,7 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const RPTOverallcurrentbalances = () => {
+const RPTOverallcurrentbalances = ({data1}) => {
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",
@@ -83,17 +83,21 @@ const RPTOverallcurrentbalances = () => {
                             <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
                             <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">User Id</th>
                             <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Username</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">rigister no</th>
+                           
                             <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Current Balance</th>
                             
                             </tr> 
                         </thead>
                         <tbody>
                             {
-                                userData.map( (uData, index)=>(
+                                data1.map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.username}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registred_number}</td>
+                                
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.current_balance}</td>
                                
                                 <td>

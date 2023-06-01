@@ -5,7 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const RPTNotificationReport = () => {
+const RPTNotificationReport = ({data1}) => {
   const [data, setDate] = useState({
     name: "ram transport",
     email: "email@gmail.com",
@@ -107,7 +107,7 @@ const RPTNotificationReport = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {userData.map((uData, index) => (
+                      {data1.map((uData, index) => (
                         <tr key={index}>
                           <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">
                             {index + 1}

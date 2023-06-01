@@ -427,7 +427,7 @@ const Apidata= [
               "freight_slip_date": "2023-05-13"
             }
   ]
-const RPTVehicleHireHistory = () => {
+const RPTVehicleHireHistory = ({data1}) => {
   const pageStyle = `@page { 
     size: auto;  margin: 0mm ; } @media print { body { -webkit-print-color-adjust: exact; } }
   @media print {
@@ -572,14 +572,14 @@ const RPTVehicleHireHistory = () => {
                         </thead>
                         <tbody>
                             {
-                                postdata
+                                data1
                                 // .slice(pageclick, pageclick + perpage)
                                 .map((datapost,index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.booking_no}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.username}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.user_name}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.registered_number}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.vehicle_no_scheduled}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{datapost.current_status}</td>

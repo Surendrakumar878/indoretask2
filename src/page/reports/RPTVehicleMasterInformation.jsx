@@ -5,7 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const RPTVehicleMasterInformation = () => {
+const RPTVehicleMasterInformation = ({data1}) => {
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",
@@ -98,10 +98,10 @@ const RPTVehicleMasterInformation = () => {
                         </thead>
                         <tbody>
                             {
-                                userData.map( (uData, index)=>(
+                                data1.map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{uData.vehicle_no}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-[8px] border border-slate-300">{index+1}</td>

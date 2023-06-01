@@ -8,7 +8,7 @@ import { Col, DatePicker, Form, Input, Row, Select } from "antd";
 import { Option } from "antd/es/mentions";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-const RPTDemandDetail = () => {
+const RPTDemandDetail = ({data1}) => {
   const conponentPDF = useRef();
   const [userData, setUserdata] = useState([]);
 
@@ -80,10 +80,10 @@ const RPTDemandDetail = () => {
                         <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Total Weight</th></tr>
                     </thead>
                     <tbody>
-                      {/* { */}
-                      {/* // userData.map( (uData, index)=>( */}
+                      {
+                      data1.map( (uData, index)=>(
                       <tr
-                      //  key={index}
+                       key={index}
                       >
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{1}</td>
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a."}</td>
@@ -98,9 +98,11 @@ const RPTDemandDetail = () => {
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.s_name"}</td>
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">ghj</td>
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">ghj
+</td> <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">ghj</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">ghj
 </td>
                       </tr>
-                      {/* )) } */}
+                       )) } 
                     </tbody>
                   </table>
                   <div    style={{

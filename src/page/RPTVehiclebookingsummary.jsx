@@ -6,7 +6,7 @@ import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 
 import 'jspdf-autotable';
-const RPTVehiclebookingsummary= () => {
+const RPTVehiclebookingsummary= ({data1}) => {
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",
@@ -98,13 +98,13 @@ const RPTVehiclebookingsummary= () => {
                         </thead>
                         <tbody>
                             {
-                                userData.map( (uData, index)=>(
+                                data1.map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.booking_date_time}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.username}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registerd_no}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registered_number}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_no_booked}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_owner_id}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_owner_name}</td>
