@@ -148,7 +148,7 @@ const Vehicle_owner_documents = () => {
         {" "}
         Vehicle / owner Documents{" "}
       </div>
-      <div className=" py-4  w-[60%] m-auto center">
+      <div className=" py-3 w-full sm:w-[60%] m-auto center">
         <Card
           className="w-[90%] m-auto shadow-lg"
           hoverable
@@ -167,7 +167,7 @@ const Vehicle_owner_documents = () => {
             </div>{" "}
           </div>
 
-          <div className="w-[96%] m-auto   flex flex-col gap-5">
+          <div className="w-[96%] m-auto   flex flex-col gap-2">
             <div>
               <div
                 className="w-80  m-auto
@@ -218,7 +218,7 @@ const Vehicle_owner_documents = () => {
 
           {/* vehicleducuments */}
 
-          <div className={`${v.card_menu} py-5 rounded-t-lg `}>
+          <div className={`${v.card_menu} py-2 rounded-t-lg `}>
             <div className="py-0">
               {" "}
               <img
@@ -230,7 +230,7 @@ const Vehicle_owner_documents = () => {
           </div>
 
           <div>
-            <div className="w-[96%] m-auto  flex-col flex gap-3 text-center  ">
+            <div className="w-[96%] m-auto  flex-col flex gap-2 text-center  ">
               <div>
                 <div
                   className="w-80  m-auto"

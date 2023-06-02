@@ -19,24 +19,14 @@ console.log("dhvdv",data1)
 
     })
         const conponentPDF= useRef();
-        const [userData, setUserdata]= useState([1,1,1,1,2323,2323,2,33,3,3,3,33]);
-      
-        useEffect( ()=>{
-            const registerUserdata= async()=>{
-             axios.get("http://localhost:4000/Vehicle")  
-             .then(res=>setUserdata(res.data.data) )
-             .catch(error=>console.log(error)); 
-    
-            }
-            registerUserdata();
-        },[]);
+       
     
         const generatePDF= useReactToPrint({
             content: ()=>conponentPDF.current,
             documentTitle:"Userdata",
             onAfterPrint:()=>alert("Data saved in PDF")
         });
-           console.log(userData)
+           
 
 
            const exportPDF = () => {
@@ -98,7 +88,7 @@ console.log("dhvdv",data1)
                                 data1?.map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.schedule_date_time}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.scheduled_date}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registered_number}</td>

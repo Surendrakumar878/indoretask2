@@ -37,6 +37,7 @@ const FRMView_Pod = () => {
     
     useEffect(()=>{
         setDate(userData.filter((res)=>res.vehicle_no.includes(vehicle)))
+        
     },[vehicle]);
     useEffect(()=>{
         setDate(userData.filter((res)=>res.pod_no.includes(pod_no)))
@@ -84,38 +85,38 @@ const FRMView_Pod = () => {
                       <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full    border-black ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> FRM View Pod  </div> 
                     <div className="  pb-2">
-                    <div className="m-auto sm:m-0 w-[90%] grid grid-cols-2 gap-2 px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
-                        <div  className="w-full">
-                        <label className=" text-[10px] lg:text-[11px] sm:text-base " >Vehicle No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Vehicle" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
+                    <div className="  m-auto  w-full pb-3 md:w-full md:grid md:grid-cols-5 md:gap-2 sm:w-[90%] sm:m-auto grid grid-cols-2 gap-1 px-1 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
+                        <div  className="w-full ">
+                        <label className=" text-[10px] lg:text-[11px] sm:text-base " >Vehicle No :  </label> <br />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Vehicle" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
                 </div>
                 <div  className="w-full">
-                        <label className=" text-[10px] lg:text-[11px] sm:text-base " >Pod No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by pod no" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
+                        <label className=" text-[10px] lg:text-[11px] sm:text-base " >Pod No :  </label><br />
+             <input className="border border-collapse p-1 text-[12px] w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by pod no" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
                 </div>
                 <div  className="w-full">
-                        <label className=" text-[10px] lg:text-[11px] sm:text-base " > Booking No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
+                        <label className=" text-[10px] lg:text-[11px] sm:text-base " > Booking No :  </label> <br />
+             <input className="border border-collapse p-1 text-[12px] w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
                 </div>
 
                 
                 <div  className="w-full">
-                        <label className=" text-[10px] lg:text-[11px] sm:text-base " >Booking date/time :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" max="2999-12-25T23:59" type="datetime-local" placeholder="Search by Vehicle" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
+                        <label className=" text-[10px] lg:text-[11px] sm:text-base " >Booking date/time :  </label> <br />
+             <input className="border border-collapse p-1 text-[12px] w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" max="2999-12-25T23:59" type="datetime-local" placeholder="Search by Vehicle" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
            
                 </div>
                 <div  className="w-full">
-                        <label className=" text-[10px] lg:text-[11px] sm:text-base " > Pod Date/time :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" max="2999-12-25T23:59" type="datetime-local" placeholder="Search by Name" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
+                        <label className=" text-[10px] lg:text-[11px] sm:text-base " > Pod Date/time :  </label> <br />
+             <input className="border border-collapse p-1 text-[12px] w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" max="2999-12-25T23:59" type="datetime-local" placeholder="Search by Name" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
                 </div>
                 
                 <div  className="w-full">
-                        <label className=" text-[10px] lg:text-[11px] sm:text-base " >Report Date/time :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" max="2999-12-25T23:59" type="datetime-local" placeholder="Search by Vehicle" value={report_date} onChange={(e)=>setReport_date(e.target.value)} />
+                        <label className=" text-[10px] lg:text-[11px] sm:text-base " >Report Date/time :  </label> <br />
+             <input className="border border-collapse p-1 text-[12px] w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" max="2999-12-25T23:59" type="datetime-local" placeholder="Search by Vehicle" value={report_date} onChange={(e)=>setReport_date(e.target.value)} />
                 </div>
                 <div>
-                        <label className=" text-[10px] lg:text-[11px] sm:text-base " > Unloading Date:  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Name" value={unloading_date} onChange={(e)=>setunloading_date(e.target.value)} />
+                        <label className=" text-[10px] lg:text-[11px] sm:text-base " > Unloading Date:  </label> <br />
+             <input className="border border-collapse p-1 text-[12px] w-44 sm:w-32 sm:text-xs rounded-sm" type="date" placeholder="Search by Name" value={unloading_date} onChange={(e)=>setunloading_date(e.target.value)} />
                 </div>
                     </div>
                     <table className=" w-full " >

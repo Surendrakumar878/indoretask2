@@ -79,12 +79,6 @@ console.log(countpage)
  const changePage=({selected})=>{
    setPagenumber(selected);
  }
- const [date1,setDate1]=useState(false)
-//  if(schd_date_time){
-
-//  }else{
-// setDate1(true)
-//  }
 
  console.log(schd_date_time)
  
