@@ -1,7 +1,4 @@
-import { Col, Input, Radio, Row } from 'antd'
 import React, { useEffect, useRef, useState } from 'react'
-// import Report from "react-data-report"
-// import schedule from "../page/reports/scheduleview.module.css"
 import axios from 'axios'
 import ReactPaginate from 'react-paginate'
 const FRMVehicle_View_Agent = () => {
@@ -32,28 +29,28 @@ const FRMVehicle_View_Agent = () => {
     },[]);
     
 useEffect(()=>{
-    setData(userData.filter((res)=>res.from.includes(from)))
+    setData(userData.filter((res)=>res.from.toLowerCase().includes(from.toLowerCase())))
     
 },[from])
     useEffect(()=>{
-        setData(userData.filter((res)=>res.to.includes(to)))
+        setData(userData.filter((res)=>res.to.toLowerCase().includes(to.toLowerCase())))
    
     },[to])
     useEffect(()=>{
-      setData(userData.filter((res)=>res.demand_by.includes(demand_by)))
+      setData(userData.filter((res)=>res.demand_by.toLowerCase().includes(demand_by.toLowerCase())))
  
   },[demand_by])
   useEffect(()=>{
-    setData(userData.filter((res)=>res.vehicle_type.includes(vehicle_type)))
+    setData(userData.filter((res)=>res.vehicle_type.toLowerCase().includes(vehicle_type.toLowerCase())))
 
 },[vehicle_type])
 
 useEffect(()=>{
-  setData(userData.filter((res)=>res.goods_name.includes(goods_name)))
+  setData(userData.filter((res)=>res.goods_name.toLowerCase().includes(goods_name.toLowerCase())))
 
 },[goods_name])
 useEffect(()=>{
-  setData(userData.filter((res)=>res.vehicle_body_type.includes(vehicle_body_type)))
+  setData(userData.filter((res)=>res.vehicle_body_type.toLowerCase().includes(vehicle_body_type.toLowerCase())))
 
 },[vehicle_body_type])
 

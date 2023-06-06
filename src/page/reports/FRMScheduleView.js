@@ -40,7 +40,7 @@ useEffect(()=>{
     
 },[vehicle])
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.hire_by.includes(hire_by)))
+        setDate(userData.filter((res)=>res.hire_by.toLowerCase().includes(hire_by.toLowerCase())))
         
     },[hire_by])
     useEffect(() => {
@@ -66,8 +66,7 @@ useEffect(()=>{
       console.log('radio checked', e.target.value);
       sethire_status(e.target.value);
     };
-  // console.log("hire_status",data[0].vehicle_no)
-
+  
 
  
 
@@ -140,7 +139,7 @@ console.log(countpage)
     <th id={schedule.transaction_boder}>HIRE BY </th>
     <th id={schedule.transaction_boder}>ACTION</th>
   </tr> 
-  {  data.slice(pageclick, pageclick + perpage).map((items ,index)=>(
+  {  data?.slice(pageclick, pageclick + perpage).map((items ,index)=>(
   <tr> 
     <td id={schedule.transaction_boder}>{index+1}</td>
     <td id={schedule.transaction_boder}>{items.schd_id}</td>

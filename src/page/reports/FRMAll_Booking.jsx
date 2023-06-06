@@ -27,15 +27,13 @@ const FRMAll_Booking = () => {
             
         }
         registerUserdata();
-        
-        // setDate(userData.filter((res)=>res.vehicle_no.slice(0,1)==vehicle||res.vehicle_no.slice(0,2)==vehicle||res.vehicle_no.slice(0,3)==vehicle||res.vehicle_no.slice(0,4)==vehicle||res.vehicle_no==vehicle||res.vehicle_no.includes(vehicle)))
-    },[]);
+        },[]);
     useEffect(()=>{
         setDate(userData.filter((res)=>res.vehicle_no.includes(vehicle)))
     },[vehicle]);
 
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.from.includes(from)))
+        setDate(userData.filter((res)=>res.from.toLowerCase().includes(from.toLowerCase())))
    
     },[from])
 
@@ -44,15 +42,15 @@ const FRMAll_Booking = () => {
    
     },[booking_no])
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.booking_date.slice(0,1)==booking_date||res.booking_date.slice(0,2)==booking_date||res.booking_no.slice(0,3)==booking_date||res.booking_date.slice(0,4)==booking_date||res.booking_date==booking_date||res.booking_date.includes(booking_date)))
+        setDate(userData.filter((res)=>res.booking_date.includes(booking_date)))
    
     },[booking_date])
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.to.slice(0,1)==to||res.booking_no.slice(0,2)==booking_no||res.booking_no.slice(0,3)==booking_no||res.booking_no.slice(0,4)==booking_no||res.booking_no==booking_no||res.to.includes(to)))
+        setDate(userData.filter((res)=>res.to.toLowerCase().includes(to.toLowerCase())))
    
     },[to])
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.vehicle_type.slice(0,1)==vehicle_type||res.booking_no.slice(0,2)==booking_no||res.booking_no.slice(0,3)==booking_no||res.booking_no.slice(0,4)==booking_no||res.booking_no==booking_no||res.vehicle_type.includes(vehicle_type)))
+        setDate(userData.filter((res)=>res.vehicle_type.toLowerCase().includes(vehicle_type.toLowerCase())))
    
     },[vehicle_type])
 
@@ -62,15 +60,7 @@ const FRMAll_Booking = () => {
         onAfterPrint:()=>alert("Data saved in PDF")
     });
     console.log(userData)
-    
-    
-    
-    
-    //  const data2=userData.filter((res)=>res.vehicle_no.slice(0,1)==owner||res.vehicle_no.slice(0,2)==owner||res.vehicle_no.slice(0,3)==owner||res.vehicle_no.slice(0,4)==owner||res.vehicle_no==owner)
-    
-    console.log(booking_date)
    
-  
   const [pagenumber, setPagenumber]= useState(0);
   const perpage=10;
   const pageclick= pagenumber*perpage;
@@ -91,34 +81,34 @@ const FRMAll_Booking = () => {
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> All Booking </div> 
                     <div className="  pb-2">
 
-                    <div className="m-auto sm:m-0 w-[80%] grid grid-cols-2 gap-2 px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
+                    <div className="m-auto sm:m-auto pb-2  sm:w-[90%] grid grid-cols-2 gap-2 px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
 
                     <div className="w-full">
                         <label className=" text-[10px] sm:text-base " >Vehicle No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by Vehicle No" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by Vehicle No" value={vehicle} onChange={(e)=>setVehicle(e.target.value)} />
                 </div  >
                 <div className="w-full">
                         <label className=" text-[10px] sm:text-base " > Booking No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by Booking No" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by Booking No" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
                 </div>
 
                 
                 <div className="w-full">
                         <label className=" text-[10px] sm:text-base " >Booking date :  </label>
-             <input max="2099-12-25T23:59" className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
+             <input max="2099-12-25T23:59" className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] sm:text-base " > From :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by From" value={from} onChange={(e)=>setFrom(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by From" value={from} onChange={(e)=>setFrom(e.target.value)} />
                 </div>
                 
                 <div className="w-full">
                         <label className=" text-[10px] sm:text-base " >To :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-full lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text   " placeholder="Search by To" value={to} onChange={(e)=>setto(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text   " placeholder="Search by To" value={to} onChange={(e)=>setto(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] sm:text-base " > Vehicle Type:  </label>
-             <input className="border border-collapse px-1 text-[10px] w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by  Vehicle Type" value={vehicle_type} onChange={(e)=>setvehicle_type(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by  Vehicle Type" value={vehicle_type} onChange={(e)=>setvehicle_type(e.target.value)} />
                 </div>
                     </div>
                     <table className=" w-full " >
@@ -138,7 +128,7 @@ const FRMAll_Booking = () => {
                         </thead>
                         <tbody>
                             {
-                                data.slice(pageclick, pageclick + perpage).map( (uData, index)=>(
+                                data?.slice(pageclick, pageclick + perpage).map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_id}</td>
@@ -153,7 +143,7 @@ const FRMAll_Booking = () => {
                                 
                                 <div className="  m-auto">
 
-                                <button className=" center bg-[#151B54] sm:py-2 sm:px-2 w-16 m-auto sm:w-32 sm:text-base text-[6px] lg:text-[11px] rounded-md text-white ">Edit</button> 
+                                <button className="  bg-[#151B54] sm:py-2 sm:px-2 w-10 m-auto sm:w-32 sm:text-base text-[6px] lg:text-[11px] rounded-md text-white ">Edit</button> 
                                 
                                 </div>
                                 </td>

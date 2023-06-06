@@ -70,12 +70,7 @@ const FRMVehicleDemandAgent = () => {
       vehicle_height: values.vehicle_height,
       contact_number: values.contact_number,
       location: values.location,
-    //   email: values.email,
-    //   website: values.website,
-    //   company_registeration: values.company_registeration,
-    //   owner_aadhar_card: values.owner_aadhar_card,
-    //   gst_certificate: values.gst_certificate,
-    //   company_visiting_card: values.company_visiting_card,
+   
     };
     console.log(reg_data)
 
@@ -169,10 +164,9 @@ const FRMVehicleDemandAgent = () => {
                   hasFeedback
                   style={{  width: "96%" }}
                 >
-                  {/* <Tooltip title="Enter Your Address" > */}
+                  
                   <input max="2099-12-25T23:59" 
-                  //  value={"hire_date_time"} 
-                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+              
 
                    class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 

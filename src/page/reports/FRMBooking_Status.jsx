@@ -1,16 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-// npm install react-to-print (please install)
-import { useReactToPrint } from "react-to-print";
-import { DatePicker } from "antd";
 import ReactPaginate from "react-paginate";
-
 const FRMBooking_Status = () => {
-    
-      
-
-    const [data,setDate]=useState([])
+const [data,setDate]=useState([])
     const conponentPDF= useRef();
     const [userData, setUserdata]= useState([]);
    
@@ -32,24 +24,23 @@ const FRMBooking_Status = () => {
             
         }
         registerUserdata();
-        
-        // setDate(userData.filter((res)=>res.freight_slip_no.includes(freight_slip_no)))
+
     },[]);
     useEffect(()=>{
         setDate(userData.filter((res)=>res.freight_slip_no.includes(freight_slip_no)))
     },[freight_slip_no]);
 
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.pod_no.slice(0,1)==pod_no||res.pod_no.slice(0,2)==pod_no||res.pod_no.slice(0,3)==pod_no||res.pod_no.slice(0,4)==pod_no||res.pod_no==pod_no||res.pod_no.includes(pod_no)))
+        setDate(userData.filter((res)=>res.pod_no.includes(pod_no)))
    
     },[pod_no])
 
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.booking_no.slice(0,1)==booking_no||res.booking_no.slice(0,2)==booking_no||res.booking_no.slice(0,3)==booking_no||res.booking_no.slice(0,4)==booking_no||res.booking_no==booking_no||res.booking_no.includes(booking_no)))
+        setDate(userData.filter((res)=>res.booking_no.includes(booking_no)))
    
     },[booking_no])
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.booking_date.slice(0,1)==booking_date||res.booking_date.slice(0,2)==booking_date||res.booking_no.slice(0,3)==booking_date||res.booking_date.slice(0,4)==booking_date||res.booking_date==booking_date||res.booking_date.includes(booking_date)))
+        setDate(userData.filter((res)=>res.booking_date.includes(booking_date)))
    
     },[booking_date])
     useEffect(()=>{
@@ -61,7 +52,7 @@ const FRMBooking_Status = () => {
    
     },[loading_no])
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.pod_date.slice(0,1)==pod_date||res.pod_date.slice(0,2)==pod_date||res.pod_date.slice(0,3)==pod_date||res.pod_date.slice(0,4)==pod_date||res.pod_date==pod_date||res.pod_date.includes(pod_date)))
+        setDate(userData.filter((res)=>res.pod_date.includes(pod_date)))
    
     },[pod_date])
     useEffect(()=>{
@@ -89,42 +80,42 @@ const FRMBooking_Status = () => {
                       <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full    border-black ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Booking Status </div> 
                     <div className="  pb-2">
-                    <div className="m-auto sm:m-0 w-[80%] sm:w-full grid grid-cols-2 gap-2 px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
+                    <div className="m-auto sm:m-auto gap-1 w-[98%] sm:w-full grid grid-cols-2  px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
                         <div  className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Freight slip No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Freight slip No" value={freight_slip_no} onChange={(e)=>setfreight_slip_no(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Freight slip No" value={freight_slip_no} onChange={(e)=>setfreight_slip_no(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Loading No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Loading No" value={loading_no} onChange={(e)=>setloading_no(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Loading No" value={loading_no} onChange={(e)=>setloading_no(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Pod No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Pod No" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Pod No" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Booking No :  </label>
-             <input className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
+             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
                 </div>
 
                 
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Booking date :  </label>
-             <input max="2099-12-25T23:59"  className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
+             <input max="2099-12-25T23:59"  className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
            
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Pod Date :  </label>
-             <input max="2099-12-25T23:59" className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Pod Date" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
+             <input max="2099-12-25T23:59" className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Pod Date" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
                 </div>
                 
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Loading Date :  </label>
-             <input  max="2099-12-25T23:59"className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Loading Date" value={loading_date} onChange={(e)=>setloading_date(e.target.value)} />
+             <input  max="2099-12-25T23:59"className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Loading Date" value={loading_date} onChange={(e)=>setloading_date(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Freight Slip  Date:  </label>
-             <input max="2099-12-25T23:59" className="border border-collapse px-1 text-[10px] w-28 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Freight Slip  Date:" value={freight_slip_date} onChange={(e)=>setfreight_slip_date(e.target.value)} />
+             <input max="2099-12-25T23:59" className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Freight Slip  Date:" value={freight_slip_date} onChange={(e)=>setfreight_slip_date(e.target.value)} />
                 </div>
                     </div>
                     <table className=" w-full " >
@@ -145,7 +136,7 @@ const FRMBooking_Status = () => {
                         </thead>
                         <tbody>
                             {
-                                  data.slice(pageclick, pageclick + perpage).map( (uData, index)=>(
+                                  data?.slice(pageclick, pageclick + perpage).map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{index+1}</td>
                                 <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_no}</td>

@@ -1,0 +1,31 @@
+.border{
+    border-bottom:0px solid;
+    border-right:0px solid;
+    border-top:1px solid;
+    border-left:1px solid;
+    /* border: 1px solid ; */
+}
+.border>div{
+    /* border-bottom:1px solid; */
+    /* border: 1px solid ; */
+    border-bottom:1px solid;
+    border-right:1px solid;
+    border-top:0px solid;
+    border-left:0px solid;
+}
+.border>div>div{
+    /* border-bottom:1px solid; */
+    /* border: 1px solid ; */
+    border-bottom:0px solid;
+    border-right:1px solid;
+    border-top:0px solid;
+    border-left:0px solid;
+}
+.border>div>h1{
+    /* border-bottom:1px solid; */
+    /* border: 1px solid ; */
+    border-bottom:1px solid;
+    border-right:0px solid;
+    border-top:0px solid;
+    border-left:0px solid;
+}

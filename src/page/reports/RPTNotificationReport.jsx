@@ -107,7 +107,7 @@ const RPTNotificationReport = ({data1}) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {data1.map((uData, index) => (
+                      {data1?.map((uData, index) => (
                         <tr key={index}>
                           <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">
                             {index + 1}
@@ -154,20 +154,22 @@ const RPTNotificationReport = ({data1}) => {
                   Powered by : www.transduniya.com-97553-22022{" "}
                 </h1>
               </div>
-              <div className="m-auto w-full text-center">
-                <button
-                  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "
-                  onClick={exportPDF}
-                >
-                  Download
-                </button>{" "}
-                <button
-                  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "
-                  onClick={generatePDF}
-                >
-                  Print
-                </button>
-              </div>
+              <div className="m-auto w-full flex justify-center gap-2 text-center">
+        <button
+          className=" bg-[#151B54] py-1 px-2 w-24 text-sm mt-10 rounded-md text-white "
+          onClick={exportPDF}
+        >
+          Download
+        </button>{" "}
+        <button
+          className=" bg-[#151B54] py-1 px-2 w-16 text-sm mt-10 rounded-md text-white "
+          onClick={generatePDF}
+        >
+          Print
+        </button>
+       
+      
+      </div>
             </div>
           </div>
         </div>

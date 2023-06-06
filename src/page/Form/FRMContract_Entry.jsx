@@ -19,6 +19,7 @@ import { DatePicker } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 
 import v from "./contractentry.module.css";
+import TextArea from "antd/es/input/TextArea";
 const { Option } = Select;
 // import LoadingButton from "@mui/lab/LoadingButton";
 const FRMContract_Entry = () => {
@@ -182,12 +183,11 @@ const FRMContract_Entry = () => {
                     style={{ width: "96%" }}
                   >
                      <input max="2099-12-25T23:59" 
-                  //  value={"hire_date_time"} 
-                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+                  
 
                    class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
-   {/* <DatePicker onChange={onChange} /> */}
+   
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
@@ -346,7 +346,7 @@ const FRMContract_Entry = () => {
               <h3 className={v.card_menu}> VEHICLE DETAILS</h3>
 
               <Row>
-                <Col className="select_option_col">
+                <Col className={v.select_option_col}>
                   <Form.Item
                     name="vehicle_type"
                     label={
@@ -608,14 +608,7 @@ const FRMContract_Entry = () => {
                             return Promise.reject();
                           }
 
-                          if (isNaN(value)) {
-                            return Promise.reject(
-                              " Number has to be a number."
-                            );
-                          }
-                          if (value.typeOf === "number") {
-                            return Promise.resolve();
-                          }
+                         
 
                           return Promise.resolve();
                         },
@@ -623,10 +616,48 @@ const FRMContract_Entry = () => {
                     ]}
                   >
                     {/* <Tooltip title="Enter GST Number"> */}
-                    <Input
+                    <TextArea
                       placeholder="Payment"
-                      type="tel"
-                      onKeyPress={handlePhoneKeyPress}
+                      
+                   
+                      maxLength={15}
+                      tabIndex={9}
+                    />
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="require doc"
+                    label={
+                      <label style={{ fontSize: "15px" }}>Require doc</label>
+                    }
+                    hasFeedback
+                    style={{ width: "96%" }}
+                    rules={[
+                      {
+                        required: true,
+                        // message: "Please input your Total weight!",
+                      },
+
+                      () => ({
+                        validator(_, value) {
+                          if (!value) {
+                            return Promise.reject();
+                          }
+
+                         
+
+                          return Promise.resolve();
+                        },
+                      }),
+                    ]}
+                  >
+                    {/* <Tooltip title="Enter GST Number"> */}
+                    <TextArea
+                      placeholder="require doc"
+                      
+                   
                       maxLength={15}
                       tabIndex={9}
                     />

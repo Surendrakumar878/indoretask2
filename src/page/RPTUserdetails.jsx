@@ -84,7 +84,7 @@ console.log(data1)
                   Date From : {data.date_From} To :{data.to}
                 </h1>
                 </div>
-                    <table id="my-table" className=" w-full " >
+                    <table scope="colgroup" id="my-table" className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">     Sr. No               </th>
@@ -101,25 +101,24 @@ console.log(data1)
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     goods name               </th>
                             </tr> 
                         </thead>
-                        <tbody>
+                        <tbody >
                             {
                                 data1?.map( (uData, index)=>(
-                                 <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.booking_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registered_number}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.city}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.contact}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.person}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.status}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.Registration_date}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.activation_date}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.total_weight}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.goods_name}</td>
+                                 <tr key={index} >
+                                <td scope="colgroup" className="sm:px-2 px-2  sm:text-base text-base border-slate-300">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.booking_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.user_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.registered_number}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.city}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.contact}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.person}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.status}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.Registration_date}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.activation_date}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.total_weight}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.goods_name}</td>
                                 <td>
-                                    {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>
-                                    <Link to="/userDelete" className="btn btn-danger">Delete</Link> */}
+                               
                                 </td>
                             </tr>
                             )) }
@@ -147,9 +146,22 @@ console.log(data1)
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div>
 </div>
-<div className="m-auto w-full text-center" >
-                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={exportPDF}>Download</button>  <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
-                    </div> 
+<div className="m-auto w-full flex justify-center gap-2 text-center">
+        <button
+          className=" bg-[#151B54] py-1 px-2 w-24 text-sm mt-10 rounded-md text-white "
+          onClick={exportPDF}
+        >
+          Download
+        </button>{" "}
+        <button
+          className=" bg-[#151B54] py-1 px-2 w-16 text-sm mt-10 rounded-md text-white "
+          onClick={generatePDF}
+        >
+          Print
+        </button>
+       
+      
+      </div>
                     </div>
                 </div>
             </div>           

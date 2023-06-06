@@ -40,7 +40,7 @@ const FRMHiringview = () => {
     },[]);
     
 useEffect(()=>{
-    setDate(userData.filter((res)=>res.vehicle_no.includes(vehicle)))
+    setDate(userData.filter((res)=>res.vehicle_no.toLowerCase().includes(vehicle.toLowerCase())))
     
 },[vehicle])
     useEffect(()=>{
@@ -48,7 +48,7 @@ useEffect(()=>{
         
     },[hire_date_time])
     useEffect(()=>{
-      setDate(userData.filter((res)=>res.hire_owner_name.includes(hire_owner_name)))
+      setDate(userData.filter((res)=>res.hire_owner_name.toLowerCase().includes(hire_owner_name.toLowerCase())))
       
   },[hire_owner_name])
   useEffect(()=>{

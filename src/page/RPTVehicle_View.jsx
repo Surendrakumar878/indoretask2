@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import v from "../components/Vehicleform.module.css";
-// npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
-import { Col, DatePicker, Form, Input, Row, Select } from "antd";
-import { Option } from "antd/es/mentions";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
 const RPTVehicle_View = () => {
@@ -42,7 +37,6 @@ const RPTVehicle_View = () => {
  margin: { top: 50 },
 
 })
- // Save the PDF document
  doc.save('data-report.pdf');
 }
   return (

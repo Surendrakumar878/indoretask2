@@ -8,7 +8,7 @@ import { useReactToPrint } from "react-to-print";
 import { Input ,Row,Col, Radio } from "antd";
 import schedule from "../reports/scheduleview.module.css"
 import ReactPaginate from "react-paginate";
-const FRMGPSView = () => {
+const FRMFastTagRequest = () => {
     const [data,setDate]=useState([])
     const conponentPDF= useRef();
     const [userData, setUserdata]= useState([]);
@@ -151,4 +151,4 @@ useEffect(()=>{
     )
 }
 
-export default FRMGPSView
+export default FRMFastTagRequest

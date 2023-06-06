@@ -3,25 +3,24 @@ import { useState } from "react";
 import {
   Button,
   Input,
-  message,
+
   Form,
   Row,
-  Radio,
+
   Col,
   Upload,
   Card,
   Select,
-  Tooltip,
-  Modal,
+  
 } from "antd";
 
 import { DatePicker } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import v from "../components/Vehicleform.module.css";
 const { Option } = Select;
-// import LoadingButton from "@mui/lab/LoadingButton";
-const FRMPodRegisterForm = () => {
-  const { RangePicker } = DatePicker;
+
+const FRMPod = () => {
+  
   function onChange(value, dateString) {
     console.log("Selected Time: ", value);
     console.log("Formatted Selected Time: ", dateString);
@@ -112,20 +111,21 @@ const FRMPodRegisterForm = () => {
   const saveData = async (values) => {
     console.log(values);
     const reg_data = {
-      enq_no: values.enq_no,
-      enq_date: values.enq_date,
-      vehicle_required_date: values.vehicle_required_date,
-      vehicle_type: values.vehicle_type,
-      vehicle_size: values.vehicle_size,
-      vehicle_capacity: values.vehicle_capacity,
-      no_of_tyres: values.no_of_tyres,
-      from: values.from,
-      to: values.to,
+      booking_no: values.booking_no,
+      vehicle_no: values.vehicle_no,
+      booking_date: values.booking_date,
+      driver_name: values.driver_name,
+      driver_contact_no: values.driver_contact_no,
       goods_name: values.goods_name,
-      total_weight: values.total_weight,
-      vehicle_body_type: values.vehicle_body_type,
-      vehicle_height: values.vehicle_height,
-    
+     from: values.from,
+      to: values.to,
+      Reporting_date: values.Reporting_date,
+      Unloading_date: values.Unloading_date,
+      pod_date: values.pod_date,
+      loading_weight: values.loading_weight,
+      unloading_weight: values.unloading_weight,
+      Weight_difference: values.Weight_difference,
+
       pod1: values.pod1,
       pod2: values.pod2,
       weight_slip1: values.weight_slip1,
@@ -148,80 +148,18 @@ const FRMPodRegisterForm = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-4 bg-white mb-10">
+      <div className="flex flex-col gap-4 bg-white mb-0">
         <h2 id={v.heading}>POD Entry</h2>
         <div className={v.mainForm}>
           <Card hoverable bodyStyle={{ padding: "0" }}>
-          
+          <h3 className={`${v.card_menu} text-center`}>Booking Details</h3>
             <Form layout="vertical" autoComplete="off" onFinish={saveData}>
-           
               <Row>
-                <Col className={v.select_option_col}>
+              <Col className={v.select_option_col}>
                   <Form.Item
-                    name="pod_id"
-                    label={<lable style={{ fontSize: "15px" }}>POD ID: </lable>}
-                    rules={[
-                      {
-                        // required: true,
-                        message: "Please input your  POD ID!",
-                      },
-                    ]}
-                    style={{ width: "96%" }}
-                    hasFeedback
-                  >
-                    {/* <Tooltip title="Enter Your Comapny Name"> */}
-                    <Input placeholder="POD ID" value="3223452" tabIndex={1} />
-                    {/* </Tooltip> */}
-                  </Form.Item>
-                </Col>
-                <Col className={v.select_option_col}>
-                  <Form.Item
-                    name="pod_no"
-                    label={<lable style={{ fontSize: "15px" }}>POD NO: </lable>}
-                    rules={[
-                      {
-                        // required: true,
-                        message: "Please input your  POD NO!",
-                      },
-                    ]}
-                    style={{ width: "96%" }}
-                    hasFeedback
-                  >
-                    {/* <Tooltip title="Enter Your Comapny Name"> */}
-                    <Input placeholder="POD NO" tabIndex={1} />
-                    {/* </Tooltip> */}
-                  </Form.Item>
-                </Col>
-                <Col className={v.select_option_col}>
-                  <Form.Item
-                    name="pod_date"
+                    name="booking_no"
                     label={
-                      <label style={{ fontSize: "15px" }}>POD DATE/TIME</label>
-                    }
-                    rules={[
-                      {
-                        required: true,
-                      },
-                    ]}
-                    hasFeedback
-                    style={{ width: "96%" }}
-                  >
-                    {/* <Tooltip title="Enter Your Address" > */}
-                    <input max="2099-12-25T23:59" 
-                  //  value={"hire_date_time"} 
-                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
-
-                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
-
-
-                    {/* </Tooltip> */}
-                  </Form.Item>
-                </Col>
-                <Col className={v.select_option_col}>
-                  <Form.Item
-                    name="booking_id"
-                    label={
-                      <label style={{ fontSize: "15px" }}> Booking id:</label>
+                      <label style={{ fontSize: "15px" }}> Booking No:</label>
                     }
                     hasFeedback
                     style={{ width: "96%" }}
@@ -239,7 +177,7 @@ const FRMPodRegisterForm = () => {
 
                           if (isNaN(value)) {
                             return Promise.reject(
-                              " Number has to be a Booking id."
+                              " Number has to be a Booking no."
                             );
                           }
                           if (value.typeOf === "number") {
@@ -252,16 +190,67 @@ const FRMPodRegisterForm = () => {
                     ]}
                   >
                     {/* <Tooltip title="Enter GST Number"> */}
-                    <Input
-                      placeholder="Booking id"
-                      type="tel"
-                      onKeyPress={handlePhoneKeyPress}
-                      maxLength={15}
-                      tabIndex={9}
-                    />
+                    
+                     <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder="Booking no"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="vehicle_no"
+                    label={
+                      <label style={{ fontSize: "15px" }}>Vehicle No:</label>
+                    }
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input your Vehicle No!",
+                      },
+                      () => ({
+                        validator(_, value) {
+                          if (!value) {
+                            return Promise.reject();
+                          }
+                          if (isNaN(value)) {
+                            return Promise.reject(
+                              "No of tyres  Number has to be a Vehicle No."
+                            );
+                          }
+
+                          return Promise.resolve();
+                        },
+                      }),
+                    ]}
+                    hasFeedback
+                    style={{ width: "96%" }}
+                  >
+                    {/* <Tooltip title="Enter Your Website URL"> */}
+                    
+                       <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder="Vehicle No"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+              
                 <Col className={v.select_option_col}>
                   <Form.Item
                     name="booking_date"
@@ -281,62 +270,20 @@ const FRMPodRegisterForm = () => {
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
                     <input max="2099-12-25T23:59" 
+                   
                   //  value={"hire_date_time"} 
                   //  onChange={(e)=>sethire_date_time(e.target.value)} 
 
-                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+                   class="placeholder:italic placeholder:text-slate-400 block  bg-white w-[100%] border border-slate-300 rounded-md py-[5px] pl-1 sm:pl-3 pr-1  focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
 
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
               </Row>
-              {/* VEHICLE DETAILS */}
-              {/* <h3 className={v.card_menu}> VEHICLE DETAILS</h3> */}
-
-              {/* GOODS DETAILS */}
-              {/* <h3 className={v.card_menu}> GOODS DETAILS</h3> */}
-
+             
               <Row>
-                <Col className={v.select_option_col}>
-                  <Form.Item
-                    name="vehicle_no"
-                    label={
-                      <label style={{ fontSize: "15px" }}>Vehicle no:</label>
-                    }
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your Vehicle no!",
-                      },
-                      () => ({
-                        validator(_, value) {
-                          if (!value) {
-                            return Promise.reject();
-                          }
-                          if (isNaN(value)) {
-                            return Promise.reject(
-                              "no_of_tyres  Number has to be a Vehicle no."
-                            );
-                          }
-
-                          return Promise.resolve();
-                        },
-                      }),
-                    ]}
-                    hasFeedback
-                    style={{ width: "96%" }}
-                  >
-                    {/* <Tooltip title="Enter Your Website URL"> */}
-                    <Input
-                      placeholder="Vehicle no"
-                      type="tel"
-                      onKeyPress={handlePhoneKeyPress}
-                      tabIndex={8}
-                    />
-                    {/* </Tooltip> */}
-                  </Form.Item>
-                </Col>
+               
                 <Col className={v.select_option_col}>
                   <Form.Item
                     name="driver_name"
@@ -382,8 +329,55 @@ const FRMPodRegisterForm = () => {
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
-              </Row>
-              <Row>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="driver_contact_no:"
+                    label={
+                      <label style={{ fontSize: "15px" }}>
+                        {" "}
+                        Driver Contact No:
+
+                      </label>
+                    }
+                    hasFeedback
+                    style={{ width: "96%" }}
+                    rules={[
+                      {
+                        required: true,
+                        // message: "Please input your Total weight!",
+                      },
+
+                      () => ({
+                        validator(_, value) {
+                          if (!value) {
+                            return Promise.reject();
+                          }
+
+                          if (isNaN(value)) {
+                            return Promise.reject(
+                              " Number has to be a number."
+                            );
+                          }
+                          if (value.typeOf === "number") {
+                            return Promise.resolve();
+                          }
+
+                          return Promise.resolve();
+                        },
+                      }),
+                    ]}
+                  >
+                    {/* <Tooltip title="Enter GST Number"> */}
+                    <Input
+                      placeholder="driver_contact_no"
+                      type="tel"
+                      onKeyPress={handlePhoneKeyPress}
+                      maxLength={15}
+                      tabIndex={9}
+                    />
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
                 <Col className={v.select_option_col}>
                   <Form.Item
                     name="goods_name"
@@ -407,6 +401,10 @@ const FRMPodRegisterForm = () => {
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
+
+              </Row>
+              <Row>
+                
                 <Col className={v.select_option_col}>
                   <Form.Item
                     name="from"
@@ -426,7 +424,18 @@ const FRMPodRegisterForm = () => {
                     style={{ width: "96%" }}
                   >
                     {/* <Tooltip title="Enter Your Website URL"> */}
-                    <Input placeholder="From" tabIndex={9} />
+                    {/* <Input placeholder="From" tabIndex={9} /> */}
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder="From"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
@@ -449,7 +458,43 @@ const FRMPodRegisterForm = () => {
                     style={{ width: "96%" }}
                   >
                     {/* <Tooltip title="Enter Your Website URL"> */}
-                    <Input placeholder="To" tabIndex={10} />
+                    {/* <Input placeholder="To" tabIndex={10} /> */}
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder="To "
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="Reporting_date"
+                    label={
+                      <label style={{ fontSize: "15px" }}>Reporting date/time</label>
+                    }
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                    hasFeedback
+                    style={{ width: "96%" }}
+                  >
+                    {/* <Tooltip title="Enter Your Address" > */}
+                    <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[100%] border border-slate-300 rounded-md py-[5px] pl-1 sm:pl-3 pr-1 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
+
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
@@ -479,7 +524,7 @@ const FRMPodRegisterForm = () => {
                   //  value={"hire_date_time"} 
                   //  onChange={(e)=>sethire_date_time(e.target.value)} 
 
-                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[100%] rounded-md border border-slate-300  py-[5px] pl-1 sm:pl-3 pr-1  focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
 
                     {/* </Tooltip> */}
@@ -504,13 +549,37 @@ const FRMPodRegisterForm = () => {
                   //  value={"hire_date_time"} 
                   //  onChange={(e)=>sethire_date_time(e.target.value)} 
 
-                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[100%] border border-slate-300  py-[5px] pl-1 sm:pl-3 pr-1 rounded-md focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
 
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
-              
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="pod_date"
+                    label={
+                      <label style={{ fontSize: "15px" }}>POD DATE/TIME</label>
+                    }
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                    hasFeedback
+                    style={{ width: "96%" }}
+                  >
+                    {/* <Tooltip title="Enter Your Address" > */}
+                    <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[100%] border border-slate-300  py-[5px] pl-1 sm:pl-3 pr-1 rounded-md focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
+
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
             
                
 
@@ -665,7 +734,7 @@ const FRMPodRegisterForm = () => {
                   </Form.Item>
                 </Col>
               </Row>
-              <h3 className={v.card_menu}>DOCUMENTS</h3>
+              <h3 className={`${v.card_menu} text-center`}>DOCUMENTS</h3>
             <Row>
               {/* pod1 */}
               <Col className={v.upload_col}>
@@ -752,7 +821,7 @@ const FRMPodRegisterForm = () => {
                 </Form.Item>
               </Col>
             </Row>
-              <div className=" m-auto w-40 pb-20">
+              <div className=" m-auto w-40 pb-4">
                 <Form.Item className="w-40 m-auto">
                   <button
                     type="submit"
@@ -773,5 +842,5 @@ const FRMPodRegisterForm = () => {
     </>
   );
 };
-export default FRMPodRegisterForm;
+export default FRMPod;
 

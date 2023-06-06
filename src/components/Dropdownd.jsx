@@ -383,7 +383,7 @@ const Dropdownd = () => {
                       Scheduled date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                       type="date"
@@ -528,7 +528,7 @@ const Dropdownd = () => {
                       Booking date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                       type="date"
@@ -806,7 +806,7 @@ const Dropdownd = () => {
                       Booking Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                   
@@ -848,7 +848,7 @@ const Dropdownd = () => {
                       POD Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                       value={pod_register.pod_date}
@@ -1034,7 +1034,7 @@ const Dropdownd = () => {
                       Hire Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                   
@@ -1223,7 +1223,7 @@ const Dropdownd = () => {
                       Sch Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                   
@@ -1319,7 +1319,7 @@ const Dropdownd = () => {
                       Req Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                   
@@ -1434,7 +1434,7 @@ const Dropdownd = () => {
                       No Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                   
@@ -1454,7 +1454,7 @@ const Dropdownd = () => {
                       End Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                   
@@ -1512,7 +1512,7 @@ const Dropdownd = () => {
                       Promotion Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                   
@@ -1532,7 +1532,7 @@ const Dropdownd = () => {
                       End Date
                     </label>
                   
-                    <input
+                    <input max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
                     
                   

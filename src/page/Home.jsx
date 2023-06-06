@@ -57,7 +57,10 @@ const options = {
       <Link to="/FRMVehicleDemandAgent"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMVehicleDemandAgent</button> </Link>
       <Link to="/FRMVehicleViewAgent"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMVehicleViewAgent</button> </Link>
       <Link to="/FRMGPSView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMGPSView</button> </Link>
-     
+      <Link to="/FRMfastTag"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMfastTag</button> </Link>
+      <Link to="/FRMFastTagRequest"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMFastTagRequest</button> </Link>
+      <Link to="/FRMContractView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMContractView</button> </Link>
+   
     </div>
 
    

@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
-// import v from "../components/Vehicleform.module.css";
-// npm install react-to-print (please install)
+
 import { useReactToPrint } from "react-to-print";
-import { Col, DatePicker, Form, Input, Row, Select } from "antd";
-import { Option } from "antd/es/mentions";
+
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
 const RPTDemandDetail = ({data1}) => {
@@ -81,7 +79,7 @@ const RPTDemandDetail = ({data1}) => {
                     </thead>
                     <tbody>
                       {
-                      data1.map( (uData, index)=>(
+                      data1?.map( (uData, index)=>(
                       <tr
                        key={index}
                       >
@@ -91,7 +89,7 @@ const RPTDemandDetail = ({data1}) => {
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a."}</td>
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.act"}</td>
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.on"}</td>
-                        {/* <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.us"}</td> */}
+                     
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.ate"}</td>
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a_date"}</td>
                         <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.l_weight"}</td>
@@ -127,20 +125,23 @@ const RPTDemandDetail = ({data1}) => {
                   </h1>
                 </div>
               </div>
-              <div className="m-auto w-full text-center">
-                <button
-                  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "
-                  onClick={exportPDF}
-                >
-                  Download
-                </button>{" "}
-                <button
-                  className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white "
-                  onClick={generatePDF}
-                >
-                  Print
-                </button>
-              </div>
+           
+              <div className="m-auto w-full flex justify-center gap-2 text-center">
+        <button
+          className=" bg-[#151B54] py-1 px-2 w-24 text-sm mt-10 rounded-md text-white "
+          onClick={exportPDF}
+        >
+          Download
+        </button>{" "}
+        <button
+          className=" bg-[#151B54] py-1 px-2 w-16 text-sm mt-10 rounded-md text-white "
+          onClick={generatePDF}
+        >
+          Print
+        </button>
+       
+      
+      </div>
             </div>
           </div>
         </div>

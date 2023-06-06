@@ -28,25 +28,19 @@ const FRMMaster_Vehicle_View = () => {
     },[]);
     
 useEffect(()=>{
-    setDate(userData.filter((res)=>res.vehicle_no.includes(vehicle)))
+setDate(userData.filter((res)=>res.vehicle_no.includes(vehicle)))
     
 },[vehicle])
     useEffect(()=>{
-        setDate(userData.filter((res)=>res.owner_name.includes(owner)))
-   
-    },[owner])
+        setDate(userData.filter((res)=>res.owner_name.toLowerCase().includes(owner.toLowerCase())))
+   },[owner])
     const generatePDF= useReactToPrint({
         content: ()=>conponentPDF.current,
         documentTitle:"Userdata",
         onAfterPrint:()=>alert("Data saved in PDF")
     });
     console.log(userData)
-    
-    
-    
-    
-    //  const data2=userData.filter((res)=>res.vehicle_no.slice(0,1)==owner||res.vehicle_no.slice(0,2)==owner||res.vehicle_no.slice(0,3)==owner||res.vehicle_no.slice(0,4)==owner||res.vehicle_no==owner)
-    
+  
     console.log(data)
     const [pagenumber, setPagenumber]= useState(0);
     const perpage=10;
@@ -99,7 +93,7 @@ useEffect(()=>{
                                 <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_id}</td>
                                 <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_no}</td>
                                 <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_type}</td>
-                                <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_no}</td>
+                                <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.owner_name}</td>
                                <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_no}</td>
                                 <td className="sm:px-3 lg:text-[11px] px-2 sm:text-base text-[10px] border border-slate-300">{uData.vehicle_no}</td>
                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300"> 

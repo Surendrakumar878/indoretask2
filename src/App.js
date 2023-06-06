@@ -14,7 +14,6 @@ import FRMVehicleViewAgent from "./page/Form/FRMVehicleViewAgent";
 import RPTDemandDetail from "./page/reports/RPTDemandDetail";
 import FRMGPSView from "./page/Form/FRMGPSView";
 import FRMPromotion from "./page/Form/FRMPromotion";
-import FRMPodRegisterForm from "./page/FRMPodRegisterForm";
 import FRMNotification from "./page/FRMNotification";
 import FRMContract_Entry from "./page/Form/FRMContract_Entry";
 import FRMGPSrequierement from "./page/Form/FRMGPSrequierement";
@@ -40,6 +39,10 @@ import RPTPromotionReport from "./page/reports/RPTPromotionReport";
 import Dropdownd from "./components/Dropdownd";
 import RPTreport from "./page/reports/RPTreport";
 import DataCard from "./components/DataCard";
+import FRMPod from "./page/FRMPod";
+import FRMfastTag from "./page/Form/FRMfastTag";
+import FRMFastTagRequest from "./page/Form/FRMFastTagRequest";
+import FRMContractView from "./page/Form/FRMContractView";
 
 // create a new preview
 
@@ -81,7 +84,7 @@ function App() {
         <Route path="/DataCard" element={<DataCard />}></Route>
 {/* from */}
         
-        <Route path="/FRMPodRegisterForm" element={<FRMPodRegisterForm />}></Route>
+        <Route path="/FRMPodRegisterForm" element={<FRMPod />}></Route>
         <Route path="/FRMView_Pod" element={<FRMView_Pod />}></Route>
         <Route path="/FRMScheduleView" element={<FRMScheduleView />}></Route>
         <Route path="/FRMBooking_Status" element={<FRMBooking_Status />}></Route>
@@ -98,6 +101,9 @@ function App() {
         <Route path="/FRMVehicleViewAgent" element={<FRMVehicleViewAgent />}></Route>
         <Route path="/FRMGPSView" element={<FRMGPSView />}></Route>
         <Route path="/Dropdownd" element={<Dropdownd />}></Route>
+        <Route path="/FRMfastTag" element={<FRMfastTag />}></Route>
+        <Route path="/FRMFastTagRequest" element={<FRMFastTagRequest />}></Route>
+        <Route path="/FRMContractView" element={<FRMContractView />}></Route>
       </Routes>
     </div>
   );
