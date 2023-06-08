@@ -43,6 +43,10 @@ import FRMPod from "./page/FRMPod";
 import FRMfastTag from "./page/Form/FRMfastTag";
 import FRMFastTagRequest from "./page/Form/FRMFastTagRequest";
 import FRMContractView from "./page/Form/FRMContractView";
+import FRMwebsite from "./page/Form/FRMwebsite";
+import FRMPurchesTyer from "./page/Form/FRMPurchesTyer";
+
+import FRMPurchesSparePart from "./page/Form/FRMPurchesSparePart";
 
 // create a new preview
 
@@ -104,6 +108,9 @@ function App() {
         <Route path="/FRMfastTag" element={<FRMfastTag />}></Route>
         <Route path="/FRMFastTagRequest" element={<FRMFastTagRequest />}></Route>
         <Route path="/FRMContractView" element={<FRMContractView />}></Route>
+        <Route path="/FRMwebsite" element={<FRMwebsite />}></Route>
+        <Route path="/FRMPurchesTyer" element={<FRMPurchesTyer />}></Route>
+        <Route path="/FRMPurchesSparePart" element={<FRMPurchesSparePart />}></Route>
       </Routes>
     </div>
   );

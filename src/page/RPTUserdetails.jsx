@@ -5,6 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+import r from "./rpt.module.css"
 const RPTUserdetails = ({data1}) => {
 console.log(data1)
     let [searchParams, setSearchParams] = useSearchParams();
@@ -39,7 +40,7 @@ console.log(data1)
         const generatePDF= useReactToPrint({
             content: ()=>conponentPDF.current,
             documentTitle:"Userdata",
-            onAfterPrint:()=>alert("Data saved in PDF")
+           
         });
            console.log(userData)
 
@@ -84,45 +85,51 @@ console.log(data1)
                   Date From : {data.date_From} To :{data.to}
                 </h1>
                 </div>
-                    <table scope="colgroup" id="my-table" className=" w-full " >
+                    <table id="my-table" className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">     Sr. No               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     user id               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     username               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     registered number               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     city               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     contact                </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     person                </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     Status               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     Registration date               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     activation date               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     total weight               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">     goods name               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">     Sr. No               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     user id               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     username               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     registered number               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     city               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     contact                </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     person                </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     Status               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     Registration date               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     activation date               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     total weight               </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     goods name               </th>
                             </tr> 
                         </thead>
                         <tbody >
                             {
                                 data1?.map( (uData, index)=>(
                                  <tr key={index} >
-                                <td scope="colgroup" className="sm:px-2 px-2  sm:text-base text-base border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.booking_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.user_name}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.registered_number}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.city}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.contact}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.person}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.status}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.Registration_date}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.activation_date}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.total_weight}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border-slate-300">{uData.goods_name}</td>
+                                <td className="sm:px-2 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.booking_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.user_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.registered_number}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.city}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.contact}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.person}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.status}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.Registration_date}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.activation_date}</td>
+                                {/* <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.total_weight}</td> */}
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.goods_name}</td>
                                 <td>
                                
                                 </td>
                             </tr>
                             )) }
-                        </tbody>                        
+                        </tbody>    
+                        <tfoot>
+        <tr>
+            <th colspan="10" scope="row">Totals</th>
+            <td>21,000</td>
+        </tr>
+    </tfoot>                           
                     </table>         
                     <div   style={{
         position: 'fixed',
@@ -133,7 +140,7 @@ console.log(data1)
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: '0.5',
+        opacity: '0.2',
         fontSize: '48px',
         color: 'red',
         transform: 'rotate(0deg)',

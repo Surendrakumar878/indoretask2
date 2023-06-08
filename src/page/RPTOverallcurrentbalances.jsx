@@ -5,6 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+import r from "./rpt.module.css"
 const RPTOverallcurrentbalances = ({data1}) => {
     const [data,setDate]=useState({
         name:"ram transport",
@@ -80,12 +81,11 @@ const RPTOverallcurrentbalances = ({data1}) => {
                     <table id="my-table" className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">User Id</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Username</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">rigister no</th>
-                           
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Current Balance</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">Sr. No</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">User Id</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Username</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">rigister no</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Current Balance</th>
                             
                             </tr> 
                         </thead>
@@ -93,20 +93,22 @@ const RPTOverallcurrentbalances = ({data1}) => {
                             {
                                 data1?.map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registred_number}</td>
-                                
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.current_balance}</td>
+                                <td className="sm:px-2 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.user_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.user_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.registred_number}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.current_balance}</td>
                                
-                                <td>
-                                    {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>
-                                    <Link to="/userDelete" className="btn btn-danger">Delete</Link> */}
-                                </td>
+                               
                             </tr>
                             )) }
-                        </tbody>                        
+                        </tbody>    
+                        <tfoot>
+        <tr>
+            <th colspan="4" scope="row">Totals</th>
+            <td>21,000</td>
+        </tr>
+    </tfoot>                           
                     </table>         
                     <div    style={{
         position: 'fixed',

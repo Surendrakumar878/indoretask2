@@ -15,13 +15,10 @@ import {
   Modal,
 } from "antd";
 
-import { DatePicker } from "antd";
-
 import v from "./GPSrequierement.module.css";
 const { Option } = Select;
-
-const FRMfastTag = () => {
-
+// import LoadingButton from "@mui/lab/LoadingButtxon";
+const FRMPurchesTyer = () => {
   function onChange(value, dateString) {
     console.log("Selected Time: ", value);
     console.log("Formatted Selected Time: ", dateString);
@@ -42,9 +39,7 @@ const FRMfastTag = () => {
       setFile1(newFileList);
     },
 
-    beforeUpload: (file) => {
-      setFile1([...fileList1, file]);
-    },
+   
 
     progress: {
       strokeColor: {
@@ -55,67 +50,18 @@ const FRMfastTag = () => {
       format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
     },
   };
-  const [fileList2, setFile2] = useState([]);
-  const fileProps2 = {
-    multiple: false,
-    fileList1,
+ 
 
-    onRemove: (file) => {
-      const index = fileList2.indexOf(file);
-      const newFileList = fileList2.slice();
-      newFileList.splice(index, 1);
-      setFile2(newFileList);
-    },
-
-    beforeUpload: (file) => {
-      setFile2([...fileList2, file]);
-    },
-
-    progress: {
-      strokeColor: {
-        "0%": "#108ee9",
-        "100%": "#87d068",
-      },
-      strokeWidth: 3,
-      format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
-    },
-  };
-  const [fileList3, setFile3] = useState([]);
-
-  const [fileList4, setFile4] = useState([]);
-  const fileProps4 = {
-    multiple: false,
-    fileList1,
-
-    onRemove: (file) => {
-      const index = fileList4.indexOf(file);
-      const newFileList = fileList4.slice();
-      newFileList.splice(index, 1);
-      setFile4(newFileList);
-    },
-
-    beforeUpload: (file) => {
-      setFile4([...fileList4, file]);
-    },
-
-    progress: {
-      strokeColor: {
-        "0%": "#108ee9",
-        "100%": "#87d068",
-      },
-      strokeWidth: 3,
-      format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
-    },
-  };
+  
 
   const saveData = async (values) => {
-    console.log(values);
+    
     const reg_data = {
-      entry_id: values.entry_id,
-      no_of_vehicle: values.no_of_vehicle,
-      government_approve: values.government_approve,
-      current_gps_company: values.current_gps_company,
-      current_gps_yearly_charges: values.current_gps_yearly_charges,
+      req_id: values.req_id,
+      total_tyer_require: values.total_tyer_require,
+      tyer_company: values.tyer_company,
+      tyer_model: values.tyer_model,
+      total_qty: values.total_qty,
     };
     console.log(reg_data);
   };
@@ -137,7 +83,7 @@ const FRMfastTag = () => {
   return (
     <>
       <div className="flex flex-col gap-4 bg-white mb-10">
-        <h2 id={v.heading}> Fast Tag Request </h2>
+        <h2 id={v.heading}> Purches Tyer </h2>
         <div className={v.mainForm}>
           <Card hoverable bodyStyle={{ padding: "0" }}>
             <Form layout="vertical" autoComplete="off" onFinish={saveData}>
@@ -155,7 +101,7 @@ const FRMfastTag = () => {
                     style={{ width: "96%", marginBottom: "10px" }}
                     hasFeedback
                   >
-                    {/* <Tooltip title="Enter Your Comapny Name"> */}
+                    
                     <Input
                       placeholder="Entry ID"
                       value="3223452"
@@ -173,24 +119,64 @@ const FRMfastTag = () => {
                     rules={[
                       {
                         required: true,
-                        message: "Please input your  NO of Vehicle!",
+                        message: "Please input your  !",
                       },
                     ]}
                     style={{ width: "96%", marginBottom: "10px" }}
                     hasFeedback
                   >
                     {/* <Tooltip title="Enter Your Comapny Name"> */}
-                    <input type="datetime-local" placeholder="REQ Date/TIME" />
+                    <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[100%] rounded-md border border-slate-300  py-[5px] pl-1 sm:pl-3 pr-1  focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+               
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="total_tyer_require"
+                    label={
+                      <label style={{ fontSize: "15px" }}>
+                        {" "}
+                       Total Tyer Require
+                      </label>
+                    }
+                    hasFeedback
+                    style={{ width: "96%", marginBottom: "10px" }}
+                    rules={[
+                      {
+                        required: true,
+                        // message: "Please input your Total weight!",
+                      },
+                    ]}
+                  >
+              
+                    <Select
+                      showSearch
+                     
+                      placeholder=" Total Tyer require"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                     
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                 
+                    </Select>
+
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
                 <Col className={v.select_option_col}>
                   <Form.Item
-                    name="transaction_type"
+                    name=" tyer_company"
                     label={
                       <label style={{ fontSize: "15px" }}>
                         {" "}
-                        Transaction Type{" "}
+                        Tyer Company
                       </label>
                     }
                     hasFeedback
@@ -203,10 +189,79 @@ const FRMfastTag = () => {
                     ]}
                   >
                     {/* <Tooltip title="Enter GST Number"> */}
-                    <Radio.Group onChange={onChange1} value={value}>
-                      <Radio value={1}>Fast Tag Recharge</Radio>
-                      <Radio value={2}>Purchase</Radio>
-                    </Radio.Group>
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder=" Tyer Company"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
+
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="  tyer_model"
+                    label={
+                      <label style={{ fontSize: "15px" }}>
+                        {" "}
+                        Tyer Model
+                      </label>
+                    }
+                    hasFeedback
+                    style={{ width: "96%", marginBottom: "10px" }}
+                    rules={[
+                      {
+                        required: true,
+                        // message: "Please input your Total weight!",
+                      },
+                    ]}
+                  >
+                    {/* <Tooltip title="Enter GST Number"> */}
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder="Tyer Model"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
+
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="total_qty"
+                    label={
+                      <label style={{ fontSize: "15px" }}>
+                        {" "}
+                        Total Qty
+                      </label>
+                    }
+                    hasFeedback
+                    style={{ width: "96%", marginBottom: "10px" }}
+                    rules={[
+                      {
+                        required: true,
+                     
+                      },
+                    ]}
+                  >
+                   
+                   <Input
+                      placeholder="  Total Qty"
+                      value="3223452"
+                      tabIndex={1}
+                    />
 
                     {/* </Tooltip> */}
                   </Form.Item>
@@ -234,4 +289,4 @@ const FRMfastTag = () => {
     </>
   );
 };
-export default FRMfastTag;
+export default FRMPurchesTyer;

@@ -71,7 +71,7 @@ const FRMContractView = () => {
                 <div className="">
                     <div className="">
                       <div   className=" relative sm:w-full sm:m-auto w-full    border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">FRMContractView   </div> 
+                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Contract View   </div> 
                     <div className="  pb-2">
                     <div className="  m-auto  w-full pb-3 md:w-full md:grid md:grid-cols-5 md:gap-2 sm:w-[90%] sm:m-auto grid grid-cols-2 gap-1 px-1 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
                         <div  className="w-full ">

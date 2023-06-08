@@ -5,6 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+import r from "./rpt.module.css"
 const RPTVehiclescheduledsummary = ({data1}) => {
 console.log("dhvdv",data1)
     const [data,setDate]=useState({
@@ -52,7 +53,7 @@ console.log("dhvdv",data1)
                     <div className="">
                       
                     
-                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  ">
+                   <div ref={conponentPDF}  className="  sm:w-full sm:m-auto w-full  ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Vehicle Scheduled Summary </div> 
                     <div className="  pb-2">
 
@@ -69,44 +70,44 @@ console.log("dhvdv",data1)
                   Date From : {data.date_From} To :{data.to}
                 </h1>
                 </div>
-                    <table id="my-table" className=" w-full " >
+                    <table id="my-table" className=" w-full relative " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Schedule  Date/Time</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">User Id</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">User Name</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Registered Number</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No Scheduled </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Current Status </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Freight</th>
-                         
-                            </tr> 
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base ">Sr. No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base "> Schedule  Date/Time</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">User Id</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">User Name</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">Registered Number</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">Vehicle No Scheduled </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">Current Status </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">Freight</th>
+                         </tr> 
                         </thead>
                         <tbody>
                             {
                                 data1?.map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.scheduled_date}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registered_number}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_no_scheduled}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.current_status}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.freight}</td>
+                                <td className="sm:px-2 px-2 sm:text-base text-base">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base">{uData.scheduled_date}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base">{uData.user_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base">{uData.user_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base">{uData.registered_number}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base">{uData.vehicle_no_scheduled}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base">{uData.current_status}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base">{uData.freight}</td>
                              
                            
-                                <td>
-                                    {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>
-                                    <Link to="/userDelete" className="btn btn-danger">Delete</Link> */}
-                                </td>
                             </tr>
                             )) }
-                        </tbody>                        
-                    </table>         
-                    <div   style={{
-        position: 'fixed',
+                        </tbody>  
+                        <tfoot>
+        <tr>
+            <th colspan="7" scope="row">Totals</th>
+            <td>21,000</td>
+        </tr>
+    </tfoot>       
+    <div   style={{
+        position: 'absolute',
         top: '0',
         left: '0',
         right: '0',
@@ -114,7 +115,7 @@ console.log("dhvdv",data1)
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: '0.5',
+        opacity: '0.2',
         fontSize: '48px',
         color: 'red',
         transform: 'rotate(0deg)',
@@ -123,7 +124,10 @@ console.log("dhvdv",data1)
 
 <img className="w-60" src="transduniyalogo.png" alt="" />
 
-</div>
+</div>               
+                    </table>   
+                        
+                   
 </div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div>

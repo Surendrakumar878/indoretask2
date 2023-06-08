@@ -60,6 +60,9 @@ const options = {
       <Link to="/FRMfastTag"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMfastTag</button> </Link>
       <Link to="/FRMFastTagRequest"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMFastTagRequest</button> </Link>
       <Link to="/FRMContractView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMContractView</button> </Link>
+      <Link to="/FRMwebsite"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMwebsite</button> </Link>
+      <Link to="/FRMPurchesTyer"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMPurchesTyer</button> </Link>
+      <Link to="/FRMPurchesSparePart"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMPurchesPart</button> </Link>
    
     </div>
 

@@ -6,6 +6,7 @@ import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 
 import 'jspdf-autotable';
+import r from "./rpt.module.css"
 const RPTVehiclebookingsummary= ({data1}) => {
     const [data,setDate]=useState({
         name:"ram transport",
@@ -81,18 +82,18 @@ const RPTVehiclebookingsummary= ({data1}) => {
                     <table id="my-table" className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">booking  Date/Time</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">User Id</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">User Name</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Registerd No</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No Booked</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle owner Id </th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Owner Name </th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Freight</th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From Station </th>
-                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To Station</th>
-                            {/* <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Registration date</th> */}
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">Sr. No</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">booking  Date/Time</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">User Id</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">User Name</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Registerd No</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle No Booked</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle owner Id </th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle Owner Name </th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Freight</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">From Station </th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">To Station</th>
+                            {/* <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Registration date</th> */}
                       
                             </tr> 
                         </thead>
@@ -100,25 +101,27 @@ const RPTVehiclebookingsummary= ({data1}) => {
                             {
                                 data1?.map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.booking_date_time}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registered_number}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_no_booked}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_owner_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_owner_name}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.freight}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.from_station}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.to_station}</td>
-                                {/* <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.goodsname}</td>to statio */}
-                                <td>
-                                    {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>
-                                    <Link to="/userDelete" className="btn btn-danger">Delete</Link> */}
-                                </td>
+                                <td className="sm:px-2 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.booking_date_time}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.user_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.user_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.registered_number}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.vehicle_no_booked}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.vehicle_owner_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.vehicle_owner_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.freight}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.from_station}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.to_station}</td>
+                               
                             </tr>
                             )) }
-                        </tbody>                        
+                        </tbody>  
+                        <tfoot>
+        <tr>
+            <th colspan="8" scope="row">Totals</th>
+            <td>21,000</td>
+        </tr>
+    </tfoot>                         
                     </table>         
                     <div   style={{
         position: 'fixed',

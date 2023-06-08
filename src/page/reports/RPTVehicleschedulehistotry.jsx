@@ -5,6 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+import r from "../rpt.module.css"
 const RPTVehicleschedulehistotry = ({data1}) => {
     
 
@@ -62,12 +63,12 @@ const RPTVehicleschedulehistotry = ({data1}) => {
                     <div className="">
                       
                     
-                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2  border-black ">
+                   <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full   ">
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Vehicle Schedule History</div> 
-                    <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
+                    <div className=" pb-2">
 
                     
-                    <div>
+                    <div className=" border border-t-1  border-slate-700 border-b-1 border-r-1 border-l-1 w-[100%] ">
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.name}</h1>
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.email} </h1>
                 <p className="pl-1 text-[10px] ">{data.mobilenumber} </p>
@@ -85,36 +86,37 @@ const RPTVehicleschedulehistotry = ({data1}) => {
                     <table id="my-table" className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Schedule No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Schedule Date</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Name</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Contact Number</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Lisence No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Name</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">Sr. No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle No </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  "> Schedule No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Schedule Date</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Driver Name</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Driver Contact Number</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Driver Lisence No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Owner Name</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">From</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">To</th>
                             </tr>  
                         </thead>
                         <tbody>
                             {
                                 data1?.map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
+                                <td className="sm:px-2 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
 
                             </tr>
                             )) }
-                        </tbody>                        
+                        </tbody>          
+                                     
                     </table>         
                     <div    style={{
         position: 'fixed',

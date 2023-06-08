@@ -9,18 +9,12 @@ import {
   Upload,
   Card,
   Select,
-  Tooltip,
-  Modal,
-  DatePicker,
+  
   Checkbox,
 } from "antd";
 import { React, useState, useEffect } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import { Link, useNavigate } from "react-router-dom";
-// import { Empregister, GetCountryName, GetStateName, GetCityName, RegisterationNumberValidationName } from '../../../services/Services'
 import { UploadOutlined } from "@ant-design/icons";
-// import "./Register.css";
-// import logo from '../../../assets/image/transduniyalogofinal.png'
 import TextArea from "antd/es/input/TextArea";
 import n from "./Promotion.module.css";
 const { Option } = Select;
@@ -141,7 +135,7 @@ const FRMPromotion = () => {
               style={{ paddingLeft: "20px" }}
               hasFeedback
             >
-              <Checkbox.Group style={{ width: "100%" }} onChange={onChange}>
+              <Checkbox.Group style={{ width: "100%",marginBottom: "10px" }} onChange={onChange}>
                 <Row>
                   <Col span={8}>
                     <Checkbox value="A">Company</Checkbox>
@@ -171,7 +165,7 @@ const FRMPromotion = () => {
                       message: "Please input your Promotion_id !",
                     },
                   ]}
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                   hasFeedback
                 >
                   <Input placeholder="Promotion" tabIndex={1} />
@@ -193,11 +187,10 @@ const FRMPromotion = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width:"96%",marginBottom: "10px" }}
                 >
                    <input max="2099-12-25T23:59" 
-                  //  value={"hire_date_time"} 
-                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+                  
 
                    class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
@@ -220,17 +213,12 @@ const FRMPromotion = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
                   <input max="2099-12-25T23:59" 
-                  //  value={"hire_date_time"} 
-                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
-
-                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
-
-
-                  {/* </Tooltip> */}
+                  class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
+{/* </Tooltip> */}
                 </Form.Item>
               </Col>
               {/* Promotion Type */}
@@ -247,7 +235,7 @@ const FRMPromotion = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                 >
                   <Select
                     showSearch
@@ -277,7 +265,7 @@ const FRMPromotion = () => {
                   },
                 ]}
                 hasFeedback
-                style={{ paddingLeft: "20px", width: "96%" }}
+                style={{ paddingLeft: "20px", width: "96%",marginBottom: "10px" }}
               >
                 {/* <Tooltip title="Enter Your Address" > */}
                 <TextArea placeholder="Promotion Messages" tabIndex={2} />
@@ -285,10 +273,10 @@ const FRMPromotion = () => {
               </Form.Item>
             </Row>
 
-            <h3 className="card_menu">DOCUMENTS</h3>
+            <h3 className={n.card_menu}>DOCUMENTS</h3>
             <Row>
               {/* Image1 */}
-              <Col className="upload_col">
+              <Col className={n.upload_col}>
                 <Form.Item
                   name="image1"
                   label={<label style={{ fontSize: "15px" }}> Image1 </label>}
@@ -330,7 +318,7 @@ const FRMPromotion = () => {
                 </Form.Item>
               </Col>
               {/* PDF1 */}
-              <Col className="upload_col">
+              <Col className={n.upload_col}>
                 <Form.Item
                   name="pdf1"
                   label={<label style={{ fontSize: "15px" }}>PDF1</label>}
@@ -351,7 +339,7 @@ const FRMPromotion = () => {
                 </Form.Item>
               </Col>
               {/* PDF2 */}
-              <Col className="upload_col">
+              <Col className={n.upload_col}>
                 <Form.Item
                   name="pdf2"
                   label={<label style={{ fontSize: "15px" }}>PDF2</label>}

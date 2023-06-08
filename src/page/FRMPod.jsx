@@ -162,7 +162,7 @@ const FRMPod = () => {
                       <label style={{ fontSize: "15px" }}> Booking No:</label>
                     }
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                     rules={[
                       {
                         required: true,
@@ -232,7 +232,7 @@ const FRMPod = () => {
                       }),
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Website URL"> */}
                     
@@ -266,7 +266,7 @@ const FRMPod = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
                     <input max="2099-12-25T23:59" 
@@ -291,7 +291,7 @@ const FRMPod = () => {
                       <label style={{ fontSize: "15px" }}> Driver name:</label>
                     }
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                     rules={[
                       {
                         required: true,
@@ -340,7 +340,7 @@ const FRMPod = () => {
                       </label>
                     }
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                     rules={[
                       {
                         required: true,
@@ -394,7 +394,7 @@ const FRMPod = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Website URL"> */}
                     <Input placeholder="Goods Name" tabIndex={11} />
@@ -421,7 +421,7 @@ const FRMPod = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Website URL"> */}
                     {/* <Input placeholder="From" tabIndex={9} /> */}
@@ -455,7 +455,7 @@ const FRMPod = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Website URL"> */}
                     {/* <Input placeholder="To" tabIndex={10} /> */}
@@ -485,7 +485,7 @@ const FRMPod = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
                     <input max="2099-12-25T23:59" 
@@ -517,7 +517,7 @@ const FRMPod = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
                     <input max="2099-12-25T23:59" 
@@ -542,7 +542,7 @@ const FRMPod = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
                     <input max="2099-12-25T23:59" 
@@ -567,7 +567,7 @@ const FRMPod = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     {/* <Tooltip title="Enter Your Address" > */}
                     <input max="2099-12-25T23:59" 
@@ -598,7 +598,7 @@ const FRMPod = () => {
                       </label>
                     }
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                     rules={[
                       {
                         required: true,
@@ -647,7 +647,7 @@ const FRMPod = () => {
                       </label>
                     }
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                     rules={[
                       {
                         required: true,
@@ -695,7 +695,7 @@ const FRMPod = () => {
                       </label>
                     }
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                     rules={[
                       {
                         required: true,
@@ -742,6 +742,7 @@ const FRMPod = () => {
                   name="pod1"
                   label={<label style={{ fontSize: "15px" }}> Pod1 </label>}
                   getValueFromEvent={({ file }) => file.originFileObj}
+                  style={{ width: "96%",marginBottom: "10px" }}
                   rules={[
                     {
                       required: true,
@@ -763,6 +764,7 @@ const FRMPod = () => {
                   name="pod2"
                   label={<label style={{ fontSize: "15px" }}>Pod2</label>}
                   getValueFromEvent={({ file }) => file.originFileObj}
+                  style={{ width: "96%",marginBottom: "10px" }}
                   rules={[
                     {
                       required: true,
@@ -783,6 +785,7 @@ const FRMPod = () => {
                 <Form.Item
                   name="weight_slip1"
                   label={<label style={{ fontSize: "15px" }}>Weight slip1</label>}
+                  style={{ width: "96%",marginBottom: "10px" }}
                   rules={[
                     {
                       required: true,
@@ -804,6 +807,7 @@ const FRMPod = () => {
                 <Form.Item
                   name="weight_slip2"
                   label={<label style={{ fontSize: "15px" }}>Weight Slip2</label>}
+                  style={{ width: "96%",marginBottom: "10px" }}
                   rules={[
                     {
                       required: true,

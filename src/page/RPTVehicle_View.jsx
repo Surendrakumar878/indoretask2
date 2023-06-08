@@ -3,6 +3,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+import r from "./rpt.module.css"
 const RPTVehicle_View = () => {
   const conponentPDF = useRef();
   const [userData, setUserdata] = useState([]);
@@ -57,19 +58,19 @@ const RPTVehicle_View = () => {
                   <table id="my-table" className=" w-full ">
                     <thead className="bg-[#151B54] w-full text-white">
                       <tr>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Enq id</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Enq date</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Demand by</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle type</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Height</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle size </th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle body type</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle capacity</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Good Name</th>
-                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Total Weight</th></tr>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">Sr. No</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Enq id</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  "> Enq date</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">From</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">To</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Demand by</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle type</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle Height</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle size </th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle body type</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Vehicle capacity</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Good Name</th>
+                        <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Total Weight</th></tr>
                     </thead>
                     <tbody>
                       {/* { */}
@@ -77,23 +78,29 @@ const RPTVehicle_View = () => {
                       <tr
                       //  key={index}
                       >
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{1}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a."}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a."}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a."}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.act"}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.on"}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.us"}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.ate"}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a_date"}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.l_weight"}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">{"a.s_name"}</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">ghj</td>
-                        <td className="sm:px-1 px-1 sm:text-base text-[8px] border border-slate-300">ghj
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{1}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a."}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a."}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a."}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a.act"}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a.on"}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a.us"}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a.ate"}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a_date"}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a.l_weight"}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">{"a.s_name"}</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">ghj</td>
+                        <td className="sm:px-1 px-1 sm:text-base text-[8px] ">ghj
 </td>
                       </tr>
                       {/* )) } */}
                     </tbody>
+                    <tfoot>
+        <tr>
+            <th colspan="7" scope="row">Totals</th>
+            <td>21,000</td>
+        </tr>
+    </tfoot>       
                   </table>
                   <div className="absolute w-40 top-40 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
                     <img className="w-full" src="transduniyalogo.png" alt="" />

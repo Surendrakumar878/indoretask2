@@ -78,14 +78,14 @@ useEffect(()=>{
       <Input
    
      placeholder="Search VEHICLE NO" value={req_by} onChange={(e) => setreq_by(e.target.value)} 
-        style={{width:"90%"}}
+        style={{width:"90%",marginBottom: "10px"}}
       />
       </Col>
       <Col  className={schedule.select_option_col}>
      <label   style={{paddingLeft:"10px"}}>CONTACT NO </label><br/>
       <Input
         placeholder="Search by OWNER NAME" value={contact_no} onChange={(e) => setcontact_no(e.target.value)}
-        style={{width:"90%"}}
+        style={{width:"90%",marginBottom: "10px"}}
       />
       </Col>
       

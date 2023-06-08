@@ -1,5 +1,5 @@
 // import { Form, Formik } from "formik";
-import { useState } from "react";
+
 import {
   Button,
   Input,
@@ -16,7 +16,7 @@ import {
 } from "antd";
 
 import { DatePicker } from "antd";
-import { Link, useNavigate } from "react-router-dom";
+
 
 import v from "./contractentry.module.css";
 import TextArea from "antd/es/input/TextArea";
@@ -29,22 +29,7 @@ const FRMContract_Entry = () => {
     console.log("Formatted Selected Time: ", dateString);
   }
 
-  function onOk(value) {
-    console.log("onOk: ", value);
-  }
-
-  const navigate = useNavigate();
-  const [verfied, setVerifed] = useState(false);
-  const [country, setCountry] = useState([]);
-  const [state, setState] = useState([]);
-  const [city, setCity] = useState([]);
-  const [register, SetRegisterNumber] = useState([]);
-  const [required, Setrequired] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  function onChange() {
-    setVerifed(true);
-  }
+ 
 
   const saveData = async (values) => {
     console.log(values);
@@ -88,7 +73,7 @@ const FRMContract_Entry = () => {
   return (
     <>
       <div className="flex flex-col gap-4 bg-white mb-10">
-        <h2 id={v.heading}>FRMContract_Entry Entry</h2>
+        <h2 id={v.heading}> Contract  Entry</h2>
         <div className={v.mainForm}>
           <Card hoverable bodyStyle={{ padding: "0" }}>
             {/* <Button onClick={welcom}> save</Button> */}
@@ -114,9 +99,6 @@ const FRMContract_Entry = () => {
                     hasFeedback
                     style={{ width: "96%" }}
                   >
-                    {/* <Tooltip title="Enter Your Website URL"> */}
-                    {/* <Input placeholder="From" tabIndex={9} /> */}
-
                     <Select
                       showSearch
                       placeholder=" From State"
@@ -151,8 +133,6 @@ const FRMContract_Entry = () => {
                     hasFeedback
                     style={{ width: "96%" }}
                   >
-                    {/* <Tooltip title="Enter Your Website URL"> */}
-                    {/* <Input placeholder="To" tabIndex={10} /> */}
                     <Select
                       showSearch
                       placeholder="From City"
@@ -212,9 +192,7 @@ const FRMContract_Entry = () => {
                     hasFeedback
                     style={{ width: "96%" }}
                   >
-                    {/* <Tooltip title="Enter Your Website URL"> */}
-                    {/* <Input placeholder="From" tabIndex={9} /> */}
-
+                   
                     <Select
                       showSearch
                       placeholder="To State"
@@ -249,8 +227,6 @@ const FRMContract_Entry = () => {
                     hasFeedback
                     style={{ width: "96%" }}
                   >
-                    {/* <Tooltip title="Enter Your Website URL"> */}
-                    {/* <Input placeholder="To" tabIndex={10} /> */}
                     <Select
                       showSearch
                       placeholder=" To City"
@@ -285,9 +261,7 @@ const FRMContract_Entry = () => {
                     hasFeedback
                     style={{ width: "96%" }}
                   >
-                    {/* <Tooltip title="Enter Your Website URL"> */}
-                    {/* <Input placeholder="From" tabIndex={9} /> */}
-
+                    
                     <Select
                       showSearch
                       placeholder="Contract from"
@@ -322,8 +296,7 @@ const FRMContract_Entry = () => {
                     hasFeedback
                     style={{ width: "96%" }}
                   >
-                    {/* <Tooltip title="Enter Your Website URL"> */}
-                    {/* <Input placeholder="To" tabIndex={10} /> */}
+                  
                     <Select
                       showSearch
                       placeholder="Contract To"
@@ -389,7 +362,7 @@ const FRMContract_Entry = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom:"3px" }}
                   >
                     <Select
                       showSearch

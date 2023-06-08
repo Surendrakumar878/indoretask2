@@ -116,7 +116,7 @@ const FRMVehicleDemandAgent = () => {
                       message: "Please input your  Enq no!",
                     }
                   ]}
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                   hasFeedback
                 >
                   {/* <Tooltip title="Enter Your Comapny Name"> */}
@@ -133,13 +133,11 @@ const FRMVehicleDemandAgent = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{  width: "96%" }}
+                  style={{  width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
                   <input max="2099-12-25T23:59" 
-                  //  value={"hire_date_time"} 
-                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
-
+                 
                    class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
 
@@ -162,7 +160,7 @@ const FRMVehicleDemandAgent = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{  width: "96%" }}
+                  style={{  width: "96%",marginBottom: "10px" }}
                 >
                   
                   <input max="2099-12-25T23:59" 
@@ -194,7 +192,7 @@ const FRMVehicleDemandAgent = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     <Select
                       showSearch
@@ -224,7 +222,7 @@ const FRMVehicleDemandAgent = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     <Select
                       showSearch
@@ -253,7 +251,7 @@ const FRMVehicleDemandAgent = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     <Select
                       showSearch
@@ -297,7 +295,7 @@ const FRMVehicleDemandAgent = () => {
                         },
                       }),
                     ]}
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                     hasFeedback
                   >
                     {/* <Tooltip title="Enter PIN Number"> */}
@@ -342,7 +340,7 @@ const FRMVehicleDemandAgent = () => {
                         type: "text",
                       },
                     ]}
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                     hasFeedback
                   >
                     {/* <Tooltip title="Enter Email ID"> */}
@@ -379,7 +377,7 @@ const FRMVehicleDemandAgent = () => {
                     }),
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
                   {/* <Input placeholder="No of tyres" type="tel"
@@ -426,7 +424,7 @@ const FRMVehicleDemandAgent = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
                   {/* <Input placeholder="From" tabIndex={9} /> */}
@@ -461,7 +459,7 @@ const FRMVehicleDemandAgent = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
                   {/* <Input placeholder="To" tabIndex={10} /> */}
@@ -497,7 +495,7 @@ const FRMVehicleDemandAgent = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
                   <Input placeholder="Goods Name" tabIndex={11} />
@@ -513,7 +511,7 @@ const FRMVehicleDemandAgent = () => {
                   }
                   
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                   rules={[{
                     required: true,
                     // message: "Please input your Total weight!",
@@ -568,7 +566,7 @@ const FRMVehicleDemandAgent = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
                   <Input placeholder="Contact Number" tabIndex={11} />
@@ -591,7 +589,7 @@ const FRMVehicleDemandAgent = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{ width: "96%" }}
+                  style={{ width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
                   <Input placeholder="location" tabIndex={11} />

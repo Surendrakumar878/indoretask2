@@ -15,13 +15,10 @@ import {
   Modal,
 } from "antd";
 
-import { DatePicker } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
 import v from "./GPSrequierement.module.css";
 const { Option } = Select;
-// import LoadingButton from "@mui/lab/LoadingButton";
-const FRMGPSrequierement = () => {
-  const { RangePicker } = DatePicker;
+// import LoadingButton from "@mui/lab/LoadingButtxon";
+const FRMPurchesSparePart = () => {
   function onChange(value, dateString) {
     console.log("Selected Time: ", value);
     console.log("Formatted Selected Time: ", dateString);
@@ -42,82 +39,29 @@ const FRMGPSrequierement = () => {
       setFile1(newFileList);
     },
 
-    beforeUpload: (file) => {
-      setFile1([...fileList1, file]);
-    },
+   
 
     progress: {
       strokeColor: {
         "0%": "#108ee9",
         "100%": "#87d068",
       },
-      strokemarginBottom: "10px",Width: 3,
+      strokeWidth: 3,
       format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
     },
   };
-  const [fileList2, setFile2] = useState([]);
-  const fileProps2 = {
-    multiple: false,
-    fileList1,
+ 
 
-    onRemove: (file) => {
-      const index = fileList2.indexOf(file);
-      const newFileList = fileList2.slice();
-      newFileList.splice(index, 1);
-      setFile2(newFileList);
-    },
-
-    beforeUpload: (file) => {
-      setFile2([...fileList2, file]);
-    },
-
-    progress: {
-      strokeColor: {
-        "0%": "#108ee9",
-        "100%": "#87d068",
-      },
-      strokemarginBottom: "10px",Width: 3,
-      format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
-    },
-  };
-  const [fileList3, setFile3] = useState([]);
-
-  const [fileList4, setFile4] = useState([]);
-  const fileProps4 = {
-    multiple: false,
-    fileList1,
-
-    onRemove: (file) => {
-      const index = fileList4.indexOf(file);
-      const newFileList = fileList4.slice();
-      newFileList.splice(index, 1);
-      setFile4(newFileList);
-    },
-
-    beforeUpload: (file) => {
-      setFile4([...fileList4, file]);
-    },
-
-    progress: {
-      strokeColor: {
-        "0%": "#108ee9",
-        "100%": "#87d068",
-      },
-      strokemarginBottom: "10px",Width: 3,
-      format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
-    },
-  };
   
 
   const saveData = async (values) => {
-    console.log(values);
-    const reg_data = {
-        entry_id: values.entry_id,
-        no_of_vehicle: values.no_of_vehicle,
-        government_approve: values.government_approve,
-        current_gps_company: values.current_gps_company,
-        current_gps_yearly_charges: values.current_gps_yearly_charges,
     
+    const reg_data = {
+      req_id: values.req_id,
+      total_tyer_require: values.total_tyer_require,
+      tyer_company: values.tyer_company,
+      tyer_model: values.tyer_model,
+      total_qty: values.total_qty,
     };
     console.log(reg_data);
   };
@@ -126,173 +70,204 @@ const FRMGPSrequierement = () => {
     const isNumeric = charCode >= 48 && charCode <= 57; // check if the key pressed is a number
     const isBackspace = charCode === 8; // check if the key pressed is the backspace key
     const phone = e.target.value.replace(/\D/g, ""); // remove all non-numeric characters
-    
+
     if (!isNumeric && !isBackspace) {
       e.preventDefault(); // prevent the input of non-numeric characters
     }
-
-    
   };
   const [value, setValue] = useState(1);
   const onChange1 = (e) => {
-    console.log('radio checked', e.target.value);
+    console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
   return (
     <>
       <div className="flex flex-col gap-4 bg-white mb-10">
-        <h2 id={v.heading}>GPS requierement </h2>
+        <h2 id={v.heading}> Purches Spare Part </h2>
         <div className={v.mainForm}>
           <Card hoverable bodyStyle={{ padding: "0" }}>
-          
             <Form layout="vertical" autoComplete="off" onFinish={saveData}>
-           
               <Row>
                 <Col className={v.select_option_col}>
                   <Form.Item
-                    name="entry_id"
-                    label={<lable style={{ fontSize: "15px" }}>Entry ID: </lable>}
+                    name="req_id"
+                    label={<lable style={{ fontSize: "15px" }}>REQ ID: </lable>}
                     rules={[
                       {
                         // required: true,
                         message: "Please input your  Entry ID!",
                       },
                     ]}
-                    style={{ marginBottom: "10px",width: "96%" }}
+                    style={{ width: "96%", marginBottom: "10px" }}
                     hasFeedback
                   >
-                    {/* <Tooltip title="Enter Your Comapny Name"> */}
-                    <Input placeholder="Entry ID" value="3223452" tabIndex={1} />
-                    {/* </Tooltip> */}
-                  </Form.Item>
-                </Col>
-                <Col className={v.select_option_col}>
-                  <Form.Item
-                    name="no_of_vehicle"
-                    label={<lable style={{ fontSize: "15px" }}>NO Of Vehicle </lable>}
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your  NO of Vehicle!",
-                      },
-                    ]}
-                    style={{ marginBottom: "10px",width: "96%" }}
-                    hasFeedback
-                  >
-                    {/* <Tooltip title="Enter Your Comapny Name"> */}
-                    <Select
-                      showSearch
-                      placeholder=" NO Of Vehicle"
-                      optionFilterProp="children"
-                      style={{
-                        marginBottom: "10px",width: "100%",
-                      }}
-                      tabIndex={5}
-                    >
-                      {/* {city.map((items) => ( */}
-                      <Option value={"opton1"}>{"opton1"}</Option>
-                      {/* ))} */}
-                    </Select>
-                    {/* </Tooltip> */}
-                  </Form.Item>
-                </Col>
-                <Col className={v.select_option_col}>
-                  <Form.Item
-                    name="government_approve"
-                    label={
-                      <label style={{ fontSize: "15px" }}> Government Approve </label>
-                    }
-                    hasFeedback
-                    style={{ marginBottom: "10px",width: "96%" }}
-                    rules={[
-                      {
-                        required: true,
-                        // message: "Please input your Total weight!",
-                      },
-
                     
+                    <Input
+                      placeholder="Entry ID"
+                      value="3223452"
+                      tabIndex={1}
+                    />
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="req_date_time"
+                    label={
+                      <lable style={{ fontSize: "15px" }}>REQ Date/TIME </lable>
+                    }
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input your  !",
+                      },
                     ]}
+                    style={{ width: "96%", marginBottom: "10px" }}
+                    hasFeedback
                   >
-                    {/* <Tooltip title="Enter GST Number"> */}
-                    <Radio.Group onChange={onChange1} value={value}>
-      <Radio value={1}>Yes</Radio>
-      <Radio value={2}>No</Radio>
-    
-    </Radio.Group>
+                    {/* <Tooltip title="Enter Your Comapny Name"> */}
+                    <input max="2099-12-25T23:59" 
+                  //  value={"hire_date_time"} 
+                  //  onChange={(e)=>sethire_date_time(e.target.value)} 
+
+                   class="placeholder:italic placeholder:text-slate-400 block bg-white w-[100%] rounded-md border border-slate-300  py-[5px] pl-1 sm:pl-3 pr-1  focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="datetime-local" name="search"/>
 
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
                
-                
-              </Row>
-             
-              <Row>
-             
-
                 <Col className={v.select_option_col}>
                   <Form.Item
-                    name="current_gps_company"
+                    name="total_tyer_require"
                     label={
-                      <label style={{ fontSize: "15px" }}>current gps company</label>
-                    }
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your current gps company!",
-                      },
-                   
-                    
-                    ]}
-                    hasFeedback
-                    style={{ marginBottom: "10px",width: "96%" }}
-                  >
-                    {/* <Tooltip title="Enter Your Website URL"> */}
-                    <Input
-                      placeholder="current gps company"
-                    
-                      // onKeyPress={handlePhoneKeyPress}
-                      tabIndex={8}
-                    />
-                    {/* </Tooltip> */}
-                  </Form.Item>
-                </Col>
-                <Col className={v.select_option_col}>
-                  <Form.Item
-                    name="current_gps_yearly_charges"
-                    label={
-                      <label style={{ fontSize: "15px" }}> current gps yearly charges</label>
+                      <label style={{ fontSize: "15px" }}>
+                        {" "}
+                       Total Tyer Require
+                      </label>
                     }
                     hasFeedback
-                    style={{ marginBottom: "10px",width: "96%" }}
+                    style={{ width: "96%", marginBottom: "10px" }}
                     rules={[
                       {
                         required: true,
                         // message: "Please input your Total weight!",
                       },
-
-                  
                     ]}
                   >
                     {/* <Tooltip title="Enter GST Number"> */}
-                    <Input
-                      placeholder="current gps yearly charges"
-                      type="tel"
-                      onKeyPress={handlePhoneKeyPress}
-                      maxLength={15}
-                      tabIndex={9}
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder=" Total Tyer require"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
+
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name=" tyer_company"
+                    label={
+                      <label style={{ fontSize: "15px" }}>
+                        {" "}
+                        Tyer Company
+                      </label>
+                    }
+                    hasFeedback
+                    style={{ width: "96%", marginBottom: "10px" }}
+                    rules={[
+                      {
+                        required: true,
+                        // message: "Please input your Total weight!",
+                      },
+                    ]}
+                  >
+                    {/* <Tooltip title="Enter GST Number"> */}
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder=" Tyer Company"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
+
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="  tyer_model"
+                    label={
+                      <label style={{ fontSize: "15px" }}>
+                        {" "}
+                        Tyer Model
+                      </label>
+                    }
+                    hasFeedback
+                    style={{ width: "96%", marginBottom: "10px" }}
+                    rules={[
+                      {
+                        required: true,
+                        // message: "Please input your Total weight!",
+                      },
+                    ]}
+                  >
+                    {/* <Tooltip title="Enter GST Number"> */}
+                    <Select
+                      showSearch
+                      // onChange={getCityName}
+                      placeholder="Tyer Model"
+                      optionFilterProp="children"
+                      tabIndex={4}
+                    >
+                      {/* {state.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
+
+                    {/* </Tooltip> */}
+                  </Form.Item>
+                </Col>
+                <Col className={v.select_option_col}>
+                  <Form.Item
+                    name="total_qty"
+                    label={
+                      <label style={{ fontSize: "15px" }}>
+                        {" "}
+                        Total Qty
+                      </label>
+                    }
+                    hasFeedback
+                    style={{ width: "96%", marginBottom: "10px" }}
+                    rules={[
+                      {
+                        required: true,
+                     
+                      },
+                    ]}
+                  >
+                   
+                   <Input
+                      placeholder="  Total Qty"
+                      value="3223452"
+                      tabIndex={1}
                     />
+
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
               </Row>
-            
 
-            
-
-            
-              
-           
               <div className=" m-auto w-40 pb-20">
                 <Form.Item className="w-40 m-auto">
                   <button
@@ -314,5 +289,4 @@ const FRMGPSrequierement = () => {
     </>
   );
 };
-export default FRMGPSrequierement;
-
+export default FRMPurchesSparePart;

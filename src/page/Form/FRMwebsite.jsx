@@ -1,30 +1,25 @@
 // import { Form, Formik } from "formik";
 import { useState } from "react";
 import {
-  Button,
+ 
   Input,
-  message,
-  Form,
+ Form,
   Row,
   Radio,
   Col,
-  Upload,
-  Card,
+ Card,
   Select,
-  Tooltip,
-  Modal,
+ 
 } from "antd";
-
-import { DatePicker } from "antd";
 
 import v from "./GPSrequierement.module.css";
 const { Option } = Select;
-
-const FRMfastTag = () => {
-
+// import LoadingButton from "@mui/lab/LoadingButtxon";
+const FRMwebsite = () => {
+  
   function onChange(value, dateString) {
     console.log("Selected Time: ", value);
-    console.log("Formatted Selected Time: ", dateString);
+  
   }
 
   function onOk(value) {
@@ -137,15 +132,15 @@ const FRMfastTag = () => {
   return (
     <>
       <div className="flex flex-col gap-4 bg-white mb-10">
-        <h2 id={v.heading}> Fast Tag Request </h2>
+        <h2 id={v.heading}> FRM website </h2>
         <div className={v.mainForm}>
           <Card hoverable bodyStyle={{ padding: "0" }}>
             <Form layout="vertical" autoComplete="off" onFinish={saveData}>
               <Row>
                 <Col className={v.select_option_col}>
                   <Form.Item
-                    name="req_id"
-                    label={<lable style={{ fontSize: "15px" }}>REQ ID: </lable>}
+                    name="entry_id"
+                    label={<lable style={{ fontSize: "15px" }}>Entry ID: </lable>}
                     rules={[
                       {
                         // required: true,
@@ -168,7 +163,7 @@ const FRMfastTag = () => {
                   <Form.Item
                     name="req_date_time"
                     label={
-                      <lable style={{ fontSize: "15px" }}>REQ Date/TIME </lable>
+                      <lable style={{ fontSize: "15px" }}>Entry Date/TIME </lable>
                     }
                     rules={[
                       {
@@ -180,7 +175,7 @@ const FRMfastTag = () => {
                     hasFeedback
                   >
                     {/* <Tooltip title="Enter Your Comapny Name"> */}
-                    <input type="datetime-local" placeholder="REQ Date/TIME" />
+                    <input type="datetime-local" placeholder="Entry Date/TIME" />
                     {/* </Tooltip> */}
                   </Form.Item>
                 </Col>
@@ -190,7 +185,7 @@ const FRMfastTag = () => {
                     label={
                       <label style={{ fontSize: "15px" }}>
                         {" "}
-                        Transaction Type{" "}
+                        Domain Available{" "}
                       </label>
                     }
                     hasFeedback
@@ -204,8 +199,8 @@ const FRMfastTag = () => {
                   >
                     {/* <Tooltip title="Enter GST Number"> */}
                     <Radio.Group onChange={onChange1} value={value}>
-                      <Radio value={1}>Fast Tag Recharge</Radio>
-                      <Radio value={2}>Purchase</Radio>
+                      <Radio value={1}>Yes</Radio>
+                      <Radio value={2}>No</Radio>
                     </Radio.Group>
 
                     {/* </Tooltip> */}
@@ -234,4 +229,4 @@ const FRMfastTag = () => {
     </>
   );
 };
-export default FRMfastTag;
+export default FRMwebsite;

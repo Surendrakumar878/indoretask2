@@ -3,6 +3,7 @@ import jsPDF from 'jspdf';
 import React, { useRef, useState } from 'react'
 import { useReactToPrint } from 'react-to-print';
 import r from './rptsinglepod.module.css'
+import rr from "./rpt.module.css"
 const RPTSinglepod = () => {
   const conponentPDF = useRef();
   const ref = useRef();

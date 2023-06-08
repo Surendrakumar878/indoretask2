@@ -7,7 +7,7 @@ import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
-
+import r from "../rpt.module.css"
 const RPTVehicleHireHistory = ({ data1 }) => {
   const pageStyle = `@page { 
     size: auto;  margin: 0mm ; } @media print { body { -webkit-print-color-adjust: exact; } }
@@ -135,41 +135,41 @@ const RPTVehicleHireHistory = ({ data1 }) => {
                   <table id="my-table" className=" w-full  ">
                     <thead className="bg-[#151B54] w-full text-white text-[10px]">
                       <tr>
-                        <th className=" lg:text-[10px]  p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">
                           Sr. No
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Vehicle No
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           {" "}
                           Hire Id
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Hire Date
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Hire By
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Com Contact No
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Com Location{" "}
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           POD no{" "}
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Pod Date
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           From
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           To
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Com Name
                         </th>
                       </tr>
@@ -177,48 +177,47 @@ const RPTVehicleHireHistory = ({ data1 }) => {
                     <tbody>
                       {data1?.map((datapost, index) => (
                           <tr key={index}>
-                            <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-2 px-2 sm:text-base text-base ">
                               {index + 1}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.booking_no}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.user_id}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.user_name}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.registered_number}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.vehicle_no_scheduled}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.current_status}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.freight}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.from}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.to}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.com_name}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                            <td className="sm:px-3 px-2 sm:text-base text-base ">
                               {datapost.freight}
                             </td>
-                            <td>
                            
-                            </td>
                           </tr>
                         ))}
                     </tbody>
+                   
                   </table>
                   <div
                     style={{

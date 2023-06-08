@@ -5,6 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+import r from "./rpt.module.css"
 const RPTFreight = ({data1}) => {
     const [data,setDate]=useState({
         name:"ram transport",
@@ -81,14 +82,14 @@ const RPTFreight = ({data1}) => {
                     <table id="my-table" className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Id</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Number</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle No </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Goods</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Rate / Ton</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">Sr. No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Booking Id</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Booking Number</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">vehicle No </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Goods</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">From </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">To</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Rate / Ton</th>
                    
                             </tr>  
                         </thead>
@@ -96,21 +97,26 @@ const RPTFreight = ({data1}) => {
                             {
                                 data1?.map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_name}</td>
-                                
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
+                                <td className="sm:px-2 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.user_name}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base ">{index+1}</td>
                              
                        
 
                             </tr>
                             )) }
-                        </tbody>                        
+                        </tbody>    
+                        <tfoot>
+        <tr>
+            <th colspan="7" scope="row">Totals</th>
+            <td>21,000</td>
+        </tr>
+    </tfoot>                           
                     </table>         
                     <div    style={{
         position: 'fixed',
@@ -121,7 +127,7 @@ const RPTFreight = ({data1}) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: '0.5',
+        opacity: '0.2',
         fontSize: '48px',
         color: 'red',
         transform: 'rotate(0deg)',

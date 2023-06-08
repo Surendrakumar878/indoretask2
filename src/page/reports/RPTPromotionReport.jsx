@@ -5,6 +5,7 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+import r from "../rpt.module.css"
 const RPTPromotionReport = ({data1}) => {
   const [data, setDate] = useState({
     name: "ram transport",
@@ -83,23 +84,23 @@ const RPTPromotionReport = ({data1}) => {
                   <table id="my-table" className=" w-full ">
                     <thead className="bg-[#151B54] w-full text-white text-[10px]">
                       <tr>
-                        <th className=" lg:text-[10px]  p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">
                           Sr. No
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Promotion id
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           {" "}
                           Promotion Date/time
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Promotion End Date/time
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Promotion Type 
                         </th>
-                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">
+                        <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Promotion Messages
                         </th>
                       </tr>
@@ -107,28 +108,34 @@ const RPTPromotionReport = ({data1}) => {
                     <tbody>
                       {data1?.map((uData, index) => (
                         <tr key={index}>
-                          <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">
+                          <td className="sm:px-2 px-2 sm:text-base text-base ">
                             {index + 1}
                           </td>
-                          <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                          <td className="sm:px-3 px-2 sm:text-base text-base ">
                             {uData.schedule_date_time}
                           </td>
-                          <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                          <td className="sm:px-3 px-2 sm:text-base text-base ">
                             {uData.user_id}
                           </td>
-                          <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                          <td className="sm:px-3 px-2 sm:text-base text-base ">
                             {uData.username}
                           </td>
-                          <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                          <td className="sm:px-3 px-2 sm:text-base text-base ">
                             {uData.registered_number}
                           </td>
-                          <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">
+                          <td className="sm:px-3 px-2 sm:text-base text-base ">
                             {uData.registered_number}
                           </td>
                           <td></td>
                         </tr>
                       ))}
                     </tbody>
+                    <tfoot>
+        <tr>
+            <th colspan="7" scope="row">Totals</th>
+            <td>21,000</td>
+        </tr>
+    </tfoot>       
                   </table>
                   <div    style={{
         position: 'fixed',

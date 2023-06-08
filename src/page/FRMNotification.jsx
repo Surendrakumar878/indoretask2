@@ -173,7 +173,7 @@ const FRMNotification = () => {
                     message: "Please input your notification_id !"
                   }
                 ]}
-                style={{  width: "96%" }}
+                style={{  width: "96%",marginBottom: "10px" }}
                 hasFeedback
 
               >
@@ -195,7 +195,7 @@ const FRMNotification = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{  width: "96%" }}
+                  style={{  width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
                   <input max="2099-12-25T23:59" 
@@ -219,7 +219,7 @@ const FRMNotification = () => {
                     },
                   ]}
                   hasFeedback
-                  style={{  width: "96%" }}
+                  style={{  width: "96%",marginBottom: "10px" }}
                 >
                   {/* <Tooltip title="Enter Your Address" > */}
                   <input max="2099-12-25T23:59" 
@@ -245,7 +245,7 @@ const FRMNotification = () => {
                       },
                     ]}
                     hasFeedback
-                    style={{ width: "96%" }}
+                    style={{ width: "96%",marginBottom: "10px" }}
                   >
                     <Select
                       showSearch
@@ -272,7 +272,7 @@ const FRMNotification = () => {
                 ]}
                 hasFeedback
 
-                style={{ paddingLeft: "20px", width: "96%" }}
+                style={{ paddingLeft: "20px", width: "96%",marginBottom: "10px" }}
               >
                 {/* <Tooltip title="Enter Your Address" > */}
                 <TextArea placeholder='Notification Messages' tabIndex={2} />
