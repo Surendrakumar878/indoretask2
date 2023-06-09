@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Loadingslip from "./page/Loadingslip";
 import Vehicle_owner_documents from "./page/Vehicle_owner_documents";
 import ProfileUpdateForm from "./page/ProfileUpdateForm";
@@ -47,20 +47,28 @@ import FRMwebsite from "./page/Form/FRMwebsite";
 import FRMPurchesTyer from "./page/Form/FRMPurchesTyer";
 
 import FRMPurchesSparePart from "./page/Form/FRMPurchesSparePart";
+import { useGetPokemonByNameQuery } from "./Api/services/Pokman";
+import { useEffect, useState } from "react";
+import SingleProduct from "./components/SingleProduct";
+import Demo from "./components/Demo";
 
 // create a new preview
 
 function App() {
- 
+
+  
   window.history.pushState(null, null, window.location.href);
   window.onpopstate = function (event) {
     window.history.go(1);
   };
- 
+//  console.log(data.todos)
+
 
   return (
     <div>
+
       
+
       <Routes>
         {/* report */}
         <Route path="/" element={<Home />}></Route>
@@ -111,6 +119,8 @@ function App() {
         <Route path="/FRMwebsite" element={<FRMwebsite />}></Route>
         <Route path="/FRMPurchesTyer" element={<FRMPurchesTyer />}></Route>
         <Route path="/FRMPurchesSparePart" element={<FRMPurchesSparePart />}></Route>
+        <Route path="/SingleProduct/:id" element={<SingleProduct />}></Route>
+        <Route path="/demo" element={<Demo />}></Route>
       </Routes>
     </div>
   );
