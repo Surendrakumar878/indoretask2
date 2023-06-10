@@ -255,7 +255,7 @@ const RPTreport = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  opacity: ".1",
+                  opacity: ".2",
                   fontSize: "48px",
                   color: "red",
                   transform: "rotate(0deg)",

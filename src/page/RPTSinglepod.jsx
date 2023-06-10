@@ -69,7 +69,7 @@ const RPTSinglepod = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: '0.1',
+        opacity: '0.2',
         fontSize: '48px',
         // color: 'red',
         transform: 'rotate(0deg)',

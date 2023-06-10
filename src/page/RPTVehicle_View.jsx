@@ -21,7 +21,7 @@ const RPTVehicle_View = () => {
   const generatePDF = useReactToPrint({
     content: () => conponentPDF.current,
     documentTitle: "Userdata",
-    onAfterPrint: () => alert("Data saved in PDF"),
+    
   });
   console.log(userData);
 
@@ -55,7 +55,7 @@ const RPTVehicle_View = () => {
                   ref={conponentPDF}
                   className="  pb-2"
                 >
-                  <table id="my-table" className=" w-full ">
+                  <table id="my-table" className=" w-full relative">
                     <thead className="bg-[#151B54] w-full text-white">
                       <tr>
                         <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">Sr. No</th>
@@ -100,11 +100,28 @@ const RPTVehicle_View = () => {
             <th colspan="7" scope="row">Totals</th>
             <td>21,000</td>
         </tr>
-    </tfoot>       
+    </tfoot>
+    <div   style={{
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        opacity: '0.2',
+        fontSize: '48px',
+        color: 'red',
+        transform: 'rotate(0deg)',
+        pointerEvents: 'none',
+      }}>
+
+<img className="w-60" src="transduniyalogo.png" alt="" />
+
+</div>         
                   </table>
-                  <div className="absolute w-40 top-40 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10">
-                    <img className="w-full" src="transduniyalogo.png" alt="" />
-                  </div>
+          
                   <h1 className="text-end text-xs">
                     Powered by : www.transduniya.com-97553-22022{" "}
                   </h1>

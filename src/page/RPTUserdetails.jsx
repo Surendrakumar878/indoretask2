@@ -25,7 +25,7 @@ console.log(data1)
 
     })
         const conponentPDF= useRef();
-        const [userData, setUserdata]= useState([1,1,1,1,1,1,1,1,1,1,1,1,1,11,1,1,1,1,1]);
+        const [userData, setUserdata]= useState([1]);
       
         useEffect( ()=>{
             const registerUserdata= async()=>{
@@ -85,7 +85,7 @@ console.log(data1)
                   Date From : {data.date_From} To :{data.to}
                 </h1>
                 </div>
-                    <table id="my-table" className=" w-full " >
+                    <table id="my-table" className=" w-full relative " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">     Sr. No               </th>
@@ -98,8 +98,6 @@ console.log(data1)
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     Status               </th>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     Registration date               </th>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     activation date               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     total weight               </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">     goods name               </th>
                             </tr> 
                         </thead>
                         <tbody >
@@ -116,23 +114,13 @@ console.log(data1)
                                 <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.status}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.Registration_date}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.activation_date}</td>
-                                {/* <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.total_weight}</td> */}
-                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.goods_name}</td>
-                                <td>
-                               
-                                </td>
+                                
+                              
                             </tr>
                             )) }
                         </tbody>    
-                        <tfoot>
-        <tr>
-            <th colspan="10" scope="row">Totals</th>
-            <td>21,000</td>
-        </tr>
-    </tfoot>                           
-                    </table>         
-                    <div   style={{
-        position: 'fixed',
+                        <div   style={{
+        position: 'absolute',
         top: '0',
         left: '0',
         right: '0',
@@ -149,7 +137,9 @@ console.log(data1)
 
 <img className="w-60" src="transduniyalogo.png" alt="" />
 
-</div>
+</div>                       
+                    </table>         
+         
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div>
 </div>

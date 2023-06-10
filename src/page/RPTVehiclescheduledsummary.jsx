@@ -25,7 +25,7 @@ console.log("dhvdv",data1)
         const generatePDF= useReactToPrint({
             content: ()=>conponentPDF.current,
             documentTitle:"Userdata",
-            onAfterPrint:()=>alert("Data saved in PDF")
+            
         });
            
 

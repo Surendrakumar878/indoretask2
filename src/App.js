@@ -47,10 +47,12 @@ import FRMwebsite from "./page/Form/FRMwebsite";
 import FRMPurchesTyer from "./page/Form/FRMPurchesTyer";
 
 import FRMPurchesSparePart from "./page/Form/FRMPurchesSparePart";
-import { useGetPokemonByNameQuery } from "./Api/services/Pokman";
-import { useEffect, useState } from "react";
+
 import SingleProduct from "./components/SingleProduct";
 import Demo from "./components/Demo";
+import RPTVehicle_View from "./page/RPTVehicle_View";
+import FRMresaler from "./page/Form/FRMresaler";
+import FRMresalerView from "./page/Form/FRMresalerView";
 
 // create a new preview
 
@@ -61,13 +63,12 @@ function App() {
   window.onpopstate = function (event) {
     window.history.go(1);
   };
-//  console.log(data.todos)
+
 
 
   return (
     <div>
 
-      
 
       <Routes>
         {/* report */}
@@ -120,6 +121,8 @@ function App() {
         <Route path="/FRMPurchesTyer" element={<FRMPurchesTyer />}></Route>
         <Route path="/FRMPurchesSparePart" element={<FRMPurchesSparePart />}></Route>
         <Route path="/SingleProduct/:id" element={<SingleProduct />}></Route>
+        <Route path="/FRMresaler" element={<FRMresaler />}></Route>
+        <Route path="/FRMresalerView" element={<FRMresalerView />}></Route>
         <Route path="/demo" element={<Demo />}></Route>
       </Routes>
     </div>

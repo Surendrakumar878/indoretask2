@@ -132,7 +132,7 @@ const RPTVehicleHireHistory = ({ data1 }) => {
                       Date From : {data.date_From} To :{data.to}
                     </h1>
                   </div>
-                  <table id="my-table" className=" w-full  ">
+                  <table id="my-table" className=" w-full relative ">
                     <thead className="bg-[#151B54] w-full text-white text-[10px]">
                       <tr>
                         <th className=" lg:text-[10px]  p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">
@@ -217,27 +217,27 @@ const RPTVehicleHireHistory = ({ data1 }) => {
                           </tr>
                         ))}
                     </tbody>
-                   
+                    <div   style={{
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        opacity: '0.2',
+        fontSize: '48px',
+        color: 'red',
+        transform: 'rotate(0deg)',
+        pointerEvents: 'none',
+      }}>
+
+<img className="w-60" src="transduniyalogo.png" alt="" />
+
+</div>   
                   </table>
-                  <div
-                    style={{
-                      position: "fixed",
-                      top: "0",
-                      left: "0",
-                      right: "0",
-                      bottom: "0",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      opacity: "0.5",
-                      fontSize: "48px",
-                      color: "red",
-                      transform: "rotate(0deg)",
-                      pointerEvents: "none",
-                    }}
-                  >
-                    <img className="w-40" src="transduniyalogo.png" alt="" />
-                  </div>
+              
 
                   <div className="absolute w-40 top-60 left-32 sm:top-80 sm:w-96 sm:left-96 opacity-10"></div>
                 </div>

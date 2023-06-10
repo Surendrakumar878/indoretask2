@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Select, Space } from "antd";
+import { Input, Select, Space } from "antd";
 
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -162,13 +162,13 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.user_name.includes(Vehicle_Scheduled_Summary.user_name) &&
-            (res.registered_number.includes(
+            res.registered_number.includes(
               Vehicle_Scheduled_Summary.registered_number
             ) &&
-              res.scheduled_date.includes(
-                Vehicle_Scheduled_Summary.scheduled_date
-              ) &&
-              res.vehicle_no.includes(Vehicle_Scheduled_Summary.vehicle_no))
+            res.scheduled_date.includes(
+              Vehicle_Scheduled_Summary.scheduled_date
+            ) &&
+            res.vehicle_no.includes(Vehicle_Scheduled_Summary.vehicle_no)
         )
       );
     } else if (report === "Overall_wallet_Summary") {
@@ -197,9 +197,9 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.vehicle_no.includes(pod_register.vehicle_no) &&
-            res.to.includes(pod_register.to)&&
+            res.to.includes(pod_register.to) &&
             res.pod_date.includes(pod_register.pod_date) &&
-            res.booking_no.includes(pod_register.booking_no)&&
+            res.booking_no.includes(pod_register.booking_no) &&
             res.booking_date.includes(pod_register.booking_date) &&
             res.from.includes(pod_register.from)
         )
@@ -210,11 +210,10 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.vehicle_no.includes(freight_register.vehicle_no) &&
-            res.booking_no.includes(freight_register.booking_no)&&
-           res.from.includes(freight_register.from) &&
+            res.booking_no.includes(freight_register.booking_no) &&
+            res.from.includes(freight_register.from) &&
             res.to.includes(freight_register.to)
-        
-            )
+        )
       );
     } else if (report === "vehicle_hire_history") {
       setView("RPTVehicleHireHistory");
@@ -222,9 +221,9 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.hire_date.includes(vehicle_hire_history.hire_date) &&
-            res.pod_no.includes(vehicle_hire_history.pod_no)&&
+            res.pod_no.includes(vehicle_hire_history.pod_no) &&
             res.company_name.includes(vehicle_hire_history.company_name) &&
-            res.vehicle_no.includes(vehicle_hire_history.vehicle_no)&&
+            res.vehicle_no.includes(vehicle_hire_history.vehicle_no) &&
             res.from.includes(vehicle_hire_history.from) &&
             res.to.includes(vehicle_hire_history.to)
         )
@@ -235,9 +234,7 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.vehicle_no.includes(vehicle_master_information.vehicle_no) &&
-            res.owner_name.includes(
-              vehicle_master_information.owner_name
-            )
+            res.owner_name.includes(vehicle_master_information.owner_name)
         )
       );
     } else if (report === "vehicle_schedule_histotry") {
@@ -246,10 +243,11 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.vehicle_no.includes(vehicle_schedule_histotry.vehicle_no) &&
-            res.sch_date.includes(vehicle_schedule_histotry.sch_date )&&
+            res.sch_date.includes(vehicle_schedule_histotry.sch_date) &&
             res.driver_name.includes(vehicle_schedule_histotry.driver_name) &&
-            res.from.includes(vehicle_schedule_histotry.from )&&
-            res.to.includes(vehicle_schedule_histotry.to))
+            res.from.includes(vehicle_schedule_histotry.from) &&
+            res.to.includes(vehicle_schedule_histotry.to)
+        )
       );
     } else if (report === "demand_detail") {
       setView("RPTDemandDetail");
@@ -257,11 +255,10 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.req_date.includes(demand_detail.req_date) &&
-            res.demand_by.includes(demand_detail.demand_by)&&
+            res.demand_by.includes(demand_detail.demand_by) &&
             res.vehicle_type.includes(demand_detail.vehicle_type) &&
-            res.to.includes(demand_detail.to)&&
-            res.from.includes(demand_detail.from) 
-           
+            res.to.includes(demand_detail.to) &&
+            res.from.includes(demand_detail.from)
         )
       );
     } else if (report === "notification_register") {
@@ -270,12 +267,8 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.no_type.includes(notification_register.no_type) &&
-            res.no_date.includes(
-              notification_register.no_date
-            )&&
-            res.end_date.includes(
-              notification_register.end_date
-            )
+            res.no_date.includes(notification_register.no_date) &&
+            res.end_date.includes(notification_register.end_date)
         )
       );
     } else if (report === "Promotion_report") {
@@ -284,10 +277,9 @@ const Dropdownd = () => {
         userData.filter(
           (res) =>
             res.promotion_type.includes(Promotion_report.promotion_type) &&
-            res.end_date.includes(Promotion_report.registered_number)&&
+            res.end_date.includes(Promotion_report.registered_number) &&
             res.promotion_date.includes(Promotion_report.registered_number)
-        
-            )
+        )
       );
     }
   };
@@ -327,7 +319,7 @@ const Dropdownd = () => {
               className="sm:w-[29rem] sm:p-2"
               onChange={handleChange}
               options={[
-                { value: "Userdetails", label: "RPTUser details" },
+                { value: "Userdetails", label: "User details" },
                 {
                   value: "Overall_wallet_Summary",
                   label: "Overall wallet Summary",
@@ -377,15 +369,15 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-4 ">
+                <div className="flex justify-around w-full gap-2 ">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Scheduled date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       type="date"
                       value={Vehicle_Scheduled_Summary.scheduled_date}
                       onChange={(e) =>
@@ -398,13 +390,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       User Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Scheduled_Summary.user_name}
                       onChange={(e) =>
                         setVehicle_Scheduled_Summary({
@@ -417,15 +408,14 @@ const Dropdownd = () => {
                   </div>
                 </div>
 
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Register Number
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Scheduled_Summary.registered_number}
                       onChange={(e) =>
                         setVehicle_Scheduled_Summary({
@@ -437,13 +427,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Vehicle Number
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Scheduled_Summary.vehicle_no}
                       onChange={(e) =>
                         setVehicle_Scheduled_Summary({
@@ -451,14 +440,13 @@ const Dropdownd = () => {
                           vehicle_no: e.target.value,
                         })
                       }
-                  
                       placeholder={"Vehicle Number"}
                     />
                   </div>
                 </div>
                 <button
                   type="submit"
-                  className="border bg-orange-500 w-1/3 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
+                  className="border bg-orange-500 w-1/2 sm:w-1/6 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
                   // disabled={!formik.isValid && formik.isSubmitting}
                 >
                   generate Report
@@ -470,15 +458,14 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full px-2 sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       User Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Userdetails.user_name}
                       onChange={(e) =>
                         setUserdetails({
@@ -490,13 +477,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Registered Number
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Userdetails.registered_number}
                       onChange={(e) =>
                         setUserdetails({
@@ -522,15 +508,15 @@ const Dropdownd = () => {
                 // onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Booking date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       type="date"
                       value={Vehicle_Booking_Summary.booking_date}
                       onChange={(e) =>
@@ -543,13 +529,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       User Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Booking_Summary.user_name}
                       onChange={(e) =>
                         setVehicle_Booking_Summary({
@@ -563,15 +548,14 @@ const Dropdownd = () => {
                   </div>
                 </div>
 
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Register Number
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Booking_Summary.registered_number}
                       onChange={(e) =>
                         setVehicle_Booking_Summary({
@@ -583,13 +567,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Vehicle Number
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Booking_Summary.vehicle_no}
                       onChange={(e) =>
                         setVehicle_Booking_Summary({
@@ -601,15 +584,14 @@ const Dropdownd = () => {
                     />
                   </div>
                 </div>
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       From
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Booking_Summary.from}
                       onChange={(e) =>
                         setVehicle_Booking_Summary({
@@ -621,13 +603,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       To
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Booking_Summary.to}
                       onChange={(e) =>
                         setVehicle_Booking_Summary({
@@ -639,15 +620,14 @@ const Dropdownd = () => {
                     />
                   </div>
                 </div>
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Owner Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Vehicle_Booking_Summary.owner_name}
                       onChange={(e) =>
                         setVehicle_Booking_Summary({
@@ -662,7 +642,7 @@ const Dropdownd = () => {
                 <button
                   type="submit"
                   onClick={onSubmitform}
-                  className="border bg-orange-500 w-1/3 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
+                  className="border bg-orange-500 w-1/2 sm:w-1/6 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
                   // disabled={!formik.isValid || formik.isSubmitting}
                 >
                   generate Report
@@ -674,15 +654,14 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full px-2 sm:gap-8">
+                <div className="flex justify-around w-full px-2 gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       User Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Overall_wallet_Summary.user_name}
                       onChange={(e) =>
                         setOverall_wallet_Summary({
@@ -691,18 +670,16 @@ const Dropdownd = () => {
                         })
                       }
                       type="text"
-                  
                       placeholder={"  User Name"}
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Registered Number
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Overall_wallet_Summary.registered_number}
                       onChange={(e) =>
                         setOverall_wallet_Summary({
@@ -710,15 +687,13 @@ const Dropdownd = () => {
                           registered_number: e.target.value,
                         })
                       }
-                  
                       placeholder={"Registered number"}
                     />
                   </div>
                 </div>
                 <button
                   type="submit"
-                  className="border bg-orange-500 w-1/3 p-2 sm:px-6 rounded-md font-thin   text-white  disabled:bg-red-500 disabled:cursor-not-allowed "
-                  // disabled={!formik.isValid || formik.isSubmitting}
+                  className="border bg-orange-500 w-1/2 sm:w-1/6 p-2 sm:px-6 rounded-md font-thin   text-white  disabled:bg-red-500 disabled:cursor-not-allowed "
                 >
                   Generate Report
                 </button>
@@ -729,15 +704,14 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full px-2 sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       User Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Overall_Current_Balances.user_name}
                       onChange={(e) =>
                         setOverall_Current_Balances({
@@ -749,13 +723,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Registered Number
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={Overall_Current_Balances.registered_number}
                       onChange={(e) =>
                         setOverall_Current_Balances({
@@ -769,7 +742,7 @@ const Dropdownd = () => {
                 </div>
                 <button
                   type="submit"
-                  className="border bg-orange-500 w-1/3 p-2 sm:px-6 rounded-md font-thin   text-white  disabled:bg-red-500 disabled:cursor-not-allowed "
+                  className="border bg-orange-500 w-1/2 sm:w-1/6 p-2 sm:px-6 rounded-md font-thin   text-white  disabled:bg-red-500 disabled:cursor-not-allowed "
                   // disabled={!formik.isValid || formik.isSubmitting}
                 >
                   Generate Report
@@ -782,15 +755,14 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Booking no
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={pod_register.booking_no}
                       onChange={(e) =>
                         setpod_register({
@@ -802,14 +774,13 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Booking Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       type="date"
                       value={pod_register.booking_date}
                       onChange={(e) =>
@@ -823,16 +794,14 @@ const Dropdownd = () => {
                   </div>
                 </div>
 
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Vehicle No
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={pod_register.vehicle_no}
                       onChange={(e) =>
                         setpod_register({
@@ -844,13 +813,13 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       POD Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={pod_register.pod_date}
                       onChange={(e) =>
                         setpod_register({
@@ -859,20 +828,18 @@ const Dropdownd = () => {
                         })
                       }
                       type="date"
-                  
                       placeholder={"  POD Date"}
                     />
                   </div>
                 </div>
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       From
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={pod_register.from}
                       onChange={(e) =>
                         setpod_register({
@@ -884,13 +851,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       To
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={pod_register.to}
                       onChange={(e) =>
                         setpod_register({ ...pod_register, to: e.target.value })
@@ -902,7 +868,7 @@ const Dropdownd = () => {
 
                 <button
                   type="submit"
-                  className="border bg-orange-500 w-1/3 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
+                  className="border bg-orange-500 w-1/2 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
                   // disabled={!formik.isValid || formik.isSubmitting}
                 >
                   generate Report
@@ -914,15 +880,14 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Booking No
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={freight_register.booking_no}
                       onChange={(e) =>
                         setfreight_register({
@@ -934,14 +899,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Vehicle No
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={freight_register.vehicle_no}
                       onChange={(e) =>
                         setfreight_register({
@@ -954,16 +917,14 @@ const Dropdownd = () => {
                   </div>
                 </div>
 
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       From
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={freight_register.from}
                       onChange={(e) =>
                         setfreight_register({
@@ -975,14 +936,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       To
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={freight_register.to}
                       onChange={(e) =>
                         setfreight_register({
@@ -997,7 +956,7 @@ const Dropdownd = () => {
 
                 <button
                   type="submit"
-                  className="border bg-orange-500 w-1/3 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
+                  className="border bg-orange-500 w-1/2 sm:w-1/6 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
                   // disabled={!formik.isValid || formik.isSubmitting}
                 >
                   generate Report
@@ -1009,16 +968,14 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Vehicle No
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={vehicle_hire_history.vehicle_no}
                       onChange={(e) =>
                         setvehicle_hire_history({
@@ -1030,14 +987,13 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Hire Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={vehicle_hire_history.hire_date}
                       onChange={(e) =>
                         setvehicle_hire_history({
@@ -1051,15 +1007,14 @@ const Dropdownd = () => {
                   </div>
                 </div>
 
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       POD No
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={vehicle_hire_history.pod_no}
                       onChange={(e) =>
                         setvehicle_hire_history({
@@ -1071,13 +1026,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Company Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={vehicle_hire_history.company_name}
                       onChange={(e) =>
                         setvehicle_hire_history({
@@ -1089,15 +1043,14 @@ const Dropdownd = () => {
                     />
                   </div>
                 </div>
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       From
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={vehicle_hire_history.from}
                       onChange={(e) =>
                         setvehicle_hire_history({
@@ -1109,13 +1062,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       To
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={vehicle_hire_history.to}
                       onChange={(e) =>
                         setvehicle_hire_history({
@@ -1142,16 +1094,14 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Vehicle No
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={vehicle_master_information.vehicle_no}
                       onChange={(e) =>
                         setRPTVehicleMasterInformation({
@@ -1163,14 +1113,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Owner Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={vehicle_master_information.owner_name}
                       onChange={(e) =>
                         setRPTVehicleMasterInformation({
@@ -1185,8 +1133,8 @@ const Dropdownd = () => {
 
                 <button
                   type="submit"
-                  className="border bg-orange-500 w-1/3 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
-                  // disabled={!formik.isValid || formik.isSubmitting}
+                  className="border bg-orange-500 w-1/2 sm:w-1/6 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
+                 
                 >
                   generate Report
                 </button>
@@ -1198,16 +1146,14 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Vehicle No
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={vehicle_schedule_histotry.vehicle_no}
                       onChange={(e) =>
                         setvehicle_schedule_histotry({
@@ -1219,14 +1165,13 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Sch Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={vehicle_schedule_histotry.sch_date}
                       onChange={(e) =>
                         setvehicle_schedule_histotry({
@@ -1240,15 +1185,14 @@ const Dropdownd = () => {
                   </div>
                 </div>
 
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       From
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={vehicle_schedule_histotry.from}
                       onChange={(e) =>
                         setvehicle_schedule_histotry({
@@ -1260,13 +1204,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       To
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={vehicle_schedule_histotry.to}
                       onChange={(e) =>
                         setvehicle_schedule_histotry({
@@ -1278,16 +1221,14 @@ const Dropdownd = () => {
                     />
                   </div>
                 </div>
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Driver Name
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={vehicle_schedule_histotry.driver_name}
                       onChange={(e) =>
                         setvehicle_schedule_histotry({
@@ -1313,16 +1254,15 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Req Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={demand_detail.req_date}
                       onChange={(e) =>
                         setdemand_detail({
@@ -1335,14 +1275,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Vehicle Type
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={demand_detail.vehicle_type}
                       onChange={(e) =>
                         setdemand_detail({
@@ -1355,15 +1293,14 @@ const Dropdownd = () => {
                   </div>
                 </div>
 
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-8">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       From
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={demand_detail.from}
                       onChange={(e) =>
                         setdemand_detail({
@@ -1375,13 +1312,12 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       To
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
                       value={demand_detail.to}
                       onChange={(e) =>
                         setdemand_detail({
@@ -1393,16 +1329,14 @@ const Dropdownd = () => {
                     />
                   </div>
                 </div>
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Demand By
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={demand_detail.demand_by}
                       onChange={(e) =>
                         setdemand_detail({
@@ -1416,7 +1350,7 @@ const Dropdownd = () => {
                 </div>
                 <button
                   type="submit"
-                  className="border bg-orange-500 w-1/3 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
+                  className="border bg-orange-500 w-1/2 sm:w-1/6 p-2 sm:px-6 rounded-md font-thin  duration-300 text-white active:bg-green-800 disabled:bg-red-500 disabled:cursor-not-allowed "
                   // disabled={!formik.isValid || formik.isSubmitting}
                 >
                   generate Report
@@ -1428,16 +1362,15 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       No Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={notification_register.no_date}
                       onChange={(e) =>
                         setnotification_register({
@@ -1450,14 +1383,13 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       End Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={notification_register.end_date}
                       onChange={(e) =>
                         setnotification_register({
@@ -1470,16 +1402,14 @@ const Dropdownd = () => {
                     />
                   </div>
                 </div>
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       No Type
                     </label>
-                  
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={notification_register.no_type}
                       onChange={(e) =>
                         setnotification_register({
@@ -1506,16 +1436,15 @@ const Dropdownd = () => {
                 onSubmit={onSubmitform}
                 className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
               >
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Promotion Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={Promotion_report.req_date}
                       onChange={(e) =>
                         setPromotion_report({
@@ -1528,14 +1457,13 @@ const Dropdownd = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       End Date
                     </label>
-                  
-                    <input max="2099-12-25"
+
+                    <Input
+                      max="2099-12-25"
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                    
-                  
                       value={Promotion_report.end_date}
                       onChange={(e) =>
                         setPromotion_report({
@@ -1548,15 +1476,14 @@ const Dropdownd = () => {
                     />
                   </div>
                 </div>
-                <div className="sm:flex sm:justify-around sm:w-full sm:gap-9">
+                <div className="flex justify-around w-full gap-2">
                   <div className="flex flex-col gap-1 w-full">
-                    <label className="block text-gray-700 font-bold mb-2">
+                    <label className="block text-gray-700 font-bold mb-1">
                       Promotion Type
                     </label>
-                   
-                    <input
+
+                    <Input
                       className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
-                  
                       value={Promotion_report.promotion_type}
                       onChange={(e) =>
                         setPromotion_report({

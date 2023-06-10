@@ -36,7 +36,7 @@ const RPTVehicleschedulehistotry = ({data1}) => {
         const generatePDF= useReactToPrint({
             content: ()=>conponentPDF.current,
             documentTitle:"Userdata",
-            onAfterPrint:()=>alert("Data saved in PDF")
+           
         });
            console.log(userData)
            const exportPDF = () => {
@@ -83,7 +83,7 @@ const RPTVehicleschedulehistotry = ({data1}) => {
                   Date From : {data.date_From}To :{data.to}
                 </h1>
                 </div>
-                    <table id="my-table" className=" w-full " >
+                    <table id="my-table" className=" w-full relative " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
                             <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">Sr. No</th>
@@ -116,10 +116,8 @@ const RPTVehicleschedulehistotry = ({data1}) => {
                             </tr>
                             )) }
                         </tbody>          
-                                     
-                    </table>         
-                    <div    style={{
-        position: 'fixed',
+                        <div   style={{
+        position: 'absolute',
         top: '0',
         left: '0',
         right: '0',
@@ -127,16 +125,18 @@ const RPTVehicleschedulehistotry = ({data1}) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: '0.5',
+        opacity: '0.2',
         fontSize: '48px',
         color: 'red',
         transform: 'rotate(0deg)',
         pointerEvents: 'none',
       }}>
 
-<img className="w-40" src="transduniyalogo.png" alt="" />
+<img className="w-60" src="transduniyalogo.png" alt="" />
 
-</div>
+</div>             
+                    </table>         
+           
 </div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div>
