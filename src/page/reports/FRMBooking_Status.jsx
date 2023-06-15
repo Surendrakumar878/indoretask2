@@ -78,59 +78,59 @@ const [data,setDate]=useState([])
                 <div className="">
                     <div className="">
                       <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full    border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Booking Status </div> 
+                    <div className="mt-0 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Booking Status </div> 
                     <div className="  pb-2">
-                    <div className="m-auto sm:m-auto gap-1 w-[98%] sm:w-full grid grid-cols-2  px-2 sm:grid sm:grid-cols-6 sm:gap-2 sm:py-3">
+                    <div className="m-auto sm:m-auto gap-1 w-[98%] sm:w-full grid grid-cols-2 py-2  px-2 sm:grid sm:grid-cols-6 sm:gap-1 sm:p-2 sm:py-3">
                         <div  className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Freight slip No :  </label>
-             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Freight slip No" value={freight_slip_no} onChange={(e)=>setfreight_slip_no(e.target.value)} />
+             <input className="border border-collapse p-1 sm:p-2 text-[12px]  w-40 lg:w-full sm:w-32 sm:text-xs rounded-md" type="number" placeholder="Search by Freight slip No" value={freight_slip_no} onChange={(e)=>setfreight_slip_no(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Loading No :  </label>
-             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Loading No" value={loading_no} onChange={(e)=>setloading_no(e.target.value)} />
+             <input className="border border-collapse p-1 sm:p-2 text-[12px]  w-40 lg:w-full sm:w-32 sm:text-xs rounded-md" type="number" placeholder="Search by Loading No" value={loading_no} onChange={(e)=>setloading_no(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Pod No :  </label>
-             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="number" placeholder="Search by Pod No" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
+             <input className="border border-collapse p-1 sm:p-2 text-[12px]  w-40 lg:w-full sm:w-32 sm:text-xs rounded-md" type="number" placeholder="Search by Pod No" value={pod_no} onChange={(e)=>setPod_no(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Booking No :  </label>
-             <input className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
+             <input className="border border-collapse p-1 sm:p-2 text-[12px]  w-40 lg:w-full sm:w-32 sm:text-xs rounded-md" type="text" placeholder="Search by booking no" value={booking_no} onChange={(e)=>setBooking_no(e.target.value)} />
                 </div>
 
                 
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Booking date :  </label>
-             <input max="2099-12-25T23:59"  className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
+             <input max="2099-12-25T23:59"  className="border border-collapse p-1 sm:p-2 text-[12px]  w-40 lg:w-full sm:w-32 sm:text-xs rounded-md" type="datetime-local" placeholder="Search by Booking date" value={booking_date} onChange={(e)=>setbooking_date(e.target.value)} />
            
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Pod Date :  </label>
-             <input max="2099-12-25T23:59" className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Pod Date" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
+             <input max="2099-12-25T23:59" className="border border-collapse p-1 sm:p-2 text-[12px]  w-40 lg:w-full sm:w-32 sm:text-xs rounded-md" type="datetime-local" placeholder="Search by Pod Date" value={pod_date} onChange={(e)=>setpod_date(e.target.value)} />
                 </div>
                 
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " >Loading Date :  </label>
-             <input  max="2099-12-25T23:59"className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Loading Date" value={loading_date} onChange={(e)=>setloading_date(e.target.value)} />
+             <input  max="2099-12-25T23:59"className="border border-collapse p-1 sm:p-2 text-[12px]  w-40 lg:w-full sm:w-32 sm:text-xs rounded-md" type="datetime-local" placeholder="Search by Loading Date" value={loading_date} onChange={(e)=>setloading_date(e.target.value)} />
                 </div>
                 <div className="w-full">
                         <label className=" text-[10px] lg:text-[11px] sm:text-base " > Freight Slip  Date:  </label>
-             <input max="2099-12-25T23:59" className="border border-collapse p-1 text-[12px]  w-44 lg:w-full sm:w-32 sm:text-xs rounded-sm" type="datetime-local" placeholder="Search by Freight Slip  Date:" value={freight_slip_date} onChange={(e)=>setfreight_slip_date(e.target.value)} />
+             <input max="2099-12-25T23:59" className="border border-collapse p-1 sm:p-2 text-[12px]  w-40 lg:w-full sm:w-32 sm:text-xs rounded-md" type="datetime-local" placeholder="Search by Freight Slip  Date:" value={freight_slip_date} onChange={(e)=>setfreight_slip_date(e.target.value)} />
                 </div>
                     </div>
                     <table className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking No</th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking Date</th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Pod No  </th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Pod Date  </th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Loading No </th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Loading date </th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Freight Slip Date</th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Freight Slip No</th>
-                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Action</th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-2  sm:text-base  border border-slate-300">Sr. No</th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300">Booking No</th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300">Booking Date</th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300">Pod No  </th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300">Pod Date  </th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300"> Loading No </th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300">Loading date </th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300">Freight Slip Date</th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300">Freight Slip No</th>
+                            <th className="lg:text-[11px] text-[0.41rem] p-0 sm:px-3  sm:text-base  border border-slate-300">Action</th>
                             
                             </tr>  
                         </thead>
@@ -138,15 +138,15 @@ const [data,setDate]=useState([])
                             {
                                   data?.slice(pageclick, pageclick + perpage).map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{index+1}</td>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_no}</td>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_date}</td>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.pod_no}</td>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.pod_date}</td>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.loading_no}</td>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.loading_date}</td>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.freight_slip_no}</td>
-                                <td className="sm:px-1 px-1 sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.freight_slip_date}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{index+1}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_no}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_date}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_date}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_date}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_date}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_date}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_date}</td>
+                                <td className=" sm:text-base text-[8px] lg:text-[11px] border border-slate-300">{uData.booking_date}</td>
                          
                                 <td className="sm:px-3 px-2 sm:text-base text-base border lg:text-[11px] border-slate-300"> 
                                 

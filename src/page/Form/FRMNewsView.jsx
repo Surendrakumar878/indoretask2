@@ -1,23 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
-
 import { Link } from "react-router-dom";
-
 import axios from "axios";
-import { useReactToPrint } from "react-to-print";
 import { Input, Row, Col, Radio } from "antd";
 import schedule from "../reports/scheduleview.module.css";
 import ReactPaginate from "react-paginate";
-const FRMGPSView = () => {
+import r from "../rpt.module.css"
+const FRMNewsView = () => {
   const [data, setDate] = useState([]);
   const conponentPDF = useRef();
   const [userData, setUserdata] = useState([]);
-  const [req_date_time, setreq_date_time] = useState();
-  const [contact_no, setcontact_no] = useState("");
-  const [req_by, setreq_by] = useState();
+  const [news_end_date_time, setnews_end_date_time] = useState();
+  const [news_start_date_time, setnews_start_date_time] = useState("");
 
   useEffect(() => {}, []);
-
-  // console.log(vehicle)
+// console.log(vehicle)
   useEffect(() => {
     const registerUserdata = async () => {
       axios
@@ -32,16 +28,15 @@ const FRMGPSView = () => {
   }, []);
 
   useEffect(() => {
-    setDate(
-      userData.filter((res) => res.req_date_time.includes(req_date_time))
+    setnews_end_date_time(
+      userData.filter((res) => res.req_date_time.includes(news_end_date_time))
     );
-  }, [req_date_time]);
+  }, [news_end_date_time]);
   useEffect(() => {
-    setDate(userData.filter((res) => res.contact_no.includes(contact_no)));
-  }, [contact_no]);
-  useEffect(() => {
-    setDate(userData.filter((res) => res.req_by.includes(req_by)));
-  }, [req_by]);
+    setnews_start_date_time(
+      userData.filter((res) => res.contact_no.includes(news_start_date_time))
+    );
+  }, [news_start_date_time]);
 
   const [pagenumber, setPagenumber] = useState(0);
   const perpage = 10;
@@ -56,12 +51,12 @@ const FRMGPSView = () => {
       <div className={schedule.scheduleview}>
         <Row>
           <Col className={schedule.select_option_col}>
-            <label style={{ paddingLeft: "10px" }}>REQ TIME/DATE </label>
+            <label style={{ paddingLeft: "10px" }}>New Start TIME/DATE </label>
             <br />
             <input
               max="2099-12-25T23:59"
-              value={req_date_time}
-              onChange={(e) => setreq_date_time(e.target.value)}
+              value={news_start_date_time}
+              onChange={(e) => setnews_start_date_time(e.target.value)}
               class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
               placeholder="Search for anything..."
               type="datetime-local"
@@ -69,33 +64,27 @@ const FRMGPSView = () => {
             />
           </Col>
           <Col className={schedule.select_option_col}>
-            <label style={{ paddingLeft: "10px" }}>REQ BY :</label>
+            <label style={{ paddingLeft: "10px" }}>New End TIME/DATE:</label>
             <br />
-            <Input
-              placeholder="Search VEHICLE NO"
-              value={req_by}
-              onChange={(e) => setreq_by(e.target.value)}
-              style={{ width: "90%" }}
+            <input
+              max="2099-12-25T23:59"
+              value={news_end_date_time}
+              onChange={(e) => setnews_end_date_time(e.target.value)}
+              class="placeholder:italic placeholder:text-slate-400 block bg-white w-[90%] border border-slate-300 rounded-md py-1 pl-1 sm:pl-9 pr-0 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+              placeholder="Search for anything..."
+              type="datetime-local"
+              name="search"
             />
           </Col>
-          <Col className={schedule.select_option_col}>
-            <label style={{ paddingLeft: "10px" }}>CONTACT NO </label>
-            <br />
-            <Input
-              placeholder="Search by OWNER NAME"
-              value={contact_no}
-              onChange={(e) => setcontact_no(e.target.value)}
-              style={{ width: "90%" }}
-            />
-          </Col>
+         
         </Row>
         <table className="w-full" style={{ marginTop: "20px" }}>
           <tr className="bg-[#151B54] text-white">
             <th id={schedule.transaction_boder}>Sr No.</th>
-            <th id={schedule.transaction_boder}>REQ ID</th>
-            <th id={schedule.transaction_boder}>REQ TIME/DATE</th>
-            <th id={schedule.transaction_boder}>REQ BY</th>
-            <th id={schedule.transaction_boder}>CONTACT NO </th>
+            <th id={schedule.transaction_boder}>News id</th>
+            <th id={schedule.transaction_boder}>New Start Time/date</th>
+            <th id={schedule.transaction_boder}>News End Time/Date</th>
+            <th id={schedule.transaction_boder}>Heading</th>
 
             <th id={schedule.transaction_boder}>ACTION</th>
           </tr>
@@ -141,4 +130,4 @@ const FRMGPSView = () => {
   );
 };
 
-export default FRMGPSView;
+export default FRMNewsView;

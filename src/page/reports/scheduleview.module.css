@@ -47,7 +47,13 @@ text-align: left;
   font-size: 10px;
   padding: 3px;
 
-}   
+}  
+table{
+  text-align: center;
+} 
+table{
+  text-align: center;
+} 
 }
 @media screen and (max-width: 700px){
 

@@ -65,6 +65,8 @@ const options = {
       <Link to="/FRMPurchesSparePart"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMPurchesPart</button> </Link>
       <Link to="/FRMresaler"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMresaler</button> </Link>
       <Link to="/FRMresalerView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMresalerView</button> </Link>
+      <Link to="/FRMNew"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMNews</button> </Link>
+      <Link to="/FRMNewsView"> <button  className="btn btn-success bg-[#151B54] py-2 px-2 w-auto text-base mt-2 rounded-lg text-white " >FRMNewsView</button> </Link>
    
     </div>
 

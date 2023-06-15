@@ -92,10 +92,7 @@ useEffect(()=>{
         style={{width:"90%"}}
       />
       </Col>
-      
      
-       
-    
     </Row>
     <table  className="w-full" style={{marginTop:"20px"}}>
   <tr className="bg-[#151B54] text-white">
@@ -147,13 +144,11 @@ useEffect(()=>{
                 pageCount= { countpage}
                 onPageChange={ changePage}
                 containerClassName={"pagination"}
-              //   previousLinkClassName={"previousBttn"}
-              //   nextLinkClassName={"nextBttn"}
+           
                 activeClassName={"active"}
                 marginPagesDisplayed={2}
                 pageRangeDisplayed={5}
-              //   disabledClassName={"paginationDisabled"}
-
+         
               /> 
 </div>
     </div>

@@ -53,6 +53,10 @@ import Demo from "./components/Demo";
 import RPTVehicle_View from "./page/RPTVehicle_View";
 import FRMresaler from "./page/Form/FRMresaler";
 import FRMresalerView from "./page/Form/FRMresalerView";
+import FRMNew from "./page/Form/FRMNews";
+import FRMNews from "./page/Form/FRMNews";
+import FRMNewsView from "./page/Form/FRMNewsView";
+
 
 // create a new preview
 
@@ -124,6 +128,8 @@ function App() {
         <Route path="/FRMresaler" element={<FRMresaler />}></Route>
         <Route path="/FRMresalerView" element={<FRMresalerView />}></Route>
         <Route path="/demo" element={<Demo />}></Route>
+        <Route path="/FRMNew" element={<FRMNews />}></Route>
+        <Route path="/FRMNewsView" element={<FRMNewsView />}></Route>
       </Routes>
     </div>
   );

@@ -8,7 +8,61 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 
 import r from "../rpt.module.css"
-const RPTVehicleHireHistory = ({ data1 }) => {
+import { Input } from "antd";
+const userData = [
+  {
+    id: 1,
+    booking_id: 34234,
+    booking_no: "12302",
+    booking_date: "2023-05-25T00:59",
+    vehicle_no: 4,
+    from: "bhopal1",
+    to: "indore1",
+    vehicle_type: "abcde",
+  },
+  {
+    id: 2,
+    booking_id: 34234,
+    booking_no: "12303",
+    booking_date: "2023-05-25T00:58",
+    vehicle_no: 3,
+    from: "bhopal3",
+    to: "indore",
+    vehicle_type: "abcde",
+  },
+  {
+    id: 3,
+    booking_id: 34234,
+    booking_no: "12304",
+    booking_date: "2023-05-25T00:50",
+    vehicle_no: 2,
+    from: "bhopal3",
+    to: "indore3",
+    vehicle_type: "abcde",
+  },
+  {
+    id: 4,
+    vehicle_id: 6536456,
+    booking_id: 34234,
+    booking_no: "12302",
+    booking_date: "2023-05-25",
+    vehicle_no: 5,
+    from: "bhopal",
+    to: "indore",
+    vehicle_type: "abcde",
+  },
+  {
+    id: 5,
+    booking_id: 34234,
+    booking_no: "12302",
+    booking_date: "2023-05-25T00:59",
+    vehicle_no: 1,
+    from: "bhopal",
+    to: "indore",
+    vehicle_type: "abcde",
+  },
+];
+const RPTVehicleHireHistory = () => {
   const pageStyle = `@page { 
     size: auto;  margin: 0mm ; } @media print { body { -webkit-print-color-adjust: exact; } }
   @media print {
@@ -38,7 +92,7 @@ const RPTVehicleHireHistory = ({ data1 }) => {
   `;
 
   
-
+  const [data1, setData] = useState([]);
   const [data, setDate] = useState({
     name: "ram transport",
     email: "email@gmail.com",
@@ -50,17 +104,16 @@ const RPTVehicleHireHistory = ({ data1 }) => {
     to: "4/20/2023",
   });
   const conponentPDF = useRef();
-  const [userData, setUserdata] = useState([]);
-
-  useEffect(() => {
-    const registerUserdata = async () => {
-      axios
-        .get("http://localhost:3004/reports")
-        .then((res) => setUserdata(res.data))
-        .catch((error) => console.log(error));
-    };
-    registerUserdata();
-  }, []);
+  
+  const [vehicle_hire_history, setvehicle_hire_history] = useState({
+    hire_date: "",
+    pod_no: "",
+    company_name: "",
+    vehicle_no: "",
+    from: "",
+    to: "",
+  });
+  
 
   const generatePDF = useReactToPrint({
     content: () => conponentPDF.current,
@@ -98,24 +151,121 @@ const RPTVehicleHireHistory = ({ data1 }) => {
     // Save the PDF document
     doc.save("data-report.pdf");
   };
-
+  const onSubmitform = (e) => {
+    e.preventDefault();
+  };
+useEffect(()=>{
+  setData(
+    userData.filter(
+      (res) =>
+        res.booking_date.includes(vehicle_hire_history.hire_date) &&
+        res.vehicle_no.toString().includes(vehicle_hire_history.pod_no) &&
+        res.from.includes(vehicle_hire_history.company_name.toLowerCase()) &&
+        res.vehicle_no.toString().includes(vehicle_hire_history.vehicle_no) &&
+        res.from.includes(vehicle_hire_history.from.toLowerCase()) &&
+        res.to.includes(vehicle_hire_history.to.toLowerCase())
+    )
+  );
+},[vehicle_hire_history.hire_date,vehicle_hire_history.pod_no,vehicle_hire_history.company_name,vehicle_hire_history.vehicle_no,vehicle_hire_history.from,vehicle_hire_history.to ])
   return (
     <div>
       <React.Fragment>
         <div className=" sm:w-[80%]  sm:m-auto ">
           <div className="">
+          <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">
+                  {" "}
+                  Vehicle Hire History{" "}
+                </div>
             <div className="">
+            <form
+                onSubmit={onSubmitform}
+                className="flex px-2  flex-col gap-4 pb-8   justify-center items-center shadow "
+              >
+                <div className="grid grid-cols-2 gap-2  sm:flex  sm:justify-around w-[100%] sm:gap-1">
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="block text-gray-700 font-bold mb-1">
+                      Vehicle No
+                    </label>
+
+                    <Input
+                      className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
+                      value={vehicle_hire_history.vehicle_no}
+                      onChange={(e) =>
+                        setvehicle_hire_history({
+                          ...vehicle_hire_history,
+                          vehicle_no: e.target.value,
+                        })
+                      }
+                      placeholder={"Vehicle No"}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="block text-gray-700 font-bold mb-1">
+                      Hire Date
+                    </label>
+
+                    <Input
+                      max="2099-12-25"
+                      className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
+                      value={vehicle_hire_history.hire_date}
+                      onChange={(e) =>
+                        setvehicle_hire_history({
+                          ...vehicle_hire_history,
+                          hire_date: e.target.value,
+                        })
+                      }
+                      type="date"
+                      placeholder={"Hire Date"}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="block text-gray-700 font-bold mb-1">
+                      POD No
+                    </label>
+
+                    <Input
+                      className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
+                      value={vehicle_hire_history.pod_no}
+                      onChange={(e) =>
+                        setvehicle_hire_history({
+                          ...vehicle_hire_history,
+                          pod_no: e.target.value,
+                        })
+                      }
+                      placeholder={"POD No"}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="block text-gray-700 font-bold mb-1">
+                      Company Name
+                    </label>
+
+                    <Input
+                      className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
+                      value={vehicle_hire_history.company_name}
+                      onChange={(e) =>
+                        setvehicle_hire_history({
+                          ...vehicle_hire_history,
+                          company_name: e.target.value,
+                        })
+                      }
+                      placeholder={"Company Name"}
+                    />
+                  </div>
+                </div>
+
+                
+              
+               
+              </form>
               <div
                 ref={conponentPDF}
                 className=" relative sm:w-full sm:m-auto w-full   "
               >
-                <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">
-                  {" "}
-                  Vehicle Hire History{" "}
-                </div>
+                
 
                 <div className="  ">
-                  <div className=" border border-t-1  border-slate-700 border-b-1 border-r-1 border-l-1 w-[99.5%] ">
+                  <div className=" border-1  border-black w-[100%] ">
                     <h1 className=" pl-1 font-bold  text-[10px]">
                       {" "}
                       {data.name}
@@ -136,81 +286,81 @@ const RPTVehicleHireHistory = ({ data1 }) => {
                     <thead className="bg-[#151B54] w-full text-white text-[10px]">
                       <tr>
                         <th className=" lg:text-[10px]  p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">
-                          Sr. No
+                          SR. NO
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          Vehicle No
+                          VEHICLE NO
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           {" "}
-                          Hire Id
+                          HIRE ID
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          Hire Date
+                          HIRE DATE
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
                           Hire By
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          Com Contact No
+                          COM CONCTACT NO
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          Com Location{" "}
+                          COM LOCTION{" "}
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          POD no{" "}
+                          POD NO{" "}
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          Pod Date
+                          POD DATE
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          From
+                          FROM
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          To
+                          TO
                         </th>
                         <th className=" lg:text-[10px]  p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">
-                          Com Name
+                          COM NAME
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       {data1?.map((datapost, index) => (
                           <tr key={index}>
-                            <td className="sm:px-2 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {index + 1}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.booking_no}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.user_id}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.user_name}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.registered_number}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.vehicle_no_scheduled}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.current_status}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.freight}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.from}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.to}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.com_name}
                             </td>
-                            <td className="sm:px-3 px-2 sm:text-base text-base ">
+                            <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">
                               {datapost.freight}
                             </td>
                            
@@ -233,7 +383,7 @@ const RPTVehicleHireHistory = ({ data1 }) => {
         pointerEvents: 'none',
       }}>
 
-<img className="w-60" src="transduniyalogo.png" alt="" />
+<img className="w-20 sm:w-60" src="transduniyalogo.png" alt="" />
 
 </div>   
                   </table>

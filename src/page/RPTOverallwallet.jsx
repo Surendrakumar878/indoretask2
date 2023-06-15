@@ -5,8 +5,64 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-// import r from "./rpt.module.css"
-const RPTOverallwallet = ({data1}) => {
+import r from "./rpt.module.css"
+import { Input } from "antd";
+const userData = [
+  {
+    id: 1,
+    booking_id: 34234,
+    booking_no: "12302",
+    booking_date: "2023-05-25T00:59",
+    vehicle_no: 4,
+    from: "bhopal1",
+    to: "indore1",
+    vehicle_type: "abcde",
+  },
+  {
+    id: 2,
+    booking_id: 34234,
+    booking_no: "12303",
+    booking_date: "2023-05-25T00:58",
+    vehicle_no: 3,
+    from: "bhopal3",
+    to: "indore",
+    vehicle_type: "abcde",
+  },
+  {
+    id: 3,
+    booking_id: 34234,
+    booking_no: "12304",
+    booking_date: "2023-05-25T00:50",
+    vehicle_no: 2,
+    from: "bhopal3",
+    to: "indore3",
+    vehicle_type: "abcde",
+  },
+  {
+    id: 4,
+    vehicle_id: 6536456,
+    booking_id: 34234,
+    booking_no: "12302",
+    booking_date: "2023-05-25",
+    vehicle_no: 5,
+    from: "bhopal",
+    to: "indore",
+    vehicle_type: "abcde",
+  },
+  {
+    id: 5,
+    booking_id: 34234,
+    booking_no: "12302",
+    booking_date: "2023-05-25T00:59",
+    vehicle_no: 1,
+    from: "bhopal",
+    to: "indore",
+    vehicle_type: "abcde",
+  },
+];
+const RPTOverallwallet = () => {
+
+  const [data1, setData] = useState([]);
     const [data,setDate]=useState({
         name:"ram transport",
         email:"email@gmail.com",
@@ -18,25 +74,19 @@ const RPTOverallwallet = ({data1}) => {
         to : "4/20/2023"
 
     })
+    const [Overall_wallet_Summary, setOverall_wallet_Summary] = useState({
+      user_name: "",
+      registered_number: "",
+    });
         const conponentPDF= useRef();
-        const [userData, setUserdata]= useState([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
-      
-        useEffect( ()=>{
-            const registerUserdata= async()=>{
-             axios.get("http://localhost:4000/Vehicle")  
-             .then(res=>setUserdata(res.data.data) )
-             .catch(error=>console.log(error)); 
-    
-            }
-            registerUserdata();
-        },[]);
+        
     
         const generatePDF= useReactToPrint({
             content: ()=>conponentPDF.current,
             documentTitle:"Userdata",
           
         });
-           console.log(userData)
+           
 
 
            const exportPDF = () => {
@@ -55,6 +105,20 @@ const RPTOverallwallet = ({data1}) => {
          // Save the PDF document
          doc.save('data-report.pdf');
        }
+       const onSubmitform = (e) => {
+        e.preventDefault();
+      };
+       useEffect(()=>{
+        setData(
+          userData.filter(
+            (res) =>
+              res.from.toLowerCase().includes(Overall_wallet_Summary.user_name.toLowerCase()) &&
+              res.vehicle_no.toString().includes(
+                Overall_wallet_Summary.registered_number
+              )
+          )
+        );
+       },[Overall_wallet_Summary.user_name, Overall_wallet_Summary.registered_number])
   return (
     <div>
      <React.Fragment>
@@ -62,14 +126,57 @@ const RPTOverallwallet = ({data1}) => {
         
             <div className=" sm:w-[80%]  sm:m-auto ">
                 <div className="">
-                    <div className="">
+                <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Overall wallet Summary: </div> 
                    
+                    <div className="">
+                    <form
+                onSubmit={onSubmitform}
+                className="flex  flex-col gap-4 pb-8   justify-center items-center shadow "
+              >
+                <div className="flex justify-around w-full px-2 gap-2">
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="block text-gray-700 font-bold mb-1">
+                      User Name
+                    </label>
+
+                    <Input
+                      className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
+                      value={Overall_wallet_Summary.user_name}
+                      onChange={(e) =>
+                        setOverall_wallet_Summary({
+                          ...Overall_wallet_Summary,
+                          user_name: e.target.value,
+                        })
+                      }
+                      type="text"
+                      placeholder={"  User Name"}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="block text-gray-700 font-bold mb-1">
+                      Registered Number
+                    </label>
+
+                    <Input
+                      className=" px-3 py-1 w-full  text-black border-collapse  border-2   rounded placeholder:italic placeholder:text-sm placeholder:text-slate-400   focus:outline-2 focus:outline-slate-200"
+                      value={Overall_wallet_Summary.registered_number}
+                      onChange={(e) =>
+                        setOverall_wallet_Summary({
+                          ...Overall_wallet_Summary,
+                          registered_number: e.target.value,
+                        })
+                      }
+                      placeholder={"Registered number"}
+                    />
+                  </div>
+                </div>
+               
+              </form>
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full   ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Overall wallet Summary: </div> 
                     <div className=" pb-2">
 
                     
-                    <div className=" border border-t-1  border-slate-700 border-b-1 border-r-1 border-l-1 w-[99.5%] ">
+                    <div className=" border-1 border-black  ">
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.name}</h1>
                 <h1 className=" pl-1 font-bold  text-[10px]"> {data.email} </h1>
                 <p className="pl-1 text-[10px] ">{data.mobilenumber} </p>
@@ -81,16 +188,17 @@ const RPTOverallwallet = ({data1}) => {
                   Date From : {data.date_From} To :{data.to}
                 </h1>
                 </div>
+                <div className=" overflow-x-auto ">
                     <table id="my-table" className=" w-full relative" >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">Sr. No</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">User id</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Username</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Refill Date/Time</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  "> Refill Amount</th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Refilled by </th>
-                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">Current Balance</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  ">SR. NO</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">USER ID</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">USER NAME</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">REFILL DATE/TIME</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  "> REFILL AMOUNT</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">REFILLED BY </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  ">CURRENT BALANCE</th>
                             {/* <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">refill amount </th> */}
                           
                             </tr> 
@@ -99,13 +207,13 @@ const RPTOverallwallet = ({data1}) => {
                             {
                                 data1?.map( (uData, index)=>(
                                  <tr key={index}>
-                                <td className="sm:px-2 px-2 sm:text-base text-base ">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.user_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.user_name}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.registered_number}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.refill_amount}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.refilled_by}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base ">{uData.current_balance}</td>
+                                <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">{index+1}</td>
+                                <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">{uData.user_id}</td>
+                                <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">{uData.user_name}</td>
+                                <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">{uData.registered_number}</td>
+                                <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">{uData.refill_amount}</td>
+                                <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">{uData.refilled_by}</td>
+                                <td className="lg:text-[11px] text-[0.51rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base ">{uData.current_balance}</td>
                               
                                
                             </tr>
@@ -128,11 +236,11 @@ const RPTOverallwallet = ({data1}) => {
         pointerEvents: 'none',
       }}>
 
-<img className="w-60" src="transduniyalogo.png" alt="" />
+<img className="w-20 sm:w-60" src="transduniyalogo.png" alt="" />
 
 </div>              
                     </table>         
-    
+                    </div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div>
 </div>
